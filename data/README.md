@@ -2,6 +2,10 @@
 
 This directory contains comprehensive test data for **Full Metal Productions**, a YouTube company and independent game development firm.
 
+## 🚀 Current Status: Ready for Milestone 2
+
+This test dataset is prepared for **Milestone 2: Ingest Test Data and Test AI** to validate the WWIZ concept.
+
 ## 🏢 Company Overview
 
 **Full Metal Productions** is a creative digital media company specializing in:

@@ -2,7 +2,11 @@
 
 This directory contains the organized data structure for the WWIZ (Who's Who in the Zoo) AI knowledge base.
 
-## 📁 Folder Structure
+## � Status: Template Structure for Milestone 3
+
+This structure provides the framework for **Milestone 3: Automation** when implementing data ingest scripts.
+
+## �📁 Folder Structure
 
 Each object type has its own folder containing template files and actual data files:
 

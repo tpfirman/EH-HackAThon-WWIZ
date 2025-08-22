@@ -10,10 +10,15 @@
   - [My Solution](#my-solution)
     - [🏗️ Architecture](#️-architecture)
     - [📋 Plan of Attack](#-plan-of-attack)
-      - [Milestone 1 - Basics](#milestone-1---basics)
-      - [Milestone 2 - Automation](#milestone-2---automation)
-      - [Milestone 3 - Documentation and Presentation](#milestone-3---documentation-and-presentation)
+      - [Milestone 1 - Basics ✅](#milestone-1---basics-)
+      - [Milestone 2 - Ingest Test Data and Test AI 🚧](#milestone-2---ingest-test-data-and-test-ai-)
+      - [Milestone 3 - Automation](#milestone-3---automation)
+      - [Milestone 4 - Documentation and Presentation](#milestone-4---documentation-and-presentation)
   - [🚀 Getting Started](#-getting-started)
+    - [Current Status: **WORKING** ✅](#current-status-working-)
+    - [Quick Start](#quick-start)
+    - [Architecture](#architecture)
+    - [Known Issues](#known-issues)
   - [📝 Notes](#-notes)
 
 ### 💼 Mission Brief
@@ -63,41 +68,63 @@ The AI Agent at no stage will have direct access to any sensitive systems. Inste
 - **Data Aggregation**: A collection of Python scripts
 
 ### 📋 Plan of Attack
-#### Milestone 1 - Basics
 
-1. **Get AWS resources up and running**
+#### Milestone 1 - Basics ✅
+
+1. **Get AWS resources up and running** ✅
    - EC2 instance with Docker and AnythingLLM
    - Network infrastructure and supporting infrastructure running
    - Able to log into AnythingLLM frontend and talk to Nova
 
-2. **AnythingLLM setup**
+2. **AnythingLLM setup** ✅
    - Create workspace for agent
    - Build out system prompts and agent settings tuning
    - Test user accounts ready
   
-3. **Create and ingest test data**
+3. **Create test data** ✅
    - Create data template for each intended source
    - Create test dataset
    - Upload and embed in agent
 
-4. **Test Milestone 1**
-   - Can I ask the agent questions relating to the test data and get an accurate and meaningful response?
+4. **Test Milestone 1** ✅
+   - Can I login and ask an LLM a question?
 
-#### Milestone 2 - Automation
+#### Milestone 2 - Ingest Test Data and Test AI 🚧
 
-5. **Create data ingest scripts**
+5. **Data ingestion and testing**
+   - Upload test data to AnythingLLM
+   - Configure embeddings and vector database
+   - Test AI responses with sample queries
+   - Validate concept with realistic scenarios
+
+6. **Test Milestone 2**
+   - Can the AI accurately answer questions about people, projects, and processes?
+   - Does the knowledge retrieval work effectively?
+
+#### Milestone 3 - Automation
+
+7. **Create data ingest scripts**
    
-6. **Create Python data parsing**
+8. **Create Python data parsing**
    - Create common handler for standard tasks
    - Create Python modules for each intended data source with a data class structure
    - Create Python script to extract and parse data and store ready for ingest
 
-7. **Test Milestone 2**
+9. **Test Milestone 3**
    - Sign up for a bunch of trials and see how many I can pull data from
 
-#### Milestone 3 - Documentation and Presentation
+#### Milestone 4 - Documentation and Presentation
 
-8. **Documentation**
+10. **Documentation**
+   - Required documentation for submission
+   - Standard product documentation
+   - Identified risks
+   - Any known issues
+   - Anything that was planned but ran out of time for
+
+11. **Video pitch**
+
+12. **Get some sleep before work on Monday!** 😴
    - Required documentation for submission
    - Standard product documentation
    - Identified risks
@@ -112,7 +139,47 @@ The AI Agent at no stage will have direct access to any sensitive systems. Inste
 
 ## 🚀 Getting Started
 
-*Coming soon - setup instructions will be added as the project develops*
+### Current Status: **WORKING** ✅
+
+The AI POC is deployed and functional:
+
+**Live Demo:** `http://ai-poc-anythingllm-ai-poc-alb-1359693372.ap-southeast-2.elb.amazonaws.com/`
+
+### Quick Start
+
+1. **Access the Application**
+   - Visit the ALB URL above
+   - Create an account or login
+   - Start chatting with the AI
+
+2. **For Developers**
+   ```bash
+   # Clone the repository
+   git clone https://github.com/tpfirman/EH-HackAThon-WWIZ.git
+   cd EH-HackAThon-WWIZ
+   
+   # Deploy infrastructure
+   cd infra
+   ./update-stack.ps1
+   ```
+
+3. **Manual Setup on EC2** (if needed)
+   ```bash
+   sudo chmod +x infra/scripts/*.sh
+   sudo ./infra/scripts/setup-ai-poc.sh 2>&1 | tee /var/log/ai-poc-git-setup.log
+   ```
+
+### Architecture
+
+- **Compute:** AWS EC2 (spot instances for cost optimization)
+- **Load Balancer:** Application Load Balancer with health checks
+- **Security:** WAF, VPC, Security Groups
+- **AI Platform:** AnythingLLM with AWS Bedrock integration
+- **Infrastructure:** CloudFormation for reproducible deployments
+
+### Known Issues
+
+See [GitHub Issues](https://github.com/tpfirman/EH-HackAThon-WWIZ/issues) for current automation improvements in progress.
 
 ## 📝 Notes
 

@@ -1,91 +1,138 @@
 # AI POC Infrastructure Scripts
 
-This directory contains external setup scripts for the AI POC CloudFormation deployment. These scripts are hosted on GitHub and downloaded during EC2 instance initialization to prevent UserData changes from triggering instance replacement.
+This directory contains the production scripts and configuration files for the AI POC deployment.
 
-## Key Features
+## Current Status: **PRODUCTION READY** ✅
 
-- **Idempotent**: All scripts are safe to re-run multiple times without causing issues
-- **Logging**: Comprehensive logging with timestamps for debugging
-- **Status Tracking**: Setup progress tracking with lock files
-- **Error Handling**: Robust error handling and graceful failures
-- **Service Checks**: Proper checks before installing/starting services
+All scripts have been cleaned up and are production-ready. Emergency/workaround scripts have been removed.
 
-## Scripts
+## Scripts Overview
 
-### setup-ai-poc.sh
+### 🚀 Core Production Scripts
+
+#### `setup-ai-poc.sh` (21KB)
 Main setup script that configures the entire AI POC environment:
-- **Idempotent**: Checks existing installations and skips if already present
-- **Progress Tracking**: Uses lock file to track setup completion
-- **Service Management**: Safely starts/restarts services as needed
-- Installs Docker, nginx, OpenSSL with version checks
-- Sets up AnythingLLM with dynamic memory allocation and container restart handling
-- Configures nginx proxy with health endpoint and backup configurations
-- Sets up CloudWatch logging with backup of original configs
-- Handles all environment variables from CloudFormation
+- **Idempotent**: Safe to re-run multiple times
+- **Progress Tracking**: Uses lock files to track completion
+- **Target Group Registration**: Auto-registers spot instances with ALB
+- Installs Docker, nginx, CloudWatch logging
+- Configures AnythingLLM with proper memory allocation
+- Sets up nginx proxy with health endpoints
+- Handles all CloudFormation environment variables
 
-### check-status.sh
-System status check script that displays:
-- **Robust Checks**: Handles missing commands/services gracefully
-- **Timeouts**: Uses timeouts for network requests to prevent hanging
-- **Setup Status**: Shows setup completion status and progress
+#### `setup-anythingllm.sh` (4KB) 
+Container-specific setup script:
+- **Container Management**: Starts and manages AnythingLLM container
+- **Health Checks**: Validates container health before completion
+- **Logging**: Comprehensive logging for troubleshooting
+- External configuration using `docker-compose.yml`
+
+### 🔧 Operations & Maintenance Scripts
+
+#### `check-alb-health.sh` (1KB)
+ALB health diagnostics script:
+- Tests local health endpoints
+- Validates AnythingLLM connectivity
+- Checks nginx and container status
+- Provides comprehensive health report
+
+#### `check-status.sh` (6KB)
+Comprehensive system status checker:
 - System resources (memory, disk, load)
-- Docker container status and resource usage
-- Nginx status and health check responses
-- AnythingLLM connectivity and response codes
-- Recent error logs analysis
-- Network connectivity tests (Internet, AWS services)
+- Docker container status and health
+- Nginx status and health responses
+- AnythingLLM connectivity tests
+- Network connectivity validation
+- Recent error log analysis
 
-### cleanup.sh
-Cleanup script for graceful resource cleanup:
-- **Safe Operations**: Checks for service existence before operations
-- **Complete Cleanup**: Removes setup locks to allow fresh installation
-- **Logging**: Logs all cleanup operations with timestamps
-- Stops and removes Docker containers
-- Cleans up Docker images (preserving base images)
-- Clears application and system logs
-- Stops services gracefully
-- Resets setup state for fresh deployments
+#### `cleanup.sh` (2KB)
+Resource cleanup for stack termination:
+- **Safe Operations**: Graceful service shutdown
+- **Complete Cleanup**: Removes containers and logs
+- **Reset State**: Clears setup locks for fresh deployment
+- Preserves base Docker images
 
-### connect-info.sh
-Connection information script that shows:
-- Instance details and IP addresses
-- Load Balancer URLs and endpoints
-- Service status summary
-- Resource allocation information
-- Configuration details
-- Quick access commands for troubleshooting
+#### `connect-info.sh` (3KB)
+Connection and instance information:
+- Instance metadata and details
+- Network configuration
+- Service endpoints and URLs
+- Access information for troubleshooting
 
-## Usage in CloudFormation
+## Configuration Files
 
-The CloudFormation template now uses a minimal UserData section that:
-1. Downloads the main setup script from GitHub (`infra/scripts/setup-ai-poc.sh`)
-2. Executes it with all required environment variables
-3. Downloads utility scripts to `/usr/local/bin/` for easy access
+### `nginx.conf` (1.7KB)
+Production nginx configuration:
+- Health endpoint at `/health`
+- Reverse proxy to AnythingLLM on port 3001
+- Proper headers and connection handling
+- SELinux compatibility
 
-## Re-run Safety (Idempotent Design)
+### `docker-compose.yml` (600B)
+AnythingLLM container configuration:
+- Health checks and restart policies
+- Memory limits and environment variables
+- Port mapping and volume mounts
+- Production-ready settings
 
-All scripts can be safely re-run without issues:
+### `awslogs.conf` (428B)
+CloudWatch logging configuration:
+- System and application log groups
+- Log retention and formatting
+- Integration with AWS CloudWatch
+## Usage
 
-```bash
-# Safe to run multiple times
-/usr/local/bin/check-status.sh
+### Production Deployment
+Scripts are automatically executed via CloudFormation UserData during EC2 instance launch.
 
-# Safe to run for cleanup and fresh setup
-/usr/local/bin/cleanup.sh
-curl -fsSL "https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/WIP/infra/scripts/setup-ai-poc.sh" | bash
-
-# Safe to run for connection info
-/usr/local/bin/connect-info.sh
-```
-
-## Quick SSH Setup Command
-
-If you're connected to the EC2 instance via SSH and want to re-run the setup scripts, use this one-liner:
+### Manual Execution
+For troubleshooting or manual setup:
 
 ```bash
-# One-liner to clone repo and run setup from SSH session
-cd /tmp && sudo rm -rf EH-HackAThon-WWIZ && git clone https://github.com/tpfirman/EH-HackAThon-WWIZ.git && cd EH-HackAThon-WWIZ && git config --global --add safe.directory /tmp/EH-HackAThon-WWIZ && git checkout wip && sudo ./infra/scripts/setup-ai-poc.sh
+# Run main setup
+sudo chmod +x infra/scripts/*.sh
+sudo ./infra/scripts/setup-ai-poc.sh
+
+# Check system status
+./infra/scripts/check-status.sh
+
+# Get connection information
+./infra/scripts/connect-info.sh
+
+# Check ALB health (diagnostics)
+./infra/scripts/check-alb-health.sh
+
+# Cleanup for fresh deployment
+sudo ./infra/scripts/cleanup.sh
 ```
+
+### Idempotent Design
+All scripts can be safely re-run multiple times:
+- **Setup scripts**: Check existing installations and skip if present
+- **Status scripts**: Always safe to run for current state
+- **Cleanup scripts**: Handle missing resources gracefully
+
+## Integration
+
+### CloudFormation
+Scripts integrate with CloudFormation via environment variables:
+- `CF_STACK_NAME` - CloudFormation stack name
+- `CF_TARGET_GROUP_ARN` - ALB target group for registration
+- `CF_MEMORY_PERCENT` - Memory allocation percentage
+- `CF_USE_SPOT` - Spot instance flag for auto-registration
+
+### Logging
+All scripts log to:
+- **Setup:** `/var/log/ai-poc-git-setup.log`
+- **Status:** `/var/log/ai-poc-status.log`
+- **Cleanup:** `/var/log/ai-poc-cleanup.log`
+
+## Known Issues
+
+For current automation issues and improvements, see:
+- [GitHub Issues](https://github.com/tpfirman/EH-HackAThon-WWIZ/issues)
+- [UserData Script Not Executing](../../github-issue-userdata-not-running.md)
+- [Target Group Registration](../../github-issue-target-group-registration.md)
 
 **Alternative if repository already exists:**
 ```bash
