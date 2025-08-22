@@ -245,10 +245,8 @@ Resources:
                 Action:
                   - bedrock:InvokeModel
                   - bedrock:InvokeModelWithResponseStream
-                  - bedrock:ListModels
-                  - bedrock:GetFoundationModel
                   - bedrock:ListFoundationModels
-                  - bedrock:GetModel
+                  - bedrock:GetFoundationModel
                   - bedrock:ListCustomModels
                 Resource: '*'
               - Effect: Allow
@@ -334,7 +332,7 @@ Resources:
               - !Ref "AWS::Region"
               - "'\n"
               - "export CF_ALB_DNS_NAME='"
-              - !GetAtt ApplicationLoadBalancer.DNSName
+              - !GetAtt ALB.DNSName
               - "'\n"
               - "export CF_GITHUB_BRANCH='"
               - !Ref GitHubBranch
@@ -344,37 +342,37 @@ Resources:
                 yum update -y
                 yum install -y git curl
                 
-                # Download and execute setup script from GitHub
-                GITHUB_URL="https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/${CF_GITHUB_BRANCH}/infra/scripts/setup-ai-poc.sh"
-                echo "Downloading setup script from: $GITHUB_URL"
+                # Clone the repository to get the latest scripts
+                cd /home/ec2-user
+                git clone https://github.com/tpfirman/EH-HackAThon-WWIZ.git
+                cd EH-HackAThon-WWIZ
+                git checkout ${CF_GITHUB_BRANCH}
                 
-                # Download with retries
-                for i in {1..5}; do
-                    if curl -fsSL "$GITHUB_URL" -o /tmp/setup-ai-poc.sh; then
-                        echo "Setup script downloaded successfully"
-                        break
-                    fi
-                    echo "Download attempt $i failed, retrying in 10 seconds..."
-                    sleep 10
-                done
+                # Set proper ownership
+                chown -R ec2-user:ec2-user /home/ec2-user/EH-HackAThon-WWIZ
                 
-                # Verify download and execute
-                if [ -f /tmp/setup-ai-poc.sh ]; then
-                    chmod +x /tmp/setup-ai-poc.sh
-                    echo "Executing setup script..."
-                    /tmp/setup-ai-poc.sh 2>&1 | tee /var/log/ai-poc-setup.log
-                    
-                    # Download additional utility scripts
-                    curl -fsSL "https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/${CF_GITHUB_BRANCH}/infra/scripts/check-status.sh" -o /usr/local/bin/check-status.sh
-                    curl -fsSL "https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/${CF_GITHUB_BRANCH}/infra/scripts/cleanup.sh" -o /usr/local/bin/cleanup.sh
-                    curl -fsSL "https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/${CF_GITHUB_BRANCH}/infra/scripts/connect-info.sh" -o /usr/local/bin/connect-info.sh
-                    chmod +x /usr/local/bin/*.sh
-                    
-                    echo "AI POC setup complete via external script"
-                else
-                    echo "ERROR: Failed to download setup script from GitHub"
-                    exit 1
+                # Execute the setup script from the cloned repository
+                echo "Executing setup script from Git repository..."
+                chmod +x ./infra/scripts/*.sh
+                ./infra/scripts/setup-ai-poc.sh 2>&1 | tee /var/log/ai-poc-git-setup.log
+                
+                # Download utility scripts to system locations for easy access
+                if [ -f ./infra/scripts/check-status.sh ]; then
+                    cp ./infra/scripts/check-status.sh /usr/local/bin/
+                    chmod +x /usr/local/bin/check-status.sh
                 fi
+                
+                if [ -f ./infra/scripts/cleanup.sh ]; then
+                    cp ./infra/scripts/cleanup.sh /usr/local/bin/
+                    chmod +x /usr/local/bin/cleanup.sh
+                fi
+                
+                if [ -f ./infra/scripts/connect-info.sh ]; then
+                    cp ./infra/scripts/connect-info.sh /usr/local/bin/
+                    chmod +x /usr/local/bin/connect-info.sh
+                fi
+                
+                echo "AI POC setup complete via Git repository clone"
                 
                 # Signal CloudFormation that setup is complete
               - "/opt/aws/bin/cfn-signal -e $? --stack "

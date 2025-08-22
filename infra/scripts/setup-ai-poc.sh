@@ -21,6 +21,18 @@ log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$SETUP_LOG"
 }
 
+# Function to run docker compose with fallback
+docker_compose() {
+    if docker compose version &> /dev/null; then
+        docker compose "$@"
+    elif command -v docker-compose &> /dev/null; then
+        docker-compose "$@"
+    else
+        log "ERROR: Neither 'docker compose' nor 'docker-compose' is available"
+        return 1
+    fi
+}
+
 # Check if already fully set up
 if [ -f "$SETUP_LOCK" ] && [ "$(cat $SETUP_LOCK)" = "COMPLETE" ]; then
     log "Setup already completed. Checking services..."
@@ -40,9 +52,15 @@ echo "RUNNING" > "$SETUP_LOCK"
 # Install essential packages including curl for health checks
 log "Updating system packages..."
 yum update -y 2>&1 | tee -a "$SETUP_LOG"
+yum update -y amazon-linux-extras 2>&1 | tee -a "$SETUP_LOG"
+amazon-linux-extras enable openssl11 2>&1 | tee -a "$SETUP_LOG"
+yum clean metadata 2>&1 | tee -a "$SETUP_LOG"
+
+
 
 log "Installing essential packages..."
 yum install -y curl 2>&1 | tee -a "$SETUP_LOG"
+
 
 # Install latest Docker from Amazon Linux Extras and enable
 if ! command -v docker &> /dev/null; then
@@ -64,6 +82,36 @@ if ! groups ec2-user | grep -q docker; then
     usermod -a -G docker ec2-user
 fi
 
+# Install Docker Compose v2 if not available
+if ! docker compose version &> /dev/null; then
+    log "Installing Docker Compose v2..."
+    # Download Docker Compose v2
+    DOCKER_COMPOSE_VERSION="v2.21.0"
+    curl -fsSL "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+    
+    # Create Docker CLI plugin directory and symlink
+    mkdir -p /usr/local/lib/docker/cli-plugins
+    ln -sf /usr/local/bin/docker-compose /usr/local/lib/docker/cli-plugins/docker-compose
+    
+    # Also create it for ec2-user
+    sudo -u ec2-user mkdir -p /home/ec2-user/.docker/cli-plugins
+    ln -sf /usr/local/bin/docker-compose /home/ec2-user/.docker/cli-plugins/docker-compose
+    
+    log "Docker Compose v2 installed successfully"
+else
+    log "Docker Compose already available, skipping..."
+fi
+
+# Install traditional docker-compose as backup if neither method works
+if ! docker compose version &> /dev/null && ! command -v docker-compose &> /dev/null; then
+    log "Installing traditional docker-compose as fallback..."
+    # Install docker-compose via pip (more reliable on Amazon Linux 2)
+    yum install -y python3-pip
+    pip3 install docker-compose
+    log "Traditional docker-compose installed via pip"
+fi
+
 # Install latest nginx from Amazon Linux Extras
 if ! command -v nginx &> /dev/null; then
     log "Installing nginx..."
@@ -73,17 +121,19 @@ else
 fi
 
 # Install latest OpenSSL 1.1 from Amazon Linux Extras (resolves urllib3 compatibility)
-if ! rpm -q openssl11 &> /dev/null; then
+if ! rpm -q openssl1 &> /dev/null; then
     log "Installing OpenSSL 1.1..."
-    amazon-linux-extras install openssl11=latest -y 2>&1 | tee -a "$SETUP_LOG"
+    amazon-linux-extras install openssl1 -y 2>&1 | tee -a "$SETUP_LOG"
+    yum install openssl11 openssl11-devel 2>&1 | tee -a "$SETUP_LOG"
 else
     log "OpenSSL 1.1 already installed, skipping..."
 fi
 
 # Verify installations and get versions
+log "Logging installed versions..."
 echo "=== Installed Versions ===" > /var/log/package-versions.log
 docker --version >> /var/log/package-versions.log
-docker compose version >> /var/log/package-versions.log
+docker_compose version >> /var/log/package-versions.log 2>&1 || echo "Docker Compose not available" >> /var/log/package-versions.log
 nginx -v >> /var/log/package-versions.log 2>&1
 openssl version >> /var/log/package-versions.log
 
@@ -198,7 +248,14 @@ DOCKER_COMPOSE_EOF
 chown -R ec2-user:ec2-user /home/ec2-user/anythingllm
 
 # Start AnythingLLM
-sudo -u ec2-user docker compose up -d
+if docker compose version &> /dev/null; then
+    sudo -u ec2-user docker compose up -d
+elif command -v docker-compose &> /dev/null; then
+    sudo -u ec2-user docker-compose up -d
+else
+    echo "ERROR: Neither 'docker compose' nor 'docker-compose' is available"
+    exit 1
+fi
 
 echo "AnythingLLM starting with ${ANYTHINGLLM_MEMORY_MB}MB memory allocation"
 echo "AI POC setup complete! Available 24/7 for testing and evaluation."
