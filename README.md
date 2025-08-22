@@ -1,27 +1,11 @@
-# E### 💼 Mission Brief
-Employment Hero's mission is to make employment easier and more valuable for everyone. 
-
-You'll have 48 hours to create an AI-powered solution that reimagines any part of the work experience.
-
-That's it. No limits. No prescribed path. Just your creativity, speed and execution.
-
-We're looking for bold ideas that challenge the status quo. Need inspiration? Consider...
-
-- ⚡ Workflows that automate HR processes and free people for meaningful work
-- 🤖 An AI model that predicts workforce needs, boosts productivity, or detects burnout
-- ❤️‍🩹 Smart systems that enhance employee wellbeing at scale
-- 🧞 Or something so groundbreaking, we've never thought of it!
-
-Big or small, if it can revolutionize work, we want to see it.WIZ
-
 # EH-HackAThon-WWIZ
 
 > An AI-powered workplace knowledge assistant that helps employees quickly find information about people, projects, and processes in their organization.
 
 ## 📋 Table of Contents
-- [E### 💼 Mission Brief](#e--mission-brief)
 - [EH-HackAThon-WWIZ](#eh-hackathon-wwiz)
   - [📋 Table of Contents](#-table-of-contents)
+    - [💼 Mission Brief](#-mission-brief)
     - [🧑‍⚖️ Judging Criteria](#️-judging-criteria)
   - [My Solution](#my-solution)
     - [🏗️ Architecture](#️-architecture)
@@ -31,6 +15,9 @@ Big or small, if it can revolutionize work, we want to see it.WIZ
       - [Milestone 3 - Documentation and Presentation](#milestone-3---documentation-and-presentation)
   - [🚀 Getting Started](#-getting-started)
   - [📝 Notes](#-notes)
+
+### 💼 Mission Brief
+Employment Hero’s mission is to make employment easier and more valuable for everyone. 
 
 You’ll have 48 hours to create an AI-powered solution that reimagines any part of the work experience.
 
@@ -42,6 +29,7 @@ Need inspiration? Consider...
 •	❤️‍🩹 Smart systems that enhance employee wellbeing at scale.
 •	🧞 Or something so groundbreaking, we’ve never thought of it!
 Big or small, if it can revolutionise work, we want to see it.
+
 
 ### 🧑‍⚖️ Judging Criteria
 Your submission will be evaluated on:
