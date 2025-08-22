@@ -1,0 +1,15 @@
+{
+  "ehsId": "EHS001234",
+  "firstName": "John",
+  "lastName": "Smith", 
+  "positionTitle": "Senior Software Engineer",
+  "team": "Platform Engineering",
+  "manager": "Jane Doe",
+  "lengthOfService": "2 years 4 months",
+  "startDate": "2022-04-15",
+  "department": "Engineering",
+  "location": "Sydney",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

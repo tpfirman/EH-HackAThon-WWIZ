@@ -1,0 +1,42 @@
+{
+  "ehsId": "EHS001234",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4ef5",
+  "displayName": "John Smith",
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@company.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "PLAT",
+      "projectName": "Platform Engineering",
+      "roles": ["Developer", "Administrator"]
+    },
+    {
+      "projectKey": "API",
+      "projectName": "API Gateway",
+      "roles": ["Developer"]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "engineering-team",
+    "platform-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 12,
+    "inProgressIssues": 3,
+    "completedThisMonth": 8,
+    "totalTimeLoggedThisMonth": "40h 30m",
+    "averageTimePerIssue": "5h 15m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 5,
+    "issuesResolvedLastMonth": 8,
+    "commentsLastMonth": 23
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}
