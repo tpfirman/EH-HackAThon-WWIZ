@@ -3,20 +3,42 @@
 # This script checks the health of all components
 # IDEMPOTENT: Safe to re-run multiple times
 
+# Color definitions for console output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Colo
+
 STATUS_LOG="/var/log/ai-poc-status.log"
 
-# Function to log with timestamp
+# Enhanced logging functions with colors
 log() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$STATUS_LOG"
+    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${GREEN}INFO${NC}: $1" | tee -a "$STATUS_LOG"
 }
 
-echo "=== AI POC Status Check ==="
+log_warning() {
+    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${YELLOW}WARNING${NC}: $1" | tee -a "$STATUS_LOG"
+}
+
+log_error() {
+    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${RED}ERROR${NC}: $1" | tee -a "$STATUS_LOG"
+}
+
+log_success() {
+    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${GREEN}SUCCESS${NC}: $1" | tee -a "$STATUS_LOG"
+}
+
+echo -e "${CYAN}=== AI POC Status Check ===${NC}"
 echo "Timestamp: $(date)"
 echo "Instance: $(curl -s --max-time 5 http://169.254.169.254/latest/meta-data/instance-id 2>/dev/null || echo 'N/A')"
 echo
 
 # Check system resources
-echo "=== System Resources ==="
+echo -e "${BLUE}=== System Resources ===${NC}"
 echo "Memory:"
 free -h
 echo
@@ -28,14 +50,58 @@ uptime
 echo
 
 # Check Docker status
-echo "=== Docker Status ==="
+echo -e "${BLUE}=== Docker Status ===${NC}"
 if command -v docker &> /dev/null && systemctl is-active --quiet docker; then
-    echo "Docker Service: RUNNING"
+    echo -e "${GREEN}Docker Service: RUNNING${NC}"
+    
+    # Check Docker daemon info
+    echo "Docker Version:"
+    docker version --format "Server: {{.Server.Version}}, Client: {{.Client.Version}}" 2>/dev/null || echo -e "${RED}Version check failed${NC}"
+    
     echo "Docker Containers:"
-    docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" 2>/dev/null || echo "Error getting container list"
+    if docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" 2>/dev/null; then
+        echo -e "${GREEN}Container list retrieved successfully${NC}"
+    else
+        echo -e "${RED}Error getting container list${NC}"
+    fi
     echo
+    
     echo "Docker Resource Usage:"
-    docker stats --no-stream 2>/dev/null || echo "Error getting container stats"
+    if docker stats --no-stream 2>/dev/null; then
+        echo -e "${GREEN}Resource stats retrieved successfully${NC}"
+    else
+        echo -e "${RED}Error getting container stats${NC}"
+    fi
+    echo
+    
+    # Check Docker permissions for ec2-use
+    echo -e "${PURPLE}=== Docker User Permissions ===${NC}"
+    echo "ec2-user groups: $(groups ec2-user 2>/dev/null || echo 'User not found')"
+    
+    # Check if ec2-user can access Docke
+    local docker_access_test=""
+    docker_access_test=$(sudo -u ec2-user docker version --format "{{.Client.Version}}" 2>/dev/null || echo "Access denied")
+    if [ "$docker_access_test" != "Access denied" ]; then
+        echo "ec2-user Docker access: ✓ WORKING (Client: $docker_access_test)"
+    else
+        echo "ec2-user Docker access: ✗ FAILED"
+        echo "This may indicate group membership needs refresh or permission issues"
+    fi
+    
+    # Check Docker socket permissions
+    if [ -S "/var/run/docker.sock" ]; then
+        local socket_perms=$(stat -c "%a" /var/run/docker.sock 2>/dev/null)
+        local socket_group=$(stat -c "%G" /var/run/docker.sock 2>/dev/null)
+        echo "Docker socket: permissions=$socket_perms, group=$socket_group"
+    else
+        echo "Docker socket: NOT FOUND"
+    fi
+    
+    # Check specific AnythingLLM containe
+    local anythingllm_container=""
+    anythingllm_container=$(docker ps --filter "name=anythingllm" --format "{{.Status}}" 2>/dev/null || echo "Not running")
+    echo "AnythingLLM container: $anythingllm_container"
+    
 else
     echo "Docker Service: STOPPED/FAILED or not installed"
 fi
