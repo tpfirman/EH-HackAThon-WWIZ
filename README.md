@@ -59,21 +59,12 @@ Information is gathered from multiple sources, parsed and formatted to build a d
 The AI Agent at no stage will have direct access to any sensitive systems. Instead, a collection of scripted scheduled and triggered tasks are used to query, format and store the data, before making it available to the chat agent.
 
 ### 🏗️ Architecture
-*Work in Progress*
 
 - **Hosting**: AWS for Compute and frontend
 - **LLM**: AWS Bedrock, most likely using Nova
 - **Frontend**: AnythingLLM is pre-built and works well for this use case
-- **SSL/TLS**: Nginx reverse proxy with automatic HTTPS redirect
-- **Certificates**: Let's Encrypt for production, self-signed for development
 - **Data Store**: On EC2 native storage for now. Will move to S3 if possible
 - **Data Aggregation**: A collection of Python scripts
-
-#### Security Features
-- Automatic HTTP to HTTPS redirect
-- Modern TLS configuration (TLS 1.2/1.3)
-- Security headers (HSTS, X-Frame-Options, etc.)
-- Automatic certificate renewal
 
 ### 📋 Plan of Attack
 
@@ -133,62 +124,10 @@ The AI Agent at no stage will have direct access to any sensitive systems. Inste
 11. **Video pitch**
 
 12. **Get some sleep before work on Monday!** 😴
-   - Required documentation for submission
-   - Standard product documentation
-   - Identified risks
-   - Any known issues
-   - Anything that was planned but ran out of time for
-
-9. **Video pitch**
-
-10. **Get some sleep before work on Monday!** 😴
 
 ---
 
 ## 🚀 Getting Started
-
-
-### Prerequisites
-- Docker and Docker Compose installed
-- Domain name pointing to your server (for production)
-
-### Quick Start with HTTPS
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/tpfirman/EH-HackAThon-WWIZ.git
-   cd EH-HackAThon-WWIZ
-   ```
-
-2. **Set up HTTPS (Development)**
-   ```bash
-   # For local development with self-signed certificates
-   ./setup-https.sh
-   ```
-
-3. **Set up HTTPS (Production)**
-   ```bash
-   # Copy and configure environment
-   cp .env.example .env
-   # Edit .env with your domain and email
-   
-   # Get real SSL certificate from Let's Encrypt
-   DOMAIN=your-domain.com EMAIL=your-email@example.com ./scripts/get-letsencrypt-cert.sh
-   ```
-
-4. **Verify deployment**
-   ```bash
-   ./scripts/health-check.sh
-   ```
-
-### Access Your Application
-- **Development**: https://wwiz.local (accept self-signed certificate)
-- **Production**: https://your-domain.com
-
-### SSL Certificate Management
-- Certificates auto-renew via the certbot container
-- Self-signed certificates are generated for development
-- Production uses Let's Encrypt for free, trusted certificates
 
 ### Current Status: **WORKING** ✅
 
