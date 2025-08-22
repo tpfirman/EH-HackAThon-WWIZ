@@ -66,13 +66,16 @@ Information is gathered from multiple sources, parsed and formatted to build a d
 The AI Agent at no stage will have direct access to any sensitive systems. Instead, a collection of scripted scheduled and triggered tasks are used to query, format and store the data, before making it available to the chat agent.
 
 ### 🏗️ Architecture
-*Work in Progress*
+*Updated with HTTPS Support*
 
 - **Hosting**: AWS for Compute and frontend
 - **LLM**: AWS Bedrock, most likely using Nova
 - **Frontend**: AnythingLLM is pre-built and works well for this use case
+- **Reverse Proxy**: nginx with SSL termination and security headers
+- **SSL Certificates**: Let's Encrypt with automatic renewal
 - **Data Store**: On EC2 native storage for now. Will move to S3 if possible
 - **Data Aggregation**: A collection of Python scripts
+- **Deployment**: Docker Compose with HTTPS-ready configuration
 
 ### 📋 Plan of Attack
 #### Milestone 1 - Basics
@@ -124,7 +127,77 @@ The AI Agent at no stage will have direct access to any sensitive systems. Inste
 
 ## 🚀 Getting Started
 
-*Coming soon - setup instructions will be added as the project develops*
+### Prerequisites
+- Docker and Docker Compose installed on your server
+- A domain name pointing to your server's IP address
+- Ports 80 and 443 open on your server
+
+### Quick HTTPS Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/tpfirman/EH-HackAThon-WWIZ.git
+   cd EH-HackAThon-WWIZ
+   ```
+
+2. **Configure environment**
+   ```bash
+   cp .env.template .env
+   nano .env  # Edit with your domain and email
+   ```
+
+3. **Run the HTTPS setup script**
+   ```bash
+   ./setup-https.sh
+   ```
+
+4. **Access your application**
+   - Visit `https://your-domain.com`
+   - Complete AnythingLLM setup through the web interface
+
+### Manual Setup
+
+If you prefer manual setup:
+
+1. **Configure environment variables** in `.env`:
+   - `DOMAIN_NAME`: Your domain (e.g., wwiz.example.com)
+   - `SSL_EMAIL`: Your email for Let's Encrypt notifications
+   - `JWT_SECRET`: A secure random string for AnythingLLM
+
+2. **Start the services**:
+   ```bash
+   docker compose up -d
+   ```
+
+3. **Generate SSL certificate**:
+   ```bash
+   docker compose run --rm certbot
+   ```
+
+### SSL Certificate Renewal
+
+SSL certificates are automatically renewed. To set up automatic renewal:
+
+```bash
+# Add to crontab (run crontab -e)
+0 12 * * * /path/to/your/project/renew-ssl.sh
+```
+
+### Architecture
+
+The HTTPS setup includes:
+- **nginx**: Reverse proxy with SSL termination
+- **AnythingLLM**: AI chat interface (internal port 3001)
+- **Let's Encrypt**: Free SSL certificates via certbot
+- **Docker Compose**: Container orchestration
+
+### Security Features
+
+- Automatic HTTP to HTTPS redirect
+- Modern TLS configuration (TLS 1.2+)
+- Security headers (HSTS, X-Frame-Options, etc.)
+- Rate limiting for API endpoints
+- WebSocket support for real-time features
 
 ## 📝 Notes
 

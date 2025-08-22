@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# SSL certificates and keys
+certbot/
+nginx/ssl/
+
+# Docker volumes and logs
+docker-data/
+*.log
+
+# Temporary files
+*.tmp
+.DS_Store
+Thumbs.db

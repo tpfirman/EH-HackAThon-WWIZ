@@ -1,0 +1,51 @@
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm
+    ports:
+      - "3001:3001"
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - STORAGE_DIR=/app/server/storage
+      - JWT_SECRET=${JWT_SECRET:-default_jwt_secret_change_me}
+      - LLM_PROVIDER=${LLM_PROVIDER:-bedrock}
+    volumes:
+      - anythingllm_storage:/app/server/storage
+      - anythingllm_logs:/app/server/logs
+    restart: unless-stopped
+    networks:
+      - wwiz_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:ro
+    depends_on:
+      - anythingllm
+    restart: unless-stopped
+    networks:
+      - wwiz_network
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot --webroot-path=/var/www/certbot --email ${SSL_EMAIL} --agree-tos --no-eff-email -d ${DOMAIN_NAME}
+
+volumes:
+  anythingllm_storage:
+  anythingllm_logs:
+
+networks:
+  wwiz_network:
+    driver: bridge
