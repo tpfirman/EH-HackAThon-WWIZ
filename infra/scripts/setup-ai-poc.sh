@@ -273,21 +273,24 @@ run_docker_as_user() {
     local cmd="$@"
     log_step "Executing Docker command as ec2-user: $cmd"
     
-    # Try with newgrp first (refresh group membership)
-    if sudo -u ec2-user bash -c "newgrp docker <<EOF
-$cmd
-EOF" 2>/dev/null; then
-        log_success "Docker command executed successfully with group refresh"
+    # Try direct execution first (might work if group membership is active)
+    if sudo -u ec2-user $cmd 2>&1 | tee -a "$SETUP_LOG"; then
+        log_success "Docker command executed successfully"
         return 0
     else
-        log_warning "Group refresh method failed, using sudo fallback"
-        # Fallback to sudo execution
-        if sudo -u ec2-user $cmd 2>&1 | tee -a "$SETUP_LOG"; then
-            log_success "Docker command executed successfully with sudo"
-            return 0
-        else
-            log_error "Docker command failed even with sudo"
-            return 1
+        log_warning "Direct execution failed, trying with explicit group context"
+        
+        # Alternative approach: use sg (switch group) instead of newgrp
+        if command -v sg &> /dev/null; then
+            if sudo -u ec2-user sg docker -c "$cmd" 2>&1 | tee -a "$SETUP_LOG"; then
+                log_success "Docker command executed successfully with group switch"
+                return 0
+            fi
+        fi
+        
+        log_error "Docker command failed - group membership may need manual refresh"
+        log_error "Try: newgrp docker, then run the command manually"
+        return 1
         fi
     fi
 }
@@ -318,17 +321,24 @@ verify_docker_permissions() {
         return 1
     fi
     
-    # Test Docker access as ec2-user (with newgrp to refresh group membership)
+    # Test Docker access as ec2-user (simplified approach)
     local test_result
-    test_result=$(su - ec2-user -c 'newgrp docker <<EOF
-docker version --format "{{.Client.Version}}" 2>/dev/null
-EOF' 2>/dev/null)
+    log "Testing Docker access for ec2-user..."
     
-    if [ -z "$test_result" ]; then
-        log_warning "Unable to verify Docker access directly - group membership may need session refresh"
-        log "This is normal during initial setup - Docker will be accessible after login refresh"
-    else
+    # Simple test without heredoc to avoid hanging
+    if test_result=$(sudo -u ec2-user docker version --format "{{.Client.Version}}" 2>/dev/null); then
         log "Docker access verified for ec2-user (Client version: $test_result)"
+    else
+        log_warning "Direct Docker access failed - this is expected if group membership needs refresh"
+        log "Testing with group context..."
+        
+        # Alternative test with timeout to prevent hanging
+        if timeout 10 sudo -u ec2-user bash -c 'groups | grep -q docker && docker version --format "{{.Client.Version}}"' 2>/dev/null; then
+            log "Docker access works with group context"
+        else
+            log_warning "Docker access verification inconclusive - group membership may need session refresh"
+            log "This is normal during initial setup - Docker will be accessible after login refresh"
+        fi
     fi
     
     # Check Docker daemon status
@@ -615,18 +625,17 @@ sleep 30
 runtime_docker_check() {
     log_step "Performing runtime Docker permission check..."
     
-    # Test Docker access as ec2-user with proper group context
+    # Test Docker access as ec2-user with simplified approach
     local docker_test_output
-    docker_test_output=$(sudo -u ec2-user bash -c 'newgrp docker <<EOF
-docker ps -q --no-trunc 2>&1
-EOF' 2>&1)
+    local exit_code
     
-    local exit_code=$?
-    
-    if [ $exit_code -eq 0 ]; then
+    # Try direct Docker access first
+    if docker_test_output=$(sudo -u ec2-user docker ps -q --no-trunc 2>&1); then
+        exit_code=0
         log_success "Runtime Docker permission check passed - ec2-user can access Docker"
         return 0
     else
+        exit_code=$?
         log_warning "Runtime Docker permission check encountered issues:"
         log_warning "Output: $docker_test_output"
         log_warning "This may indicate group membership needs refresh, but containers should still start via sudo"
