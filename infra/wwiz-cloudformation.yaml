@@ -35,19 +35,6 @@ Parameters:
     Type: String
     Default: 10.0.1.0/24
 
-  InstanceType:
-    Type: String
-    Default: t3.micro
-    AllowedValues:
-      - t3.nano
-      - t3.micro
-      - t3.small
-      - t3.medium
-      - t3a.nano
-      - t3a.micro
-      - t3a.small
-    Description: Instance type (t3.micro free tier, t3a.* for better price/performance)
-
   InstanceVolumeSize:
     Type: Number
     Default: 10
@@ -303,7 +290,7 @@ Resources:
     Properties:
       LaunchTemplateName: !Sub "${AWS::StackName}-ai-poc-template"
       LaunchTemplateData:
-        InstanceType: !Ref InstanceType
+        InstanceType: t3.small
         ImageId: !Ref AmiId
         SecurityGroupIds:
           - !Ref SGEC2
@@ -503,7 +490,6 @@ Resources:
                         location /health {
                             access_log off;
                             return 200 '{"status":"healthy","anythingllm":"running","ai_poc_mode":true,"region":"'
-              - '                        "memory_allocated_percent": "'
               - !FindInMap [RegionConfig, !Ref "AWS::Region", RegionName]
               - |
                 ","spot_instance":"'
@@ -622,7 +608,7 @@ Resources:
               LaunchTemplateId: !Ref LaunchTemplate
               Version: !GetAtt LaunchTemplate.LatestVersionNumber
             Overrides:
-              - InstanceType: !Ref InstanceType
+              - InstanceType: t3.small
                 SubnetId: !Ref SubnetPublicA
 
   SpotFleetRole:
@@ -859,11 +845,11 @@ Outputs:
 
   InstanceInfo:
     Description: "Instance deployment type and cost savings"
-    Value: !If [UseSpot, !Sub "Spot Fleet up to 70% cost savings Target: ${InstanceType}", !Sub "OnDemand Instance: ${EC2Instance} ${InstanceType}"]
+    Value: !If [UseSpot, "Spot Fleet up to 70% cost savings Target: t3.small", !Sub "OnDemand Instance: ${EC2Instance} t3.small"]
 
   MemoryAllocation:
     Description: "AnythingLLM memory configuration"
-    Value: !Sub ["${MemoryPercent}% of instance memory (${ExpectedMemory}MB on ${InstanceType})", {MemoryPercent: !Ref AnythingLLMMemoryPercent, ExpectedMemory: !FindInMap [InstanceMemory, !Ref InstanceType, TotalMemoryMB]}]
+    Value: !Sub ["${MemoryPercent}% of instance memory (2048MB on t3.small)", {MemoryPercent: !Ref AnythingLLMMemoryPercent}]
 
   RegionOptimization:
     Description: "Australian region deployment status"
