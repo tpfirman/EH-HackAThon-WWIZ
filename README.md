@@ -140,18 +140,23 @@ The AI Agent at no stage will have direct access to any sensitive systems. Inste
    cd EH-HackAThon-WWIZ
    ```
 
-2. **Configure environment**
+2. **Verify setup** (optional)
+   ```bash
+   ./verify-setup.sh
+   ```
+
+3. **Configure environment**
    ```bash
    cp .env.template .env
    nano .env  # Edit with your domain and email
    ```
 
-3. **Run the HTTPS setup script**
+4. **Run the HTTPS setup script**
    ```bash
    ./setup-https.sh
    ```
 
-4. **Access your application**
+5. **Access your application**
    - Visit `https://your-domain.com`
    - Complete AnythingLLM setup through the web interface
 
