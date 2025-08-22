@@ -78,6 +78,21 @@ curl -fsSL "https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/WIP/inf
 /usr/local/bin/connect-info.sh
 ```
 
+## Quick SSH Setup Command
+
+If you're connected to the EC2 instance via SSH and want to re-run the setup scripts, use this one-liner:
+
+```bash
+# One-liner to clone repo and run setup from SSH session
+cd /tmp && sudo rm -rf EH-HackAThon-WWIZ && git clone https://github.com/tpfirman/EH-HackAThon-WWIZ.git && cd EH-HackAThon-WWIZ && git config --global --add safe.directory /tmp/EH-HackAThon-WWIZ && git checkout wip && sudo ./infra/scripts/setup-ai-poc.sh
+```
+
+**Alternative if repository already exists:**
+```bash
+# If repo already cloned, just pull latest and run
+cd /home/ec2-user/EH-HackAThon-WWIZ && git pull && sudo ./infra/scripts/setup-ai-poc.sh
+```
+
 ## Logging
 
 All operations are logged with timestamps:

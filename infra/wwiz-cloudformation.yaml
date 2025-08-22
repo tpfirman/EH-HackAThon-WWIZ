@@ -345,6 +345,10 @@ Resources:
                 # Clone the repository to get the latest scripts
                 cd /home/ec2-user
                 git clone https://github.com/tpfirman/EH-HackAThon-WWIZ.git
+                
+                # Configure git safe directory to avoid ownership issues
+                git config --global --add safe.directory /home/ec2-user/EH-HackAThon-WWIZ
+                
                 cd EH-HackAThon-WWIZ
                 git checkout ${CF_GITHUB_BRANCH}
                 
