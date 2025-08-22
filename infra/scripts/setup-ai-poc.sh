@@ -262,9 +262,35 @@ if ! groups ec2-user | grep -q docker; then
         exit 1
     fi
     log_success "ec2-user added to docker group"
+    log_warning "Note: Group membership requires session refresh to take effect"
+    log_warning "Docker commands will use sudo until ec2-user logs in again"
 else
     log "ec2-user already in docker group"
 fi
+
+# Function to run Docker commands with proper permissions
+run_docker_as_user() {
+    local cmd="$@"
+    log_step "Executing Docker command as ec2-user: $cmd"
+    
+    # Try with newgrp first (refresh group membership)
+    if sudo -u ec2-user bash -c "newgrp docker <<EOF
+$cmd
+EOF" 2>/dev/null; then
+        log_success "Docker command executed successfully with group refresh"
+        return 0
+    else
+        log_warning "Group refresh method failed, using sudo fallback"
+        # Fallback to sudo execution
+        if sudo -u ec2-user $cmd 2>&1 | tee -a "$SETUP_LOG"; then
+            log_success "Docker command executed successfully with sudo"
+            return 0
+        else
+            log_error "Docker command failed even with sudo"
+            return 1
+        fi
+    fi
+}
 
 # Verify Docker permissions for ec2-user
 verify_docker_permissions() {
@@ -533,24 +559,24 @@ cd /home/ec2-user/anythingllm
 
 if docker compose version &> /dev/null; then
     log "Using Docker Compose v2 to start AnythingLLM"
-    if ! sudo -u ec2-user docker compose up -d 2>&1 | tee -a "$SETUP_LOG"; then
+    if ! run_docker_as_user "cd /home/ec2-user/anythingllm && docker compose up -d"; then
         log_error "Failed to start AnythingLLM with Docker Compose v2"
         
         # Try to get more detailed error information
         log_error "Attempting to diagnose the issue..."
-        sudo -u ec2-user docker compose logs 2>&1 | tee -a "$SETUP_LOG" || log_error "Could not retrieve compose logs"
+        run_docker_as_user "cd /home/ec2-user/anythingllm && docker compose logs" || log_error "Could not retrieve compose logs"
         exit 1
     fi
     log_success "AnythingLLM started successfully with Docker Compose v2"
     
 elif command -v docker-compose &> /dev/null; then
     log "Using Docker Compose v1 to start AnythingLLM"
-    if ! sudo -u ec2-user docker-compose up -d 2>&1 | tee -a "$SETUP_LOG"; then
+    if ! run_docker_as_user "cd /home/ec2-user/anythingllm && docker-compose up -d"; then
         log_error "Failed to start AnythingLLM with Docker Compose v1"
         
         # Try to get more detailed error information
         log_error "Attempting to diagnose the issue..."
-        sudo -u ec2-user docker-compose logs 2>&1 | tee -a "$SETUP_LOG" || log_error "Could not retrieve compose logs"
+        run_docker_as_user "cd /home/ec2-user/anythingllm && docker-compose logs" || log_error "Could not retrieve compose logs"
         exit 1
     fi
     log_success "AnythingLLM started successfully with Docker Compose v1"
@@ -564,14 +590,13 @@ log_step "Verifying container startup..."
 sleep 5
 
 local container_status
-container_status=$(sudo -u ec2-user docker ps --filter "name=anythingllm" --format "{{.Status}}" 2>/dev/null || echo "Not found")
-
-if [[ "$container_status" == *"Up"* ]]; then
-    log_success "AnythingLLM container is running: $container_status"
-else
-    log_error "AnythingLLM container failed to start properly: $container_status"
-    log_error "Container logs:"
-    sudo -u ec2-user docker logs anythingllm-anythingllm-1 2>&1 | tee -a "$SETUP_LOG" || log_error "Could not retrieve container logs"
+if container_status=$(run_docker_as_user "docker ps --filter 'name=anythingllm' --format '{{.Status}}'" 2>/dev/null); then
+    if [[ "$container_status" == *"Up"* ]]; then
+        log_success "AnythingLLM container is running: $container_status"
+    else
+        log_error "AnythingLLM container failed to start properly: $container_status"
+        log_error "Container logs:"
+        run_docker_as_user "docker logs anythingllm-anythingllm-1" || log_error "Could not retrieve container logs"
     exit 1
 fi
 
