@@ -527,8 +527,11 @@ Resources:
       Protocol: HTTP
       Port: 80
       TargetType: instance
-      Targets:
-        - Id: !Ref EC2Instance
+      Targets: !If 
+        - UseOnDemand
+        - 
+          - Id: !Ref EC2Instance
+        - !Ref "AWS::NoValue"
       HealthCheckProtocol: HTTP
       HealthCheckPath: /health
       HealthCheckIntervalSeconds: 60  # Longer intervals for cost savings
