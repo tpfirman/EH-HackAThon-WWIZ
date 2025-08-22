@@ -190,7 +190,6 @@ else
     # Don't exit here, try to continue
 fi
 
-
 # Install Docker if not present
 log_step "Installing Docker..."
 if ! command -v docker &> /dev/null; then
@@ -323,161 +322,30 @@ if ! systemctl is-active --quiet awslogsd; then
 fi
 fi
 
-# Create AnythingLLM setup script with dynamic memory allocation
-log "Creating AnythingLLM setup script..."
+# Export environment variables for the setup script
+export ANYTHINGLLM_MEMORY_MB
+export ANYTHINGLLM_MEMORY_RESERVATION_MB
+export SETUP_LOG
+export CF_ENV_VARS
+export CF_REGION_NAME
+export CF_USE_SPOT
+
+# Prepare AnythingLLM directory
+log_step "Preparing AnythingLLM directory..."
 mkdir -p /home/ec2-user/anythingllm/{logs,storage}
+chown -R ec2-user:ec2-user /home/ec2-user/anythingllm
 
-cat << 'EOF' > /home/ec2-user/setup-anythingllm.sh
-#!/bin/bash
-
-# Setup logging (inherit from parent script setup)
-SETUP_LOG="${SETUP_LOG:-/var/log/ai-poc-setup.log}"
-
-# Color definitions for console output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-WHITE='\033[1;37m'
-NC='\033[0m' # No Color
-
-# Logging functions
-log() {
-    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${GREEN}INFO${NC}: $1" | tee -a "$SETUP_LOG"
-}
-
-log_warning() {
-    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${YELLOW}WARNING${NC}: $1" | tee -a "$SETUP_LOG"
-}
-
-log_error() {
-    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${RED}ERROR${NC}: $1" | tee -a "$SETUP_LOG"
-}
-
-log_success() {
-    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${GREEN}SUCCESS${NC}: $1" | tee -a "$SETUP_LOG"
-}
-
-log_step() {
-    echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] ${BLUE}STEP${NC}: $1" | tee -a "$SETUP_LOG"
-}
-
-# Create docker-compose.yml for AnythingLLM with dynamic memory
-mkdir -p /home/ec2-user/anythingllm/{logs,storage}
-cd /home/ec2-user/anythingllm
-
-# Stop existing container if running
-if docker ps | grep -q anythingllm; then
-    echo "Stopping existing AnythingLLM container..."
-    docker stop anythingllm || true
-    docker rm anythingllm || true
-fi
-
-# Convert comma-separated env vars to Docker format
-ENV_VARS="${CF_ENV_VARS:-NODE_ENV=production,DISABLE_TELEMETRY=true}"
-DOCKER_ENV=""
-IFS=',' read -ra ADDR <<< "$ENV_VARS"
-for i in "${ADDR[@]}"; do
-  DOCKER_ENV="$DOCKER_ENV\n                - \"$i\""
-done
-
-cat << DOCKER_COMPOSE_EOF > docker-compose.yml
-version: '3.8'
-services:
-  anythingllm:
-    image: mintplexlabs/anythingllm:latest
-    container_name: anythingllm
-    ports:
-      - "3001:3001"
-    volumes:
-      - ./storage:/app/server/storage
-      - ./logs:/app/server/logs
-    environment:$(echo -e "$DOCKER_ENV")
-      - STORAGE_DIR=/app/server/storage
-      - LOG_LEVEL=info
-    restart: unless-stopped
-    mem_limit: ${ANYTHINGLLM_MEMORY_MB}m
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
-        max-file: "3"
-
-volumes:
-  anythingllm_storage:
-  anythingllm_logs:
-DOCKER_COMPOSE_EOF
-
-# Set correct ownership with error handling
-log_step "Setting file ownership for AnythingLLM..."
-if ! chown -R ec2-user:ec2-user /home/ec2-user/anythingllm 2>&1 | tee -a "$SETUP_LOG"; then
-    log_error "Failed to set ownership for AnythingLLM directory"
-    exit 1
-fi
-log_success "File ownership set successfully"
-
-# Start AnythingLLM containers
-log_step "Starting AnythingLLM containers..."
-cd /home/ec2-user/anythingllm
-
-COMPOSE_SUCCESS=false
-if docker compose version &> /dev/null; then
-    log "Starting with Docker Compose v2..."
-    if sudo -u ec2-user docker compose up -d 2>&1 | tee -a "$SETUP_LOG"; then
-        log_success "AnythingLLM started with Docker Compose v2"
-        COMPOSE_SUCCESS=true
-    else
-        log_error "Failed to start AnythingLLM with Docker Compose v2"
-    fi
-elif command -v docker-compose &> /dev/null; then
-    log "Starting with Docker Compose v1..."
-    if sudo -u ec2-user docker-compose up -d 2>&1 | tee -a "$SETUP_LOG"; then
-        log_success "AnythingLLM started with Docker Compose v1"
-        COMPOSE_SUCCESS=true
-    else
-        log_error "Failed to start AnythingLLM with Docker Compose v1"
-    fi
+# Copy our setup script to the server
+SCRIPT_DIR="$(dirname "$0")"
+if [ -f "$SCRIPT_DIR/setup-anythingllm.sh" ]; then
+    log_step "Copying AnythingLLM setup script..."
+    cp "$SCRIPT_DIR/setup-anythingllm.sh" /home/ec2-user/setup-anythingllm.sh
+    chmod +x /home/ec2-user/setup-anythingllm.sh
+    chown ec2-user:ec2-user /home/ec2-user/setup-anythingllm.sh
 else
-    log_error "No Docker Compose found"
+    log_error "setup-anythingllm.sh not found in script directory: $SCRIPT_DIR"
     exit 1
 fi
-
-if [ "$COMPOSE_SUCCESS" = "false" ]; then
-    log_error "Failed to start AnythingLLM containers"
-    exit 1
-fi
-
-# Verify container started
-log_step "Verifying container startup..."
-sleep 10
-
-# Check if container exists and is running
-CONTAINER_STATUS=$(sudo -u ec2-user docker ps --filter "name=anythingllm" --filter "status=running" --format "{{.Status}}" 2>/dev/null || echo "")
-if [ -n "$CONTAINER_STATUS" ]; then
-    log_success "AnythingLLM container is running: $CONTAINER_STATUS"
-else
-    log_error "Container not found in running state, checking all containers..."
-    ALL_CONTAINERS=$(sudo -u ec2-user docker ps -a --filter "name=anythingllm" --format "{{.Names}}: {{.Status}}" 2>/dev/null || echo "None")
-    log "All AnythingLLM containers: $ALL_CONTAINERS"
-    
-    # Try to get container logs if container exists but isn't running
-    if sudo -u ec2-user docker ps -a --filter "name=anythingllm" --quiet | head -1 >/dev/null 2>&1; then
-        log "Checking container logs for startup issues..."
-        sudo -u ec2-user docker logs anythingllm 2>&1 | tail -20 | tee -a "$SETUP_LOG" || log_warning "Could not retrieve container logs"
-    fi
-    
-    log_error "AnythingLLM container failed to start properly"
-    exit 1
-fi
-
-echo -e "${GREEN}AnythingLLM starting with ${ANYTHINGLLM_MEMORY_MB}MB memory allocation${NC}"
-echo -e "${GREEN}AI POC setup complete! Available 24/7 for testing and evaluation.${NC}"
-echo -e "${CYAN}Region: ${CF_REGION_NAME:-Sydney} | Spot Instance: ${CF_USE_SPOT:-true}${NC}"
-EOF
-
-chmod +x /home/ec2-user/setup-anythingllm.sh
 
 # Run the setup (with some delay to ensure Docker is ready)
 log "Waiting for Docker to be fully ready..."
@@ -525,19 +393,7 @@ if ! /home/ec2-user/setup-anythingllm.sh 2>&1 | tee -a "$SETUP_LOG"; then
     log_error "Check the setup log for detailed error information"
     exit 1
 fi
-
-# Verify that the container actually started
-log_step "Verifying AnythingLLM container is running..."
-sleep 5
-CONTAINER_RUNNING=$(sudo -u ec2-user docker ps --filter "name=anythingllm" --filter "status=running" --quiet 2>/dev/null || echo "")
-if [ -z "$CONTAINER_RUNNING" ]; then
-    log_error "AnythingLLM container is not running after setup"
-    log_error "Checking container status for diagnostics..."
-    safe_docker "sudo -u ec2-user docker ps -a --filter name=anythingllm" || log_error "Could not check container status"
-    safe_docker "sudo -u ec2-user docker logs anythingllm" || log_error "Could not retrieve container logs"
-    exit 1
-fi
-log_success "AnythingLLM setup completed successfully - container is running"
+log_success "AnythingLLM setup completed successfully"
 
 # Create nginx configuration for proxy and health checks
 log "Configuring nginx proxy..."
@@ -645,21 +501,8 @@ done
 if [ "$READY" = "false" ]; then
     log_error "AnythingLLM failed to become ready within timeout period"
     log_error "Checking container status for diagnostics..."
-    
-    # Get detailed diagnostics
-    log_error "Container status check:"
     safe_docker "sudo -u ec2-user docker ps --filter name=anythingllm" || log_error "Could not check container status"
-    
-    log_error "Container logs (last 50 lines):"
-    safe_docker "sudo -u ec2-user docker logs --tail 50 anythingllm" || log_error "Could not retrieve container logs"
-    
-    log_error "Docker system info:"
-    safe_docker "docker system df" || log_error "Could not get Docker system info"
-    
-    log_error "Available memory:"
-    free -h | tee -a "$SETUP_LOG"
-    
-    log_error "Setup failed - AnythingLLM is not responding"
+    safe_docker "sudo -u ec2-user docker logs anythingllm" || log_error "Could not retrieve container logs"
     exit 1
 fi
 
@@ -711,9 +554,9 @@ final_verification() {
         log "ec2-user group memberships: $docker_groups"
 
         if echo "$docker_groups" | grep -q docker; then
-            log "? ec2-user is properly added to docker group"
+            log "✓ ec2-user is properly added to docker group"
         else
-            log_warning "? ec2-user docker group membership verification failed"
+            log_warning "✗ ec2-user docker group membership verification failed"
         fi
 
         # Docker socket permissions
@@ -729,9 +572,9 @@ final_verification() {
     local health_response=""
     health_response=$(curl -s -w "%{http_code}" -o /dev/null http://localhost/health 2>/dev/null || echo "000")
     if [ "$health_response" = "200" ]; then
-        log "? Health endpoint responding correctly"
+        log "✓ Health endpoint responding correctly"
     else
-        log_warning "? Health endpoint not responding (HTTP: $health_response)"
+        log_warning "✗ Health endpoint not responding (HTTP: $health_response)"
     fi
 
     return 0
