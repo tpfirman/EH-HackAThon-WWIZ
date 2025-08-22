@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 # AI POC Setup Script - External version to avoid CloudFormation UserData changes
 # This script is pulled from GitHub to prevent instance replacement on updates
 # IDEMPOTENT: Safe to re-run multiple times
@@ -321,6 +321,7 @@ if ! systemctl is-active --quiet awslogsd; then
     systemctl start awslogsd
     systemctl enable awslogsd
 fi
+fi
 
 # Create AnythingLLM setup script with dynamic memory allocation
 log "Creating AnythingLLM setup script..."
@@ -412,8 +413,6 @@ if sudo -u ec2-user docker ps --filter "name=anythingllm" --format "{{.Names}}" 
     log_success "AnythingLLM container is running"
 else
     log_warning "Container may still be starting - check logs: docker logs anythingllm"
-fi
-    exit 1
 fi
 
 echo -e "${GREEN}AnythingLLM starting with ${ANYTHINGLLM_MEMORY_MB}MB memory allocation${NC}"
