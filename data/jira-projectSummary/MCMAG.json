@@ -1,0 +1,50 @@
+{
+  "projectKey": "MCMAG",
+  "projectName": "MC Magic Systems",
+  "projectType": "software",
+  "projectCategory": "Minecraft Mods",
+  "description": "MC Magic Systems - Released",
+  "lead": "Jordan Martinez",
+  "issueTypeScheme": "Game Development Issue Types",
+  "workflowScheme": "Game Development Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "MCMAG-100",
+      "epicName": "Core Gameplay Systems",
+      "statusCounts": {
+        "Done": 24
+      }
+    },
+    {
+      "epicKey": "MCMAG-200",
+      "epicName": "Post-Launch Support",
+      "statusCounts": {
+        "To Do": 2,
+        "In Progress": 1,
+        "Done": 5
+      }
+    }
+  ],
+  "usersAndRoles": [],
+  "projectStats": {
+    "totalIssues": 32,
+    "openIssues": 3,
+    "completedIssues": 29,
+    "totalTimeSpent": "229h 9m",
+    "averageResolutionTime": "5.9 days"
+  },
+  "components": [
+    "Core",
+    "API",
+    "Config"
+  ],
+  "versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

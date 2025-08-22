@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP040",
+  "upn": "lily.evans@fullmetalproductions.com",
+  "firstName": "Lily",
+  "lastName": "Evans",
+  "displayName": "Lily Evans",
+  "slackUserId": "U3942980926",
+  "slackUsername": "lily.evans",
+  "slackDisplayName": "Lily Evans",
+  "slackEmail": "lily.evans@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-08-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C2499819758",
+      "channelName": "marketing",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-08-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 14,
+      "reactionsLastWeek": 12,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-08-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 7,
+      "reactionsLastWeek": 17,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 10,
+    "totalDirectMessages": 11,
+    "messagesSentLastWeek": 48,
+    "reactionsLastWeek": 38,
+    "filesSharedLastWeek": 3,
+    "threadsStartedLastWeek": 4,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

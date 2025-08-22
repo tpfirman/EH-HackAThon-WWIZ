@@ -1,0 +1,45 @@
+{
+  "ehsId": "FMP020",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e19",
+  "displayName": "Zoe Mitchell",
+  "firstName": "Zoe",
+  "lastName": "Mitchell",
+  "email": "zoe.mitchell@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "MMORPG",
+      "projectName": "Fantasy Realm Online",
+      "roles": [
+        "Artist"
+      ]
+    },
+    {
+      "projectKey": "HORROR",
+      "projectName": "Midnight Terror",
+      "roles": [
+        "Artist"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "art-animation-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 17,
+    "inProgressIssues": 1,
+    "completedThisMonth": 14,
+    "totalTimeLoggedThisMonth": "29h 47m",
+    "averageTimePerIssue": "5h 44m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 6,
+    "issuesResolvedLastMonth": 10,
+    "commentsLastMonth": 24
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

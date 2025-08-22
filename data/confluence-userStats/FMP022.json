@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP022",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e21",
+  "displayName": "Isabella White",
+  "firstName": "Isabella",
+  "lastName": "White",
+  "email": "isabella.white@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 14,
+      "commentsAdded": 5
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 4,
+    "totalPagesModified": 14,
+    "totalCommentsAdded": 5,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 5
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 14,
+      "commentsAdded": 5
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 7,
+    "commentsLastMonth": 7
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

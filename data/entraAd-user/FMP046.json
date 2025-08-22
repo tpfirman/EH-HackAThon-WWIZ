@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP046",
+  "firstName": "Sebastian",
+  "lastName": "Sanchez",
+  "email": "sebastian.sanchez@fullmetalproductions.com",
+  "upn": "sebastian.sanchez@fullmetalproductions.com",
+  "displayName": "Sebastian Sanchez",
+  "jobTitle": "Developer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 496 741 522",
+  "businessPhones": [
+    "+61 3 9146 7487"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2022-07-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

@@ -1,0 +1,279 @@
+{
+  "spaceKey": "YOUTUBE",
+  "spaceName": "YouTube Content",
+  "spaceType": "team",
+  "description": "Content planning, production guides, and YouTube channel documentation",
+  "homepageTitle": "YouTube Content Home",
+  "articles": [
+    {
+      "pageId": "30541",
+      "title": "Sample Article 1 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Noah Wright",
+      "authorEhsId": "FMP029",
+      "created": "2024-04-03T12:58:00Z",
+      "lastModified": "2025-04-19T17:59:00Z",
+      "wordCount": 2718,
+      "viewCount": 43,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "54761",
+      "title": "Sample Article 2 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "David Kim",
+      "authorEhsId": "FMP006",
+      "created": "2024-08-05T10:49:00Z",
+      "lastModified": "2025-02-23T15:19:00Z",
+      "wordCount": 2825,
+      "viewCount": 133,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "65964",
+      "title": "Sample Article 3 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Amelia Nelson",
+      "authorEhsId": "FMP036",
+      "created": "2024-01-24T11:57:00Z",
+      "lastModified": "2025-08-09T15:44:00Z",
+      "wordCount": 1138,
+      "viewCount": 100,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "74417",
+      "title": "Sample Article 4 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Ava Allen",
+      "authorEhsId": "FMP028",
+      "created": "2024-01-25T11:32:00Z",
+      "lastModified": "2025-02-10T10:29:00Z",
+      "wordCount": 2886,
+      "viewCount": 76,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "91071",
+      "title": "Sample Article 5 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Maya Patel",
+      "authorEhsId": "FMP018",
+      "created": "2024-11-18T17:17:00Z",
+      "lastModified": "2025-02-10T14:29:00Z",
+      "wordCount": 1236,
+      "viewCount": 193,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "74875",
+      "title": "Sample Article 6 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Maya Patel",
+      "authorEhsId": "FMP018",
+      "created": "2024-02-27T16:44:00Z",
+      "lastModified": "2025-04-09T09:45:00Z",
+      "wordCount": 2493,
+      "viewCount": 85,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "14204",
+      "title": "Sample Article 7 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Luna Morris",
+      "authorEhsId": "FMP047",
+      "created": "2024-04-11T12:22:00Z",
+      "lastModified": "2025-06-20T13:53:00Z",
+      "wordCount": 1584,
+      "viewCount": 55,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "56213",
+      "title": "Sample Article 8 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Grayson Rogers",
+      "authorEhsId": "FMP048",
+      "created": "2024-05-22T10:56:00Z",
+      "lastModified": "2025-05-20T10:43:00Z",
+      "wordCount": 2060,
+      "viewCount": 188,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "34266",
+      "title": "Sample Article 9 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Noah Wright",
+      "authorEhsId": "FMP029",
+      "created": "2024-11-17T12:58:00Z",
+      "lastModified": "2025-07-14T15:50:00Z",
+      "wordCount": 1984,
+      "viewCount": 127,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    },
+    {
+      "pageId": "48938",
+      "title": "Sample Article 10 for YouTube Content",
+      "type": "page",
+      "summary": "Documentation related to youtube content processes and procedures.",
+      "author": "Liam Walker",
+      "authorEhsId": "FMP027",
+      "created": "2024-04-17T10:39:00Z",
+      "lastModified": "2025-02-19T17:30:00Z",
+      "wordCount": 1701,
+      "viewCount": 23,
+      "labels": [
+        "documentation",
+        "youtube"
+      ]
+    }
+  ],
+  "contributors": [
+    {
+      "ehsId": "FMP001",
+      "displayName": "Tim Firman",
+      "role": "administrator",
+      "pagesCreated": 1,
+      "pagesModified": 14,
+      "lastActivity": "2025-08-22T15:34:00Z"
+    },
+    {
+      "ehsId": "FMP002",
+      "displayName": "Sarah Chen",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 19,
+      "lastActivity": "2025-08-21T11:18:00Z"
+    },
+    {
+      "ehsId": "FMP003",
+      "displayName": "Michael Rodriguez",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 17,
+      "lastActivity": "2025-08-21T10:18:00Z"
+    },
+    {
+      "ehsId": "FMP004",
+      "displayName": "Alex Thompson",
+      "role": "administrator",
+      "pagesCreated": 3,
+      "pagesModified": 7,
+      "lastActivity": "2025-08-20T15:26:00Z"
+    },
+    {
+      "ehsId": "FMP005",
+      "displayName": "Emily Johnson",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 10,
+      "lastActivity": "2025-08-20T12:09:00Z"
+    },
+    {
+      "ehsId": "FMP006",
+      "displayName": "David Kim",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 6,
+      "lastActivity": "2025-08-21T12:48:00Z"
+    },
+    {
+      "ehsId": "FMP007",
+      "displayName": "Jessica Williams",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 8,
+      "lastActivity": "2025-08-22T15:45:00Z"
+    },
+    {
+      "ehsId": "FMP008",
+      "displayName": "Ryan O'Connor",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 16,
+      "lastActivity": "2025-08-22T17:16:00Z"
+    },
+    {
+      "ehsId": "FMP009",
+      "displayName": "Lisa Zhang",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 11,
+      "lastActivity": "2025-08-22T16:54:00Z"
+    },
+    {
+      "ehsId": "FMP010",
+      "displayName": "James Brown",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 21,
+      "lastActivity": "2025-08-22T13:12:00Z"
+    },
+    {
+      "ehsId": "FMP011",
+      "displayName": "Amy Davis",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 12,
+      "lastActivity": "2025-08-22T11:31:00Z"
+    },
+    {
+      "ehsId": "FMP012",
+      "displayName": "Mark Wilson",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 9,
+      "lastActivity": "2025-08-22T17:53:00Z"
+    }
+  ],
+  "activitySummary": {
+    "totalPages": 40,
+    "totalBlogPosts": 8,
+    "totalComments": 130,
+    "totalAttachments": 44,
+    "averageViewsPerPage": 111,
+    "mostViewedPage": "Sample Article 23 for YouTube Content",
+    "recentlyUpdatedPages": 15,
+    "activeContributors": 12
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

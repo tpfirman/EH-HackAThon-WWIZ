@@ -1,0 +1,84 @@
+I need a series of files to use as templates for a data structure that will be used in AnythingLLM to provide a knoweldge base for an AI Agent in a workspace.
+
+each file type will need to be in its own object specific folder. There will need to be a template file for each object.
+
+I am not sure what the best format is to use (json, txt, xml), so I will let you provide guidance.
+
+The objects are as follows:
+employmentHero-staff
+    First name
+    last name
+    position title
+    team
+    manager
+    length of service
+
+entraAd-user
+    ehsId
+    first name
+    last name
+    email
+    upn
+    (anything else that could be considered useful and non-sensitive)
+
+googleCloudIdentity-User
+    ehsId
+    first name
+    last name
+    email
+    upn
+    (anything else that could be considered useful and non-sensitive)
+
+jira-userStats
+    ehsId
+    atlassianUserId
+    displayname
+    summary of projects project roles
+    jira groups
+    some kind of workload summary based on tickets and time entries
+
+jira-projectSummary
+    list of projects
+        count of tickets by epic and status 
+        list of users/groups and their roles
+        project summary/details
+        anything else useful
+
+confluence-userStats
+    ehsId
+    atlassianUserId
+    spaces active in
+    total contribution summary
+    summary of activity in top 10 spaces for user
+
+confluence-spacesSummary
+    list of spaces
+        list of articles
+        summary of article
+        contributors
+        activity
+
+calendar-availabilitySummary
+    ehsId
+    upn
+    availablity summary and working hours
+
+teams-UserActivitySummary
+    ehsId
+    upn
+    Active Teams groups
+    Active Teams channels
+    
+
+slack-UserActivitySummary
+    ehsId
+    upn
+    Active Teams groups
+    Active Teams channels
+
+employmentHero-staff object is the primary record record for person context. The person id from employmentHero should be used to link to all other person records.
+
+As these will be files uploaded to build a knowledge base for an AI Agent, I want this to be as efficent as possible. Text is small, so if we can gain efficencies by repeating infomration (name, position, etc) over different files, I am happy with that. However, each object needs to stay in its own file, as different scripts will pull and parse information from different data sets.
+
+
+

@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP050",
+  "upn": "leo.cook@fullmetalproductions.com",
+  "firstName": "Leo",
+  "lastName": "Cook",
+  "displayName": "Leo Cook",
+  "userPrincipalName": "leo.cook@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:developmentteam@thread.v2",
+      "teamName": "Development Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2023-01-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2023-01-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 5,
+    "messagesSentLastWeek": 54,
+    "reactionsLastWeek": 19,
+    "meetingsAttendedLastWeek": 9,
+    "callsInitiatedLastWeek": 5,
+    "filesSharedLastWeek": 6,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP026",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e25",
+  "displayName": "Emma Lewis",
+  "firstName": "Emma",
+  "lastName": "Lewis",
+  "email": "emma.lewis@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 5,
+      "commentsAdded": 10
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 2,
+    "totalPagesModified": 5,
+    "totalCommentsAdded": 10,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 10
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 5,
+      "commentsAdded": 10
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 15,
+    "commentsLastMonth": 7
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

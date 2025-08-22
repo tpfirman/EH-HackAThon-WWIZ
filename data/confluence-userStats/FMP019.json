@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP019",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e18",
+  "displayName": "Lucas Garcia",
+  "firstName": "Lucas",
+  "lastName": "Garcia",
+  "email": "lucas.garcia@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 12,
+      "commentsAdded": 4
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 3,
+    "totalPagesModified": 12,
+    "totalCommentsAdded": 4,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 6
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 12,
+      "commentsAdded": 4
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 3,
+    "commentsLastMonth": 12
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

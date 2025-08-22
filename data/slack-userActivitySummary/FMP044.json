@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP044",
+  "upn": "avery.edwards@fullmetalproductions.com",
+  "firstName": "Avery",
+  "lastName": "Edwards",
+  "displayName": "Avery Edwards",
+  "slackUserId": "U2085288242",
+  "slackUsername": "avery.edwards",
+  "slackDisplayName": "Avery Edwards",
+  "slackEmail": "avery.edwards@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-04-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C3965587634",
+      "channelName": "operations",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-04-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 13,
+      "reactionsLastWeek": 3,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-04-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 4,
+      "reactionsLastWeek": 16,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 7,
+    "totalDirectMessages": 10,
+    "messagesSentLastWeek": 41,
+    "reactionsLastWeek": 29,
+    "filesSharedLastWeek": 5,
+    "threadsStartedLastWeek": 1,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low",
+    "onlineStatus": "away"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

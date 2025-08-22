@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP050",
+  "firstName": "Leo",
+  "lastName": "Cook",
+  "email": "leo.cook@fullmetalproductions.com",
+  "upn": "leo.cook@fullmetalproductions.com",
+  "displayName": "Leo Cook",
+  "primaryEmail": "leo.cook@fullmetalproductions.com",
+  "aliases": [
+    "l.cook@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Development",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2023-01-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP050",
+      "Department": "Development",
+      "Manager": "Alex Thompson"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

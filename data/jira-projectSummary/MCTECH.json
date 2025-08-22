@@ -1,0 +1,50 @@
+{
+  "projectKey": "MCTECH",
+  "projectName": "MC Tech Overhaul",
+  "projectType": "software",
+  "projectCategory": "Minecraft Mods",
+  "description": "MC Tech Overhaul - Released",
+  "lead": "Jordan Martinez",
+  "issueTypeScheme": "Game Development Issue Types",
+  "workflowScheme": "Game Development Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "MCTECH-100",
+      "epicName": "Core Gameplay Systems",
+      "statusCounts": {
+        "Done": 30
+      }
+    },
+    {
+      "epicKey": "MCTECH-200",
+      "epicName": "Post-Launch Support",
+      "statusCounts": {
+        "To Do": 2,
+        "In Progress": 2,
+        "Done": 11
+      }
+    }
+  ],
+  "usersAndRoles": [],
+  "projectStats": {
+    "totalIssues": 45,
+    "openIssues": 4,
+    "completedIssues": 41,
+    "totalTimeSpent": "567h 0m",
+    "averageResolutionTime": "2.5 days"
+  },
+  "components": [
+    "Core",
+    "API",
+    "Config"
+  ],
+  "versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

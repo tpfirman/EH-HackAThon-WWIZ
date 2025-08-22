@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP029",
+  "firstName": "Noah",
+  "lastName": "Wright",
+  "email": "noah.wright@fullmetalproductions.com",
+  "upn": "noah.wright@fullmetalproductions.com",
+  "displayName": "Noah Wright",
+  "primaryEmail": "noah.wright@fullmetalproductions.com",
+  "aliases": [
+    "n.wright@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/YouTube Content",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-06-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP029",
+      "Department": "YouTube Content",
+      "Manager": "Emma Lewis"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

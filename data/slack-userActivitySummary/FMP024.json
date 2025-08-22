@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP024",
+  "upn": "sophia.young@fullmetalproductions.com",
+  "firstName": "Sophia",
+  "lastName": "Young",
+  "displayName": "Sophia Young",
+  "slackUserId": "U2861735162",
+  "slackUsername": "sophia.young",
+  "slackDisplayName": "Sophia Young",
+  "slackEmail": "sophia.young@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-10-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C4106027862",
+      "channelName": "art-and-animation",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-10-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 16,
+      "reactionsLastWeek": 17,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-10-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 6,
+      "reactionsLastWeek": 6,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 9,
+    "totalDirectMessages": 3,
+    "messagesSentLastWeek": 16,
+    "reactionsLastWeek": 19,
+    "filesSharedLastWeek": 1,
+    "threadsStartedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP019",
+  "firstName": "Lucas",
+  "lastName": "Garcia",
+  "email": "lucas.garcia@fullmetalproductions.com",
+  "upn": "lucas.garcia@fullmetalproductions.com",
+  "displayName": "Lucas Garcia",
+  "jobTitle": "Senior Artist",
+  "department": "Art & Animation",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 450 596 643",
+  "businessPhones": [
+    "+61 3 1708 8795"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-09-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Art & Animation_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

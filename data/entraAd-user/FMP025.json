@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP025",
+  "firstName": "Oliver",
+  "lastName": "Clark",
+  "email": "oliver.clark@fullmetalproductions.com",
+  "upn": "oliver.clark@fullmetalproductions.com",
+  "displayName": "Oliver Clark",
+  "jobTitle": "UI/UX Designer",
+  "department": "Art & Animation",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 478 819 151",
+  "businessPhones": [
+    "+61 3 6424 8460"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-12-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Art & Animation_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

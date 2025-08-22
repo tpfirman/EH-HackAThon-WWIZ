@@ -1,0 +1,255 @@
+{
+  "spaceKey": "DESIGN",
+  "spaceName": "Game Design",
+  "spaceType": "team",
+  "description": "Game design documents, concepts, and design processes",
+  "homepageTitle": "Game Design Home",
+  "articles": [
+    {
+      "pageId": "54102",
+      "title": "Sample Article 1 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "Jessica Williams",
+      "authorEhsId": "FMP007",
+      "created": "2024-05-12T12:15:00Z",
+      "lastModified": "2025-02-04T11:28:00Z",
+      "wordCount": 646,
+      "viewCount": 76,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "93545",
+      "title": "Sample Article 2 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "James Brown",
+      "authorEhsId": "FMP010",
+      "created": "2024-02-13T11:28:00Z",
+      "lastModified": "2025-01-12T10:30:00Z",
+      "wordCount": 2130,
+      "viewCount": 122,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "38840",
+      "title": "Sample Article 3 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "Ethan Hall",
+      "authorEhsId": "FMP023",
+      "created": "2024-01-04T10:02:00Z",
+      "lastModified": "2025-06-23T09:13:00Z",
+      "wordCount": 1528,
+      "viewCount": 156,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "81234",
+      "title": "Sample Article 4 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "Luna Morris",
+      "authorEhsId": "FMP047",
+      "created": "2024-01-16T12:40:00Z",
+      "lastModified": "2025-02-16T13:08:00Z",
+      "wordCount": 2148,
+      "viewCount": 188,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "90637",
+      "title": "Sample Article 5 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "Emily Johnson",
+      "authorEhsId": "FMP005",
+      "created": "2024-05-09T17:13:00Z",
+      "lastModified": "2025-04-17T16:16:00Z",
+      "wordCount": 1683,
+      "viewCount": 27,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "19593",
+      "title": "Sample Article 6 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "David Kim",
+      "authorEhsId": "FMP006",
+      "created": "2024-03-16T12:06:00Z",
+      "lastModified": "2025-02-01T17:41:00Z",
+      "wordCount": 2617,
+      "viewCount": 159,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "36894",
+      "title": "Sample Article 7 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "Lucas Garcia",
+      "authorEhsId": "FMP019",
+      "created": "2024-09-05T16:19:00Z",
+      "lastModified": "2025-03-16T17:24:00Z",
+      "wordCount": 1658,
+      "viewCount": 99,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "24891",
+      "title": "Sample Article 8 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "Alex Thompson",
+      "authorEhsId": "FMP004",
+      "created": "2024-08-05T17:35:00Z",
+      "lastModified": "2025-01-06T13:57:00Z",
+      "wordCount": 2301,
+      "viewCount": 181,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "84801",
+      "title": "Sample Article 9 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "Liam Walker",
+      "authorEhsId": "FMP027",
+      "created": "2024-03-21T10:55:00Z",
+      "lastModified": "2025-07-09T13:20:00Z",
+      "wordCount": 2134,
+      "viewCount": 52,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    },
+    {
+      "pageId": "85041",
+      "title": "Sample Article 10 for Game Design",
+      "type": "page",
+      "summary": "Documentation related to game design processes and procedures.",
+      "author": "Rachel Taylor",
+      "authorEhsId": "FMP016",
+      "created": "2024-05-17T13:26:00Z",
+      "lastModified": "2025-04-14T15:39:00Z",
+      "wordCount": 579,
+      "viewCount": 160,
+      "labels": [
+        "documentation",
+        "design"
+      ]
+    }
+  ],
+  "contributors": [
+    {
+      "ehsId": "FMP001",
+      "displayName": "Tim Firman",
+      "role": "administrator",
+      "pagesCreated": 3,
+      "pagesModified": 25,
+      "lastActivity": "2025-08-20T10:02:00Z"
+    },
+    {
+      "ehsId": "FMP002",
+      "displayName": "Sarah Chen",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 8,
+      "lastActivity": "2025-08-21T10:18:00Z"
+    },
+    {
+      "ehsId": "FMP003",
+      "displayName": "Michael Rodriguez",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 23,
+      "lastActivity": "2025-08-21T09:19:00Z"
+    },
+    {
+      "ehsId": "FMP004",
+      "displayName": "Alex Thompson",
+      "role": "administrator",
+      "pagesCreated": 7,
+      "pagesModified": 7,
+      "lastActivity": "2025-08-22T11:46:00Z"
+    },
+    {
+      "ehsId": "FMP005",
+      "displayName": "Emily Johnson",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 16,
+      "lastActivity": "2025-08-22T17:30:00Z"
+    },
+    {
+      "ehsId": "FMP006",
+      "displayName": "David Kim",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 19,
+      "lastActivity": "2025-08-20T13:53:00Z"
+    },
+    {
+      "ehsId": "FMP007",
+      "displayName": "Jessica Williams",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 12,
+      "lastActivity": "2025-08-23T17:33:00Z"
+    },
+    {
+      "ehsId": "FMP008",
+      "displayName": "Ryan O'Connor",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 8,
+      "lastActivity": "2025-08-23T15:29:00Z"
+    },
+    {
+      "ehsId": "FMP009",
+      "displayName": "Lisa Zhang",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 5,
+      "lastActivity": "2025-08-20T16:54:00Z"
+    }
+  ],
+  "activitySummary": {
+    "totalPages": 35,
+    "totalBlogPosts": 7,
+    "totalComments": 188,
+    "totalAttachments": 28,
+    "averageViewsPerPage": 104,
+    "mostViewedPage": "Sample Article 4 for Game Design",
+    "recentlyUpdatedPages": 14,
+    "activeContributors": 9
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP028",
+  "firstName": "Ava",
+  "lastName": "Allen",
+  "email": "ava.allen@fullmetalproductions.com",
+  "upn": "ava.allen@fullmetalproductions.com",
+  "displayName": "Ava Allen",
+  "jobTitle": "Video Editor",
+  "department": "YouTube Content",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 479 839 837",
+  "businessPhones": [
+    "+61 3 5528 6550"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-01-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "YouTube Content_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

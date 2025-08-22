@@ -1,0 +1,45 @@
+{
+  "ehsId": "FMP027",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e26",
+  "displayName": "Liam Walker",
+  "firstName": "Liam",
+  "lastName": "Walker",
+  "email": "liam.walker@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "YTCHAN",
+      "projectName": "YouTube Channel",
+      "roles": [
+        "Content Creator"
+      ]
+    },
+    {
+      "projectKey": "STREAM",
+      "projectName": "Live Streaming",
+      "roles": [
+        "Producer"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "youtube-content-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 8,
+    "inProgressIssues": 3,
+    "completedThisMonth": 15,
+    "totalTimeLoggedThisMonth": "26h 52m",
+    "averageTimePerIssue": "7h 36m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 4,
+    "issuesResolvedLastMonth": 6,
+    "commentsLastMonth": 12
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

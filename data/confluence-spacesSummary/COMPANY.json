@@ -1,0 +1,303 @@
+{
+  "spaceKey": "COMPANY",
+  "spaceName": "Company Wiki",
+  "spaceType": "global",
+  "description": "Company-wide policies, procedures, and general information",
+  "homepageTitle": "Company Wiki Home",
+  "articles": [
+    {
+      "pageId": "19223",
+      "title": "Sample Article 1 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "William Hill",
+      "authorEhsId": "FMP031",
+      "created": "2024-02-21T09:38:00Z",
+      "lastModified": "2025-07-10T11:51:00Z",
+      "wordCount": 593,
+      "viewCount": 26,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "87230",
+      "title": "Sample Article 2 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Evelyn Stewart",
+      "authorEhsId": "FMP045",
+      "created": "2024-06-11T17:17:00Z",
+      "lastModified": "2025-03-20T12:45:00Z",
+      "wordCount": 2635,
+      "viewCount": 197,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "94604",
+      "title": "Sample Article 3 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Rachel Taylor",
+      "authorEhsId": "FMP016",
+      "created": "2024-06-03T13:50:00Z",
+      "lastModified": "2025-04-10T09:00:00Z",
+      "wordCount": 1414,
+      "viewCount": 143,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "38869",
+      "title": "Sample Article 4 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Isabella White",
+      "authorEhsId": "FMP022",
+      "created": "2024-02-23T13:46:00Z",
+      "lastModified": "2025-02-13T16:45:00Z",
+      "wordCount": 2510,
+      "viewCount": 145,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "35098",
+      "title": "Sample Article 5 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Henry Phillips",
+      "authorEhsId": "FMP039",
+      "created": "2024-03-04T12:31:00Z",
+      "lastModified": "2025-05-07T16:31:00Z",
+      "wordCount": 1093,
+      "viewCount": 153,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "16304",
+      "title": "Sample Article 6 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Leo Cook",
+      "authorEhsId": "FMP050",
+      "created": "2024-04-13T12:10:00Z",
+      "lastModified": "2025-05-10T11:19:00Z",
+      "wordCount": 921,
+      "viewCount": 177,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "30316",
+      "title": "Sample Article 7 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Grayson Rogers",
+      "authorEhsId": "FMP048",
+      "created": "2024-09-01T09:40:00Z",
+      "lastModified": "2025-07-12T11:13:00Z",
+      "wordCount": 572,
+      "viewCount": 159,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "37133",
+      "title": "Sample Article 8 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Emily Johnson",
+      "authorEhsId": "FMP005",
+      "created": "2024-05-16T13:21:00Z",
+      "lastModified": "2025-02-10T16:53:00Z",
+      "wordCount": 1770,
+      "viewCount": 111,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "30618",
+      "title": "Sample Article 9 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Emma Lewis",
+      "authorEhsId": "FMP026",
+      "created": "2024-08-16T17:05:00Z",
+      "lastModified": "2025-06-18T16:01:00Z",
+      "wordCount": 1722,
+      "viewCount": 166,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    },
+    {
+      "pageId": "84491",
+      "title": "Sample Article 10 for Company Wiki",
+      "type": "page",
+      "summary": "Documentation related to company wiki processes and procedures.",
+      "author": "Jackson Turner",
+      "authorEhsId": "FMP041",
+      "created": "2024-09-07T09:01:00Z",
+      "lastModified": "2025-02-18T09:45:00Z",
+      "wordCount": 2417,
+      "viewCount": 21,
+      "labels": [
+        "documentation",
+        "company"
+      ]
+    }
+  ],
+  "contributors": [
+    {
+      "ehsId": "FMP001",
+      "displayName": "Tim Firman",
+      "role": "administrator",
+      "pagesCreated": 4,
+      "pagesModified": 12,
+      "lastActivity": "2025-08-22T11:30:00Z"
+    },
+    {
+      "ehsId": "FMP002",
+      "displayName": "Sarah Chen",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 20,
+      "lastActivity": "2025-08-21T17:25:00Z"
+    },
+    {
+      "ehsId": "FMP003",
+      "displayName": "Michael Rodriguez",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 25,
+      "lastActivity": "2025-08-21T16:05:00Z"
+    },
+    {
+      "ehsId": "FMP004",
+      "displayName": "Alex Thompson",
+      "role": "administrator",
+      "pagesCreated": 6,
+      "pagesModified": 16,
+      "lastActivity": "2025-08-23T17:35:00Z"
+    },
+    {
+      "ehsId": "FMP005",
+      "displayName": "Emily Johnson",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 21,
+      "lastActivity": "2025-08-20T14:09:00Z"
+    },
+    {
+      "ehsId": "FMP006",
+      "displayName": "David Kim",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 10,
+      "lastActivity": "2025-08-21T13:35:00Z"
+    },
+    {
+      "ehsId": "FMP007",
+      "displayName": "Jessica Williams",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 15,
+      "lastActivity": "2025-08-20T15:39:00Z"
+    },
+    {
+      "ehsId": "FMP008",
+      "displayName": "Ryan O'Connor",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 17,
+      "lastActivity": "2025-08-22T14:51:00Z"
+    },
+    {
+      "ehsId": "FMP009",
+      "displayName": "Lisa Zhang",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 12,
+      "lastActivity": "2025-08-21T12:36:00Z"
+    },
+    {
+      "ehsId": "FMP010",
+      "displayName": "James Brown",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 15,
+      "lastActivity": "2025-08-20T11:35:00Z"
+    },
+    {
+      "ehsId": "FMP011",
+      "displayName": "Amy Davis",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 15,
+      "lastActivity": "2025-08-23T15:16:00Z"
+    },
+    {
+      "ehsId": "FMP012",
+      "displayName": "Mark Wilson",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 18,
+      "lastActivity": "2025-08-20T15:20:00Z"
+    },
+    {
+      "ehsId": "FMP013",
+      "displayName": "Jordan Martinez",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 11,
+      "lastActivity": "2025-08-23T17:41:00Z"
+    },
+    {
+      "ehsId": "FMP014",
+      "displayName": "Samantha Lee",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 21,
+      "lastActivity": "2025-08-21T13:07:00Z"
+    },
+    {
+      "ehsId": "FMP015",
+      "displayName": "Chris Anderson",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 10,
+      "lastActivity": "2025-08-20T15:24:00Z"
+    }
+  ],
+  "activitySummary": {
+    "totalPages": 29,
+    "totalBlogPosts": 10,
+    "totalComments": 127,
+    "totalAttachments": 82,
+    "averageViewsPerPage": 128,
+    "mostViewedPage": "Sample Article 25 for Company Wiki",
+    "recentlyUpdatedPages": 12,
+    "activeContributors": 15
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

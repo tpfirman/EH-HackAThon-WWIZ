@@ -1,0 +1,20 @@
+{
+  "ehsId": "EHS001234",
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@company.com",
+  "upn": "john.smith@company.com",
+  "displayName": "John Smith",
+  "jobTitle": "Senior Software Engineer",
+  "department": "Engineering",
+  "officeLocation": "Sydney",
+  "mobilePhone": "+61 XXX XXX XXX",
+  "businessPhones": ["+61 2 XXXX XXXX"],
+  "accountEnabled": true,
+  "createdDateTime": "2022-04-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": ["Office 365 E3", "Power BI Pro"],
+  "memberOf": ["Engineering_Team", "All_Staff", "Sydney_Office"],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

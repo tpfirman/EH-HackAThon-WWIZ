@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP005",
+  "firstName": "Emily",
+  "lastName": "Johnson",
+  "email": "emily.johnson@fullmetalproductions.com",
+  "upn": "emily.johnson@fullmetalproductions.com",
+  "displayName": "Emily Johnson",
+  "jobTitle": "Senior Developer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 436 607 369",
+  "businessPhones": [
+    "+61 3 2456 6882"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-06-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

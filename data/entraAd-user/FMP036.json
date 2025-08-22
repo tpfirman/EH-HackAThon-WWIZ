@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP036",
+  "firstName": "Amelia",
+  "lastName": "Nelson",
+  "email": "amelia.nelson@fullmetalproductions.com",
+  "upn": "amelia.nelson@fullmetalproductions.com",
+  "displayName": "Amelia Nelson",
+  "jobTitle": "HR Director",
+  "department": "HR",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 452 209 172",
+  "businessPhones": [
+    "+61 3 5343 4713"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-05-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "HR_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

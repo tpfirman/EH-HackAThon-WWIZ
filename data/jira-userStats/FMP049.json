@@ -1,0 +1,45 @@
+{
+  "ehsId": "FMP049",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e48",
+  "displayName": "Scarlett Reed",
+  "firstName": "Scarlett",
+  "lastName": "Reed",
+  "email": "scarlett.reed@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "YTCHAN",
+      "projectName": "YouTube Channel",
+      "roles": [
+        "Content Creator"
+      ]
+    },
+    {
+      "projectKey": "STREAM",
+      "projectName": "Live Streaming",
+      "roles": [
+        "Producer"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "youtube-content-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 15,
+    "inProgressIssues": 3,
+    "completedThisMonth": 3,
+    "totalTimeLoggedThisMonth": "35h 2m",
+    "averageTimePerIssue": "2h 59m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 2,
+    "issuesResolvedLastMonth": 7,
+    "commentsLastMonth": 11
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}
