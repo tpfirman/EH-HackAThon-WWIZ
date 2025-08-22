@@ -294,22 +294,19 @@ fi
 if [ ! -f /etc/awslogs/awslogs.conf.backup ]; then
     log "Configuring CloudWatch logs..."
     cp /etc/awslogs/awslogs.conf /etc/awslogs/awslogs.conf.backup
-cat << EOF > /etc/awslogs/awslogs.conf
-[general]
-state_file = /var/lib/awslogs/agent-state
-
-[/var/log/messages]
-file = /var/log/messages
-log_group_name = /ai-poc/${CF_STACK_NAME:-ai-poc}/system
-log_stream_name = {instance_id}
-datetime_format = %b %d %H:%M:%S
-
-[/var/log/anythingllm.log]
-file = /home/ec2-user/anythingllm/logs/server.log
-log_group_name = /ai-poc/${CF_STACK_NAME:-ai-poc}/anythingllm
-log_stream_name = {instance_id}
-datetime_format = %Y-%m-%d %H:%M:%S
-EOF
+    
+    # Copy our CloudWatch logs configuration
+    SCRIPT_DIR="$(dirname "$0")"
+    if [ -f "$SCRIPT_DIR/awslogs.conf" ]; then
+        cp "$SCRIPT_DIR/awslogs.conf" /etc/awslogs/awslogs.conf
+        
+        # Replace placeholder variables in the config
+        sed -i "s/\${CF_STACK_NAME:-ai-poc}/${CF_STACK_NAME:-ai-poc}/g" /etc/awslogs/awslogs.conf
+        log_success "CloudWatch logs configuration applied"
+    else
+        log_error "awslogs.conf template not found in script directory"
+        exit 1
+    fi
 
 # Set region for CloudWatch logs
 log "Setting CloudWatch region configuration..."
@@ -410,65 +407,16 @@ log "Configuring nginx proxy..."
 if [ ! -f /etc/nginx/nginx.conf.backup ]; then
     cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 fi
-cat << 'NGINXCONF' > /etc/nginx/nginx.conf
-user nginx;
-worker_processes auto;
-error_log /var/log/nginx/error.log;
-pid /run/nginx.pid;
 
-events {
-    worker_connections 1024;
-}
-
-http {
-    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
-                    '$status $body_bytes_sent "$http_referer" '
-                    '"$http_user_agent" "$http_x_forwarded_for"';
-
-    access_log /var/log/nginx/access.log main;
-
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
-    keepalive_timeout 65;
-    types_hash_max_size 2048;
-
-    include /etc/nginx/mime.types;
-    default_type application/octet-stream;
-
-    server {
-        listen 80;
-        server_name _;
-
-        # Health check endpoint
-        location /health {
-            access_log off;
-            return 200 '{"status":"healthy","anythingllm":"running","ai_poc_mode":true,"region":"Sydney","spot_instance":"true","cleanup_date":"2025-12-31"}';
-            add_header Content-Type application/json;
-        }
-
-        # Proxy all other requests to AnythingLLM
-        location / {
-            proxy_pass http://localhost:3001;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_buffering off;
-            proxy_request_buffering off;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-
-            # Handle all HTTP methods including POST
-            proxy_method $request_method;
-            client_max_body_size 100M;
-            proxy_read_timeout 300s;
-            proxy_connect_timeout 75s;
-        }
-    }
-}
-NGINXCONF
+# Copy our nginx configuration
+SCRIPT_DIR="$(dirname "$0")"
+if [ -f "$SCRIPT_DIR/nginx.conf" ]; then
+    cp "$SCRIPT_DIR/nginx.conf" /etc/nginx/nginx.conf
+    log_success "Nginx configuration applied"
+else
+    log_error "nginx.conf template not found in script directory"
+    exit 1
+fi
 
 # Set correct SELinux context for nginx (if SELinux is enabled)
 setsebool -P httpd_can_network_connect 1 2>/dev/null || true
