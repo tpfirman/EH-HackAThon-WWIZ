@@ -1,4 +1,8 @@
-# Setup Script Fixes
+# Legacy Setup Script Fixes (Archived)
+
+> **📅 Archived:** August 23, 2025  
+> **Status:** Issues resolved in current version  
+> **Purpose:** Historical reference for troubleshooting similar issues  
 
 ## Problem Summary
 
