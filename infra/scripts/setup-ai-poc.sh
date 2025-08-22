@@ -52,15 +52,9 @@ echo "RUNNING" > "$SETUP_LOCK"
 # Install essential packages including curl for health checks
 log "Updating system packages..."
 yum update -y 2>&1 | tee -a "$SETUP_LOG"
-yum update -y amazon-linux-extras 2>&1 | tee -a "$SETUP_LOG"
-amazon-linux-extras enable openssl11 2>&1 | tee -a "$SETUP_LOG"
-yum clean metadata 2>&1 | tee -a "$SETUP_LOG"
-
-
 
 log "Installing essential packages..."
 yum install -y curl 2>&1 | tee -a "$SETUP_LOG"
-
 
 # Install latest Docker from Amazon Linux Extras and enable
 if ! command -v docker &> /dev/null; then
@@ -121,10 +115,9 @@ else
 fi
 
 # Install latest OpenSSL 1.1 from Amazon Linux Extras (resolves urllib3 compatibility)
-if ! rpm -q openssl1 &> /dev/null; then
+if ! rpm -q openssl11 &> /dev/null; then
     log "Installing OpenSSL 1.1..."
-    amazon-linux-extras install openssl1 -y 2>&1 | tee -a "$SETUP_LOG"
-    yum install -y openssl11 openssl11-devel 2>&1 | tee -a "$SETUP_LOG"
+    amazon-linux-extras install openssl11=latest -y 2>&1 | tee -a "$SETUP_LOG"
 else
     log "OpenSSL 1.1 already installed, skipping..."
 fi
@@ -159,7 +152,8 @@ fi
 if [ ! -f /etc/awslogs/awslogs.conf.backup ]; then
     log "Configuring CloudWatch logs..."
     cp /etc/awslogs/awslogs.conf /etc/awslogs/awslogs.conf.backup
-cat << EOF > /etc/awslogs/awslogs.conf
+
+    cat << EOF > /etc/awslogs/awslogs.conf
 [general]
 state_file = /var/lib/awslogs/agent-state
 
@@ -175,6 +169,7 @@ log_group_name = /ai-poc/${CF_STACK_NAME:-ai-poc}/anythingllm
 log_stream_name = {instance_id}
 datetime_format = %Y-%m-%d %H:%M:%S
 EOF
+fi
 
 # Set region for CloudWatch logs
 log "Setting CloudWatch region configuration..."
@@ -276,6 +271,7 @@ log "Configuring nginx proxy..."
 if [ ! -f /etc/nginx/nginx.conf.backup ]; then
     cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 fi
+
 cat << 'NGINXCONF' > /etc/nginx/nginx.conf
 user nginx;
 worker_processes auto;
