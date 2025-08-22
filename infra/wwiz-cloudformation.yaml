@@ -214,6 +214,11 @@ Resources:
           ToPort: 3001
           SourceSecurityGroupId: !Ref SGALB
           Description: AnythingLLM from ALB
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 10.0.0.0/16
+          Description: ALB health check (VPC internal)
       SecurityGroupEgress:
         - IpProtocol: -1
           CidrIp: 0.0.0.0/0
@@ -523,7 +528,7 @@ Resources:
       Port: 80
       TargetType: instance
       Targets:
-        - !If [UseSpot, !Ref "AWS::NoValue", {Id: !Ref EC2Instance}]
+        - Id: !Ref EC2Instance
       HealthCheckProtocol: HTTP
       HealthCheckPath: /health
       HealthCheckIntervalSeconds: 60  # Longer intervals for cost savings
