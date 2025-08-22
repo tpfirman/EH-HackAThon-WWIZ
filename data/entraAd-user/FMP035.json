@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP035",
+  "firstName": "Logan",
+  "lastName": "Gonzalez",
+  "email": "logan.gonzalez@fullmetalproductions.com",
+  "upn": "logan.gonzalez@fullmetalproductions.com",
+  "displayName": "Logan Gonzalez",
+  "jobTitle": "QA Tester",
+  "department": "QA",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 422 733 312",
+  "businessPhones": [
+    "+61 3 1574 9364"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2022-04-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "QA_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

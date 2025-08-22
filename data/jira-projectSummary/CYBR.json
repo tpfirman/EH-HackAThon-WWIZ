@@ -1,0 +1,52 @@
+{
+  "projectKey": "CYBR",
+  "projectName": "CyberRealm",
+  "projectType": "software",
+  "projectCategory": "Game Development",
+  "description": "CyberRealm - Released",
+  "lead": "Jordan Martinez",
+  "issueTypeScheme": "Game Development Issue Types",
+  "workflowScheme": "Game Development Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "CYBR-100",
+      "epicName": "Core Gameplay Systems",
+      "statusCounts": {
+        "Done": 27
+      }
+    },
+    {
+      "epicKey": "CYBR-200",
+      "epicName": "Post-Launch Support",
+      "statusCounts": {
+        "To Do": 1,
+        "In Progress": 1,
+        "Done": 7
+      }
+    }
+  ],
+  "usersAndRoles": [],
+  "projectStats": {
+    "totalIssues": 36,
+    "openIssues": 2,
+    "completedIssues": 34,
+    "totalTimeSpent": "649h 34m",
+    "averageResolutionTime": "7.9 days"
+  },
+  "components": [
+    "Gameplay",
+    "UI",
+    "Audio",
+    "Graphics",
+    "Networking"
+  ],
+  "versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

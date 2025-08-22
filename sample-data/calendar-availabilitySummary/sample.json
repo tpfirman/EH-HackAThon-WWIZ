@@ -1,0 +1,69 @@
+{
+  "ehsId": "EHS001234",
+  "upn": "john.smith@company.com",
+  "firstName": "John",
+  "lastName": "Smith",
+  "displayName": "John Smith",
+  "workingHours": {
+    "timezone": "Australia/Sydney",
+    "monday": {"start": "09:00", "end": "17:00"},
+    "tuesday": {"start": "09:00", "end": "17:00"},
+    "wednesday": {"start": "09:00", "end": "17:00"},
+    "thursday": {"start": "09:00", "end": "17:00"},
+    "friday": {"start": "09:00", "end": "17:00"},
+    "saturday": null,
+    "sunday": null
+  },
+  "availabilitySummary": {
+    "currentStatus": "Available",
+    "nextMeeting": {
+      "title": "Sprint Planning",
+      "start": "2025-08-23T14:00:00Z",
+      "end": "2025-08-23T15:00:00Z"
+    },
+    "busyPeriodsToday": [
+      {
+        "title": "Daily Standup",
+        "start": "2025-08-23T23:00:00Z",
+        "end": "2025-08-23T23:30:00Z",
+        "type": "meeting"
+      },
+      {
+        "title": "Focus Time - Development",
+        "start": "2025-08-23T01:00:00Z", 
+        "end": "2025-08-23T04:00:00Z",
+        "type": "focus"
+      }
+    ],
+    "weeklyMeetingLoad": {
+      "totalMeetingHours": 12.5,
+      "focusTimeHours": 20,
+      "availableHours": 7.5,
+      "meetingDensity": "moderate"
+    }
+  },
+  "recurringCommitments": [
+    {
+      "title": "Daily Standup",
+      "frequency": "daily",
+      "duration": "30 minutes",
+      "time": "09:00"
+    },
+    {
+      "title": "Sprint Planning",
+      "frequency": "bi-weekly",
+      "duration": "2 hours",
+      "day": "Monday"
+    }
+  ],
+  "outOfOffice": {
+    "currentlyOut": false,
+    "nextPlannedLeave": {
+      "start": "2025-09-15",
+      "end": "2025-09-22", 
+      "type": "annual leave"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "calendar-availabilitySummary"
+}

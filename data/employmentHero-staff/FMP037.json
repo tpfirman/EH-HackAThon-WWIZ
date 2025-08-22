@@ -1,0 +1,15 @@
+{
+  "ehsId": "FMP037",
+  "firstName": "Elijah",
+  "lastName": "Carter",
+  "positionTitle": "HR Coordinator",
+  "team": "HR",
+  "manager": "Amelia Nelson",
+  "lengthOfService": "3 years 9 months",
+  "startDate": "2021-11-01",
+  "department": "HR",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

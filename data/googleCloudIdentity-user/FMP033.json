@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP033",
+  "firstName": "Benjamin",
+  "lastName": "Adams",
+  "email": "benjamin.adams@fullmetalproductions.com",
+  "upn": "benjamin.adams@fullmetalproductions.com",
+  "displayName": "Benjamin Adams",
+  "primaryEmail": "benjamin.adams@fullmetalproductions.com",
+  "aliases": [
+    "b.adams@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/QA",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-03-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP033",
+      "Department": "QA",
+      "Manager": "Charlotte Green"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

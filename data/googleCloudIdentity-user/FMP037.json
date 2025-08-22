@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP037",
+  "firstName": "Elijah",
+  "lastName": "Carter",
+  "email": "elijah.carter@fullmetalproductions.com",
+  "upn": "elijah.carter@fullmetalproductions.com",
+  "displayName": "Elijah Carter",
+  "primaryEmail": "elijah.carter@fullmetalproductions.com",
+  "aliases": [
+    "e.carter@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/HR",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-11-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP037",
+      "Department": "HR",
+      "Manager": "Amelia Nelson"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

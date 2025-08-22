@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP042",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e41",
+  "displayName": "Chloe Parker",
+  "firstName": "Chloe",
+  "lastName": "Parker",
+  "email": "chloe.parker@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 12,
+      "commentsAdded": 10
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 1,
+    "totalPagesModified": 12,
+    "totalCommentsAdded": 10,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 7
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 12,
+      "commentsAdded": 10
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 1,
+    "pagesModifiedLastMonth": 7,
+    "commentsLastMonth": 3
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

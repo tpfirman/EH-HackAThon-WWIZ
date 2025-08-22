@@ -1,0 +1,15 @@
+{
+  "ehsId": "FMP036",
+  "firstName": "Amelia",
+  "lastName": "Nelson",
+  "positionTitle": "HR Director",
+  "team": "HR",
+  "manager": "Tim Firman",
+  "lengthOfService": "5 years 3 months",
+  "startDate": "2020-05-15",
+  "department": "HR",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

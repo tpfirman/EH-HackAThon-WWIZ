@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP021",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e20",
+  "displayName": "Nathan Cooper",
+  "firstName": "Nathan",
+  "lastName": "Cooper",
+  "email": "nathan.cooper@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 14,
+      "commentsAdded": 10
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 3,
+    "totalPagesModified": 14,
+    "totalCommentsAdded": 10,
+    "totalBlogPostsCreated": 1,
+    "totalAttachmentsUploaded": 11
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 14,
+      "commentsAdded": 10
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 4,
+    "pagesModifiedLastMonth": 7,
+    "commentsLastMonth": 8
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

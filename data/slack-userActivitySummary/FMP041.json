@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP041",
+  "upn": "jackson.turner@fullmetalproductions.com",
+  "firstName": "Jackson",
+  "lastName": "Turner",
+  "displayName": "Jackson Turner",
+  "slackUserId": "U6085236712",
+  "slackUsername": "jackson.turner",
+  "slackDisplayName": "Jackson Turner",
+  "slackEmail": "jackson.turner@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-02-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C5366016941",
+      "channelName": "marketing",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-02-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 24,
+      "reactionsLastWeek": 9,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-02-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 10,
+      "reactionsLastWeek": 16,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 10,
+    "totalDirectMessages": 7,
+    "messagesSentLastWeek": 38,
+    "reactionsLastWeek": 40,
+    "filesSharedLastWeek": 3,
+    "threadsStartedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

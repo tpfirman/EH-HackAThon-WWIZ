@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP046",
+  "firstName": "Sebastian",
+  "lastName": "Sanchez",
+  "email": "sebastian.sanchez@fullmetalproductions.com",
+  "upn": "sebastian.sanchez@fullmetalproductions.com",
+  "displayName": "Sebastian Sanchez",
+  "primaryEmail": "sebastian.sanchez@fullmetalproductions.com",
+  "aliases": [
+    "s.sanchez@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Development",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2022-07-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP046",
+      "Department": "Development",
+      "Manager": "Alex Thompson"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP029",
+  "upn": "noah.wright@fullmetalproductions.com",
+  "firstName": "Noah",
+  "lastName": "Wright",
+  "displayName": "Noah Wright",
+  "slackUserId": "U7262770333",
+  "slackUsername": "noah.wright",
+  "slackDisplayName": "Noah Wright",
+  "slackEmail": "noah.wright@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-06-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C7698966187",
+      "channelName": "youtube-content",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-06-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 17,
+      "reactionsLastWeek": 15,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-06-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 12,
+      "reactionsLastWeek": 14,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 9,
+    "totalDirectMessages": 7,
+    "messagesSentLastWeek": 16,
+    "reactionsLastWeek": 15,
+    "filesSharedLastWeek": 3,
+    "threadsStartedLastWeek": 0,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

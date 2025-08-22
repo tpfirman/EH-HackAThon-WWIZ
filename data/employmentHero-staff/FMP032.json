@@ -1,0 +1,15 @@
+{
+  "ehsId": "FMP032",
+  "firstName": "Charlotte",
+  "lastName": "Green",
+  "positionTitle": "QA Lead",
+  "team": "QA",
+  "manager": "Alex Thompson",
+  "lengthOfService": "4 years 9 months",
+  "startDate": "2020-11-01",
+  "department": "QA",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

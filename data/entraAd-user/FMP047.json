@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP047",
+  "firstName": "Luna",
+  "lastName": "Morris",
+  "email": "luna.morris@fullmetalproductions.com",
+  "upn": "luna.morris@fullmetalproductions.com",
+  "displayName": "Luna Morris",
+  "jobTitle": "QA Tester",
+  "department": "QA",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 429 396 739",
+  "businessPhones": [
+    "+61 3 9529 4883"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2022-08-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "QA_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

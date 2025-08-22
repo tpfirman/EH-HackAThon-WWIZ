@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP041",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e40",
+  "displayName": "Jackson Turner",
+  "firstName": "Jackson",
+  "lastName": "Turner",
+  "email": "jackson.turner@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 9,
+      "commentsAdded": 2
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 2,
+    "totalPagesModified": 9,
+    "totalCommentsAdded": 2,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 15
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 9,
+      "commentsAdded": 2
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 3,
+    "pagesModifiedLastMonth": 11,
+    "commentsLastMonth": 10
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

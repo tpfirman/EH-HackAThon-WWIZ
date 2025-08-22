@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP031",
+  "upn": "william.hill@fullmetalproductions.com",
+  "firstName": "William",
+  "lastName": "Hill",
+  "displayName": "William Hill",
+  "slackUserId": "U4260617046",
+  "slackUsername": "william.hill",
+  "slackDisplayName": "William Hill",
+  "slackEmail": "william.hill@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-09-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C7764186299",
+      "channelName": "youtube-content",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-09-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 17,
+      "reactionsLastWeek": 15,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-09-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 3,
+      "reactionsLastWeek": 9,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 11,
+    "totalDirectMessages": 5,
+    "messagesSentLastWeek": 39,
+    "reactionsLastWeek": 27,
+    "filesSharedLastWeek": 1,
+    "threadsStartedLastWeek": 0,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "away"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

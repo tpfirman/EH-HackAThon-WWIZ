@@ -1,0 +1,287 @@
+{
+  "spaceKey": "ART",
+  "spaceName": "Art & Animation",
+  "spaceType": "team",
+  "description": "Art style guides, asset libraries, and animation documentation",
+  "homepageTitle": "Art & Animation Home",
+  "articles": [
+    {
+      "pageId": "42945",
+      "title": "Sample Article 1 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Michael Rodriguez",
+      "authorEhsId": "FMP003",
+      "created": "2024-05-18T13:17:00Z",
+      "lastModified": "2025-04-03T13:06:00Z",
+      "wordCount": 1135,
+      "viewCount": 189,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "79610",
+      "title": "Sample Article 2 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Amelia Nelson",
+      "authorEhsId": "FMP036",
+      "created": "2024-06-07T14:00:00Z",
+      "lastModified": "2025-07-02T17:34:00Z",
+      "wordCount": 2376,
+      "viewCount": 191,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "82520",
+      "title": "Sample Article 3 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Zoe Mitchell",
+      "authorEhsId": "FMP020",
+      "created": "2024-08-24T15:59:00Z",
+      "lastModified": "2025-05-18T13:39:00Z",
+      "wordCount": 2339,
+      "viewCount": 40,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "43894",
+      "title": "Sample Article 4 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Amy Davis",
+      "authorEhsId": "FMP011",
+      "created": "2024-01-14T17:22:00Z",
+      "lastModified": "2025-07-19T13:20:00Z",
+      "wordCount": 1674,
+      "viewCount": 109,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "14661",
+      "title": "Sample Article 5 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Chloe Parker",
+      "authorEhsId": "FMP042",
+      "created": "2024-06-13T13:57:00Z",
+      "lastModified": "2025-08-20T11:21:00Z",
+      "wordCount": 1233,
+      "viewCount": 194,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "69395",
+      "title": "Sample Article 6 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Lily Evans",
+      "authorEhsId": "FMP040",
+      "created": "2024-12-12T15:16:00Z",
+      "lastModified": "2025-03-20T10:11:00Z",
+      "wordCount": 1387,
+      "viewCount": 143,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "79334",
+      "title": "Sample Article 7 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "David Kim",
+      "authorEhsId": "FMP006",
+      "created": "2024-01-18T13:50:00Z",
+      "lastModified": "2025-06-22T10:32:00Z",
+      "wordCount": 839,
+      "viewCount": 117,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "91059",
+      "title": "Sample Article 8 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Michael Rodriguez",
+      "authorEhsId": "FMP003",
+      "created": "2024-07-13T11:28:00Z",
+      "lastModified": "2025-07-09T13:42:00Z",
+      "wordCount": 2076,
+      "viewCount": 32,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "88596",
+      "title": "Sample Article 9 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Lily Evans",
+      "authorEhsId": "FMP040",
+      "created": "2024-02-20T10:43:00Z",
+      "lastModified": "2025-02-14T11:24:00Z",
+      "wordCount": 1072,
+      "viewCount": 33,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    },
+    {
+      "pageId": "32131",
+      "title": "Sample Article 10 for Art & Animation",
+      "type": "page",
+      "summary": "Documentation related to art & animation processes and procedures.",
+      "author": "Sarah Chen",
+      "authorEhsId": "FMP002",
+      "created": "2024-04-11T13:10:00Z",
+      "lastModified": "2025-03-09T15:55:00Z",
+      "wordCount": 763,
+      "viewCount": 119,
+      "labels": [
+        "documentation",
+        "art"
+      ]
+    }
+  ],
+  "contributors": [
+    {
+      "ehsId": "FMP001",
+      "displayName": "Tim Firman",
+      "role": "administrator",
+      "pagesCreated": 2,
+      "pagesModified": 19,
+      "lastActivity": "2025-08-22T10:57:00Z"
+    },
+    {
+      "ehsId": "FMP002",
+      "displayName": "Sarah Chen",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 22,
+      "lastActivity": "2025-08-21T14:46:00Z"
+    },
+    {
+      "ehsId": "FMP003",
+      "displayName": "Michael Rodriguez",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 13,
+      "lastActivity": "2025-08-22T14:10:00Z"
+    },
+    {
+      "ehsId": "FMP004",
+      "displayName": "Alex Thompson",
+      "role": "administrator",
+      "pagesCreated": 7,
+      "pagesModified": 5,
+      "lastActivity": "2025-08-23T16:38:00Z"
+    },
+    {
+      "ehsId": "FMP005",
+      "displayName": "Emily Johnson",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 11,
+      "lastActivity": "2025-08-23T13:02:00Z"
+    },
+    {
+      "ehsId": "FMP006",
+      "displayName": "David Kim",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 20,
+      "lastActivity": "2025-08-21T13:56:00Z"
+    },
+    {
+      "ehsId": "FMP007",
+      "displayName": "Jessica Williams",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 18,
+      "lastActivity": "2025-08-20T15:49:00Z"
+    },
+    {
+      "ehsId": "FMP008",
+      "displayName": "Ryan O'Connor",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 10,
+      "lastActivity": "2025-08-21T14:15:00Z"
+    },
+    {
+      "ehsId": "FMP009",
+      "displayName": "Lisa Zhang",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 14,
+      "lastActivity": "2025-08-23T16:21:00Z"
+    },
+    {
+      "ehsId": "FMP010",
+      "displayName": "James Brown",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 17,
+      "lastActivity": "2025-08-23T17:32:00Z"
+    },
+    {
+      "ehsId": "FMP011",
+      "displayName": "Amy Davis",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 19,
+      "lastActivity": "2025-08-22T11:17:00Z"
+    },
+    {
+      "ehsId": "FMP012",
+      "displayName": "Mark Wilson",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 24,
+      "lastActivity": "2025-08-21T16:52:00Z"
+    },
+    {
+      "ehsId": "FMP013",
+      "displayName": "Jordan Martinez",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 14,
+      "lastActivity": "2025-08-22T12:28:00Z"
+    }
+  ],
+  "activitySummary": {
+    "totalPages": 28,
+    "totalBlogPosts": 11,
+    "totalComments": 60,
+    "totalAttachments": 35,
+    "averageViewsPerPage": 112,
+    "mostViewedPage": "Sample Article 12 for Art & Animation",
+    "recentlyUpdatedPages": 7,
+    "activeContributors": 13
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

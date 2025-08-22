@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP032",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e31",
+  "displayName": "Charlotte Green",
+  "firstName": "Charlotte",
+  "lastName": "Green",
+  "email": "charlotte.green@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 7,
+      "commentsAdded": 5
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 2,
+    "totalPagesModified": 7,
+    "totalCommentsAdded": 5,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 7
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 7,
+      "commentsAdded": 5
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 3,
+    "pagesModifiedLastMonth": 14,
+    "commentsLastMonth": 7
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

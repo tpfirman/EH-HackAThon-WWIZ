@@ -1,0 +1,50 @@
+{
+  "projectKey": "MCRPG",
+  "projectName": "MC RPG Elements",
+  "projectType": "software",
+  "projectCategory": "Minecraft Mods",
+  "description": "MC RPG Elements - Released",
+  "lead": "Jordan Martinez",
+  "issueTypeScheme": "Game Development Issue Types",
+  "workflowScheme": "Game Development Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "MCRPG-100",
+      "epicName": "Core Gameplay Systems",
+      "statusCounts": {
+        "Done": 27
+      }
+    },
+    {
+      "epicKey": "MCRPG-200",
+      "epicName": "Post-Launch Support",
+      "statusCounts": {
+        "To Do": 3,
+        "In Progress": 0,
+        "Done": 8
+      }
+    }
+  ],
+  "usersAndRoles": [],
+  "projectStats": {
+    "totalIssues": 38,
+    "openIssues": 3,
+    "completedIssues": 35,
+    "totalTimeSpent": "213h 57m",
+    "averageResolutionTime": "7.2 days"
+  },
+  "components": [
+    "Core",
+    "API",
+    "Config"
+  ],
+  "versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP018",
+  "firstName": "Maya",
+  "lastName": "Patel",
+  "email": "maya.patel@fullmetalproductions.com",
+  "upn": "maya.patel@fullmetalproductions.com",
+  "displayName": "Maya Patel",
+  "primaryEmail": "maya.patel@fullmetalproductions.com",
+  "aliases": [
+    "m.patel@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Art & Animation",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-04-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": true,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP018",
+      "Department": "Art & Animation",
+      "Manager": "Sarah Chen"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

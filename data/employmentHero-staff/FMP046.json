@@ -1,0 +1,15 @@
+{
+  "ehsId": "FMP046",
+  "firstName": "Sebastian",
+  "lastName": "Sanchez",
+  "positionTitle": "Developer",
+  "team": "Development",
+  "manager": "Alex Thompson",
+  "lengthOfService": "3 years 1 month",
+  "startDate": "2022-07-01",
+  "department": "Development",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP044",
+  "firstName": "Avery",
+  "lastName": "Edwards",
+  "email": "avery.edwards@fullmetalproductions.com",
+  "upn": "avery.edwards@fullmetalproductions.com",
+  "displayName": "Avery Edwards",
+  "primaryEmail": "avery.edwards@fullmetalproductions.com",
+  "aliases": [
+    "a.edwards@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Operations",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-04-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP044",
+      "Department": "Operations",
+      "Manager": "Mason Collins"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

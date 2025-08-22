@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP021",
+  "firstName": "Nathan",
+  "lastName": "Cooper",
+  "email": "nathan.cooper@fullmetalproductions.com",
+  "upn": "nathan.cooper@fullmetalproductions.com",
+  "displayName": "Nathan Cooper",
+  "primaryEmail": "nathan.cooper@fullmetalproductions.com",
+  "aliases": [
+    "n.cooper@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Art & Animation",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-07-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP021",
+      "Department": "Art & Animation",
+      "Manager": "Maya Patel"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

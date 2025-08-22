@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP004",
+  "firstName": "Alex",
+  "lastName": "Thompson",
+  "email": "alex.thompson@fullmetalproductions.com",
+  "upn": "alex.thompson@fullmetalproductions.com",
+  "displayName": "Alex Thompson",
+  "jobTitle": "Lead Developer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 434 472 890",
+  "businessPhones": [
+    "+61 3 9977 4892"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-04-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

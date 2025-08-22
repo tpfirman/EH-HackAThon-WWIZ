@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP038",
+  "firstName": "Grace",
+  "lastName": "Roberts",
+  "email": "grace.roberts@fullmetalproductions.com",
+  "upn": "grace.roberts@fullmetalproductions.com",
+  "displayName": "Grace Roberts",
+  "primaryEmail": "grace.roberts@fullmetalproductions.com",
+  "aliases": [
+    "g.roberts@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Finance",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-07-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP038",
+      "Department": "Finance",
+      "Manager": "Michael Rodriguez"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

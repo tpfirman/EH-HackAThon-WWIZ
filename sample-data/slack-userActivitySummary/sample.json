@@ -1,0 +1,90 @@
+{
+  "ehsId": "EHS001234",
+  "upn": "john.smith@company.com",
+  "firstName": "John",
+  "lastName": "Smith",
+  "displayName": "John Smith",
+  "slackUserId": "U1234567890",
+  "slackUsername": "john.smith",
+  "slackDisplayName": "John Smith",
+  "slackEmail": "john.smith@company.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Company Workspace",
+      "workspaceDomain": "company.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2022-04-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C1234567890",
+      "channelName": "platform-engineering",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2022-04-20T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 15,
+      "reactionsLastWeek": 12,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "engineering-general", 
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2022-04-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 8,
+      "reactionsLastWeek": 18,
+      "isArchived": false
+    },
+    {
+      "channelId": "C3456789012",
+      "channelName": "random",
+      "channelType": "public", 
+      "membershipType": "member",
+      "joinedDate": "2022-04-15T09:00:00Z",
+      "lastActivity": "2025-08-21T12:15:00Z",
+      "messagesSentLastWeek": 3,
+      "reactionsLastWeek": 7,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 12,
+    "totalDirectMessages": 8,
+    "messagesSentLastWeek": 26,
+    "reactionsLastWeek": 37,
+    "filesSharedLastWeek": 4,
+    "threadsStartedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "active"
+  },
+  "recentActivity": [
+    {
+      "type": "message",
+      "channelName": "platform-engineering",
+      "timestamp": "2025-08-23T08:45:00Z",
+      "action": "sent message"
+    },
+    {
+      "type": "reaction",
+      "channelName": "engineering-general",
+      "timestamp": "2025-08-22T16:30:00Z", 
+      "action": "added reaction"
+    },
+    {
+      "type": "file_share",
+      "channelName": "platform-engineering",
+      "timestamp": "2025-08-22T14:20:00Z",
+      "action": "shared file"
+    }
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}
