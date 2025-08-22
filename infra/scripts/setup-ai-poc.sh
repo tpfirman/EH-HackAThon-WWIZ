@@ -61,7 +61,7 @@ handle_error() {
     local exit_code=$1
     local command="$2"
     local context="$3"
-    
+
     if [ $exit_code -ne 0 ]; then
         log_error "Command failed with exit code $exit_code"
         log_error "Failed command: $command"
@@ -76,14 +76,14 @@ docker_compose() {
     local operation="$1"
     shift
     local args="$@"
-    
+
     log_step "Executing Docker Compose operation: $operation $args"
-    
+
     # Try docker compose first (v2)
     if docker compose version &> /dev/null 2>&1; then
         local cmd="docker compose $operation $args"
         log "Using Docker Compose v2: $cmd"
-        
+
         if ! eval "$cmd" 2>&1 | tee -a "$SETUP_LOG"; then
             local exit_code=${PIPESTATUS[0]}
             handle_error $exit_code "$cmd" "Docker Compose v2 operation"
@@ -91,12 +91,12 @@ docker_compose() {
         fi
         log_success "Docker Compose v2 operation completed successfully"
         return 0
-        
+
     # Fallback to docker-compose (v1)
     elif command -v docker-compose &> /dev/null; then
         local cmd="docker-compose $operation $args"
         log "Using Docker Compose v1: $cmd"
-        
+
         if ! eval "$cmd" 2>&1 | tee -a "$SETUP_LOG"; then
             local exit_code=${PIPESTATUS[0]}
             handle_error $exit_code "$cmd" "Docker Compose v1 operation"
@@ -114,10 +114,10 @@ docker_compose() {
 safe_docker() {
     local cmd="$@"
     log_step "Executing Docker command: $cmd"
-    
+
     local output
     local exit_code
-    
+
     # Capture both stdout and stderr
     if output=$(eval "$cmd" 2>&1); then
         exit_code=0
@@ -137,7 +137,7 @@ safe_docker() {
 # Check if already fully set up
 if [ -f "$SETUP_LOCK" ] && [ "$(cat $SETUP_LOCK)" = "COMPLETE" ]; then
     log_step "Setup already completed. Checking services..."
-    
+
     # Quick health check of services with error handling
     if command -v docker &> /dev/null && systemctl is-active --quiet docker && systemctl is-active --quiet nginx; then
         if docker ps --filter name=anythingllm --quiet &> /dev/null; then
@@ -219,15 +219,15 @@ if ! docker compose version &> /dev/null; then
     DOCKER_COMPOSE_VERSION="v2.21.0"
     curl -fsSL "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-linux-x86_64" -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
-    
+
     # Create Docker CLI plugin directory and symlink
     mkdir -p /usr/local/lib/docker/cli-plugins
     ln -sf /usr/local/bin/docker-compose /usr/local/lib/docker/cli-plugins/docker-compose
-    
+
     # Also create it for ec2-user
     sudo -u ec2-user mkdir -p /home/ec2-user/.docker/cli-plugins
     ln -sf /usr/local/bin/docker-compose /home/ec2-user/.docker/cli-plugins/docker-compose
-    
+
     log_success "Docker Compose installed"
 else
     log "Docker Compose already available"
@@ -430,11 +430,11 @@ sleep 30
 # Runtime Docker permission verification
 runtime_docker_check() {
     log_step "Performing runtime Docker permission check..."
-    
+
     # Test Docker access as ec2-user with simplified approach
     local docker_test_output
     local exit_code
-    
+
     # Try direct Docker access first
     if docker_test_output=$(sudo -u ec2-user docker ps -q --no-trunc 2>&1); then
         exit_code=0
@@ -445,7 +445,7 @@ runtime_docker_check() {
         log_warning "Runtime Docker permission check encountered issues:"
         log_warning "Output: $docker_test_output"
         log_warning "This may indicate group membership needs refresh, but containers should still start via sudo"
-        
+
         # Additional check: can we run Docker with sudo?
         if sudo -u ec2-user docker version &> /dev/null; then
             log_success "Fallback check passed - Docker accessible via sudo for ec2-user"
@@ -525,7 +525,7 @@ http {
             proxy_http_version 1.1;
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "upgrade";
-            
+
             # Handle all HTTP methods including POST
             proxy_method $request_method;
             client_max_body_size 100M;
@@ -593,23 +593,23 @@ log_success "Nginx restarted successfully"
 # Final status check and Docker permission verification
 final_verification() {
     log_step "Performing final status and permission verification..."
-    
+
     # Service status checks
     local docker_status=$(systemctl is-active docker 2>/dev/null || echo "inactive")
     local nginx_status=$(systemctl is-active nginx 2>/dev/null || echo "inactive")
-    
+
     log "Docker service status: $docker_status"
     log "Nginx service status: $nginx_status"
-    
+
     # Container status check
     local container_count=0
     local running_containers=""
-    
+
     if [ "$docker_status" = "active" ]; then
         # Check containers as ec2-user
         running_containers=$(sudo -u ec2-user docker ps --format "table {{.Names}}\t{{.Status}}" 2>/dev/null || echo "Permission denied")
         container_count=$(sudo -u ec2-user docker ps -q 2>/dev/null | wc -l || echo "0")
-        
+
         log "Running containers ($container_count):"
         if [ "$running_containers" != "Permission denied" ] && [ -n "$running_containers" ]; then
             echo "$running_containers" | tee -a "$SETUP_LOG"
@@ -619,22 +619,22 @@ final_verification() {
             local root_containers=$(docker ps --format "table {{.Names}}\t{{.Status}}" 2>/dev/null || echo "No containers")
             log "Container status (root view): $root_containers"
         fi
-        
+
         # Check if AnythingLLM container is running
         local anythingllm_status=""
         anythingllm_status=$(sudo -u ec2-user docker ps --filter "name=anythingllm" --format "{{.Status}}" 2>/dev/null || echo "Not found")
         log "AnythingLLM container status: $anythingllm_status"
-        
+
         # Docker group membership final check
         local docker_groups=$(groups ec2-user 2>/dev/null || echo "unknown")
         log "ec2-user group memberships: $docker_groups"
-        
+
         if echo "$docker_groups" | grep -q docker; then
             log "✓ ec2-user is properly added to docker group"
         else
             log_warning "✗ ec2-user docker group membership verification failed"
         fi
-        
+
         # Docker socket permissions
         local socket_perms=$(stat -c "%a" /var/run/docker.sock 2>/dev/null || echo "unknown")
         local socket_group=$(stat -c "%G" /var/run/docker.sock 2>/dev/null || echo "unknown")
@@ -642,7 +642,7 @@ final_verification() {
     else
         log_error "Docker service is not active - container verification skipped"
     fi
-    
+
     # Health endpoint test
     log "Testing health endpoint..."
     local health_response=""
@@ -652,7 +652,7 @@ final_verification() {
     else
         log_warning "✗ Health endpoint not responding (HTTP: $health_response)"
     fi
-    
+
     return 0
 }
 
