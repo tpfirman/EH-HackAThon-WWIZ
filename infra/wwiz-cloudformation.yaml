@@ -1,0 +1,882 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  AI POC Template: VPC → ALB+WAF → EC2 (Spot/Burstable) → Bedrock
+  + CloudWatch Logs 
+
+Parameters:
+  VpcCidr:
+    Type: String
+    Default: 10.0.0.0/16
+
+  AllowedCIDR:
+    Type: String
+    Default: 0.0.0.0/0
+    Description: IP range allowed to access the application (recommend restricting to your IP for security)
+
+  UseSpotInstances:
+    Type: String
+    Default: 'true'
+    AllowedValues: ['true', 'false']
+    Description: Use Spot instances for 70% cost savings (recommended for POCs)
+
+  ProjectCleanupDate:
+    Type: String
+    Default: '2025-12-31'
+    Description: Resource cleanup date (YYYY-MM-DD) - for resource management
+
+  AnythingLLMMemoryPercent:
+    Type: Number
+    Default: 70
+    MinValue: 30
+    MaxValue: 90
+    Description: Percentage of total instance memory to allocate to AnythingLLM (adjusts automatically with instance size)
+
+  PublicSubnet1Cidr:
+    Type: String
+    Default: 10.0.1.0/24
+
+  InstanceType:
+    Type: String
+    Default: t3.micro
+    AllowedValues:
+      - t3.nano
+      - t3.micro
+      - t3.small
+      - t3.medium
+      - t3a.nano
+      - t3a.micro
+      - t3a.small
+    Description: Instance type (t3.micro free tier, t3a.* for better price/performance)
+
+  InstanceVolumeSize:
+    Type: Number
+    Default: 10
+    MinValue: 8
+    MaxValue: 30
+    Description: Root EBS gp3 volume size (GiB) - can expand if needed
+
+  AnythingLLMEnvironment:
+    Type: CommaDelimitedList
+    Default: "NODE_ENV=production,DISABLE_TELEMETRY=true"
+    Description: Environment variables for AnythingLLM container (comma-separated)
+
+  CertificateArn:
+    Type: String
+    Description: ACM ARN for your HTTPS domain (e.g. poc.example.com)
+    Default: ""
+
+  AmiId:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+
+Mappings:
+  # Instance memory mapping for percentage-based allocation
+  InstanceMemory:
+    t3.nano:
+      TotalMemoryMB: 512
+    t3.micro:
+      TotalMemoryMB: 1024
+    t3.small:
+      TotalMemoryMB: 2048
+    t3.medium:
+      TotalMemoryMB: 4096
+    t3a.nano:
+      TotalMemoryMB: 512
+    t3a.micro:
+      TotalMemoryMB: 1024
+    t3a.small:
+      TotalMemoryMB: 2048
+  
+  # Australian region optimization
+  RegionConfig:
+    ap-southeast-2:  # Sydney
+      RegionName: "Sydney"
+      CostOptimized: true
+    ap-southeast-4:  # Melbourne
+      RegionName: "Melbourne" 
+      CostOptimized: true
+    us-east-1:
+      RegionName: "N.Virginia"
+      CostOptimized: false
+    us-west-2:
+      RegionName: "Oregon"
+      CostOptimized: false
+
+Conditions:
+  HasCertificate: !Not [!Equals [!Ref CertificateArn, ""]]
+  UseSpot: !Equals [!Ref UseSpotInstances, 'true']
+  RestrictAccess: !Not [!Equals [!Ref AllowedCIDR, '0.0.0.0/0']]
+  IsAustralianRegion: !Or [!Equals [!Ref "AWS::Region", "ap-southeast-2"], !Equals [!Ref "AWS::Region", "ap-southeast-4"]]
+  UseOnDemand: !Not [!Equals [!Ref UseSpotInstances, 'true']]
+  NoCertificate: !Equals [!Ref CertificateArn, ""]
+
+Resources:
+
+  ### VPC & Networking ###
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCidr
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-vpc"
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-igw"
+
+  VPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    DependsOn:
+      - VPC
+      - InternetGateway
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
+
+  SubnetPublicA:
+    Type: AWS::EC2::Subnet
+    DependsOn: VPC
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref PublicSubnet1Cidr
+      AvailabilityZone: !Select [0, !GetAZs '']
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-pub-a"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  RouteTablePublic:
+    Type: AWS::EC2::RouteTable
+    DependsOn: VPC
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-rt-public"
+
+  RouteInternet:
+    Type: AWS::EC2::Route
+    DependsOn:
+      - RouteTablePublic
+      - VPCGatewayAttachment
+    Properties:
+      RouteTableId: !Ref RouteTablePublic
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  PubARouteTableAssoc:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    DependsOn:
+      - SubnetPublicA
+      - RouteTablePublic
+    Properties:
+      SubnetId: !Ref SubnetPublicA
+      RouteTableId: !Ref RouteTablePublic
+
+  ### Security Groups ###
+  SGALB:
+    Type: AWS::EC2::SecurityGroup
+    DependsOn: VPC
+    Properties:
+      GroupDescription: ALB security group (AI POC cost-optimized)
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - !If [HasCertificate, {IpProtocol: tcp, FromPort: 443, ToPort: 443, CidrIp: !Ref AllowedCIDR, Description: "HTTPS access"}, {IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: !Ref AllowedCIDR, Description: "HTTP access"}]
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-alb-sg"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  SGEC2:
+    Type: AWS::EC2::SecurityGroup
+    DependsOn:
+      - VPC
+      - SGALB
+    Properties:
+      GroupDescription: EC2 allows ALB traffic and Session Manager (AI POC optimized)
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          SourceSecurityGroupId: !Ref SGALB
+          Description: Health check from ALB
+        - IpProtocol: tcp
+          FromPort: 3001
+          ToPort: 3001
+          SourceSecurityGroupId: !Ref SGALB
+          Description: AnythingLLM from ALB
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-ec2-sg"  
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  ### IAM Role & InstanceProfile ###
+  EC2Role:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: BedrockCloudWatchStreamlined
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - bedrock:InvokeModel
+                  - bedrock:InvokeModelWithResponseStream
+                  - bedrock:ListModels
+                  - bedrock:GetFoundationModel
+                  - bedrock:ListFoundationModels
+                  - bedrock:GetModel
+                  - bedrock:ListCustomModels
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/ai-poc/*'
+              - Effect: Allow
+                Action:
+                  - ssm:UpdateInstanceInformation
+                  - ssm:SendCommand
+                  - ssmmessages:CreateControlChannel
+                  - ssmmessages:CreateDataChannel
+                  - ssmmessages:OpenControlChannel
+                  - ssmmessages:OpenDataChannel
+                  - ec2messages:GetEndpoint
+                  - ec2messages:AcknowledgeMessage
+                  - ec2messages:DeleteMessage
+                  - ec2messages:FailMessage
+                  - ec2messages:GetMessages
+                  - ec2messages:SendReply
+                Resource: '*'
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-ec2-role"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  EC2InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    DependsOn: EC2Role
+    Properties:
+      Roles: [ !Ref EC2Role ]
+
+  ### EC2 Instance (Spot-enabled for cost savings) ###
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    DependsOn:
+      - SGEC2
+      - EC2InstanceProfile
+    Properties:
+      LaunchTemplateName: !Sub "${AWS::StackName}-ai-poc-template"
+      LaunchTemplateData:
+        InstanceType: !Ref InstanceType
+        ImageId: !Ref AmiId
+        SecurityGroupIds:
+          - !Ref SGEC2
+        IamInstanceProfile:
+          Arn: !GetAtt EC2InstanceProfile.Arn
+        BlockDeviceMappings:
+          - DeviceName: /dev/xvda
+            Ebs:
+              VolumeSize: !Ref InstanceVolumeSize
+              VolumeType: gp3
+              DeleteOnTermination: true
+        UserData:
+          Fn::Base64: !Join
+            - ""
+            - - "#!/bin/bash\n"
+              - "export CF_MEMORY_PERCENT="
+              - !Ref AnythingLLMMemoryPercent
+              - "\n"
+              - "export CF_ENV_VARS='"
+              - !Join [",", !Ref AnythingLLMEnvironment]
+              - "'\n"
+              - "export CF_REGION_NAME='"
+              - !FindInMap [RegionConfig, !Ref "AWS::Region", RegionName]
+              - "'\n"
+              - "export CF_USE_SPOT='"
+              - !Ref UseSpotInstances
+              - "'\n"
+              - "export CF_CLEANUP_DATE='"
+              - !Ref ProjectCleanupDate
+              - "'\n"
+              - "export CF_STACK_NAME='"
+              - !Ref "AWS::StackName"
+              - "'\n"
+              - "export CF_AWS_REGION='"
+              - !Ref "AWS::Region"
+              - "'\n"
+              - |
+                yum update -y
+                
+                # Install essential packages including curl for health checks
+                yum install -y curl
+                
+                # Install Docker from Amazon Linux Extras
+                amazon-linux-extras install docker -y
+                systemctl start docker
+                systemctl enable docker
+                usermod -a -G docker ec2-user
+                
+                # Install nginx from Amazon Linux Extras
+                amazon-linux-extras install nginx1 -y
+                
+                # Install OpenSSL 1.1 from Amazon Linux Extras (resolves urllib3 compatibility)
+                amazon-linux-extras install openssl11 -y
+                
+                # Install Docker Compose
+                curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+                chmod +x /usr/local/bin/docker-compose
+                
+                # Calculate memory allocation based on percentage
+                TOTAL_MEMORY_KB=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+                TOTAL_MEMORY_MB=$((TOTAL_MEMORY_KB / 1024))
+                ANYTHINGLLM_MEMORY_MB=$((TOTAL_MEMORY_MB * CF_MEMORY_PERCENT / 100))
+                ANYTHINGLLM_MEMORY_RESERVATION_MB=$((ANYTHINGLLM_MEMORY_MB * 60 / 100))
+                
+                echo "Instance Memory: ${TOTAL_MEMORY_MB}MB, AnythingLLM Allocation: ${ANYTHINGLLM_MEMORY_MB}MB (${CF_MEMORY_PERCENT}%)" > /var/log/memory-allocation.log
+                
+                # Basic CloudWatch logging setup (minimal for POC)
+                yum install -y awslogs
+                cat << 'EOF' > /etc/awslogs/awslogs.conf
+                [general]
+                state_file = /var/lib/awslogs/agent-state
+                
+                [/var/log/messages]
+                file = /var/log/messages
+              - "log_group_name = /ai-poc/"
+              - !Ref "AWS::StackName"
+              - |
+                /system
+                log_stream_name = {instance_id}
+                datetime_format = %b %d %H:%M:%S
+                
+                [/var/log/anythingllm.log]
+                file = /home/ec2-user/anythingllm/logs/server.log
+              - "log_group_name = /ai-poc/"
+              - !Ref "AWS::StackName"
+              - |
+                /anythingllm
+                log_stream_name = {instance_id}
+                datetime_format = %Y-%m-%d %H:%M:%S
+                EOF
+                
+                # Set region for CloudWatch logs
+              - "sed -i 's/region = us-east-1/region = "
+              - !Ref "AWS::Region"
+              - |
+                /' /etc/awslogs/awscli.conf
+                systemctl start awslogsd
+                systemctl enable awslogsd
+                
+                # Create AnythingLLM setup script with dynamic memory allocation
+                cat << 'EOF' > /home/ec2-user/setup-anythingllm.sh
+                #!/bin/bash
+                
+                # Create docker-compose.yml for AnythingLLM with dynamic memory
+                mkdir -p /home/ec2-user/anythingllm/{logs,storage}
+                cd /home/ec2-user/anythingllm
+                
+                # Convert comma-separated env vars to Docker format
+                ENV_VARS="$CF_ENV_VARS"
+                DOCKER_ENV=""
+                IFS=',' read -ra ADDR <<< "$ENV_VARS"
+                for i in "${ADDR[@]}"; do
+                  DOCKER_ENV="$DOCKER_ENV\n                - \"$i\""
+                done
+                
+                cat << DOCKER_COMPOSE_EOF > docker-compose.yml
+                version: '3.8'
+                services:
+                  anythingllm:
+                    image: mintplexlabs/anythingllm:latest
+                    container_name: anythingllm
+                    ports:
+                      - "3001:3001"
+                    volumes:
+                      - ./storage:/app/server/storage
+                      - ./logs:/app/server/logs
+                    environment:$(echo -e "$DOCKER_ENV")
+                      - STORAGE_DIR=/app/server/storage
+                      - LOG_LEVEL=info
+                    restart: unless-stopped
+                    deploy:
+                      resources:
+                        limits:
+                          memory: ${ANYTHINGLLM_MEMORY_MB}M
+                        reservations:
+                          memory: ${ANYTHINGLLM_MEMORY_RESERVATION_MB}M
+                    logging:
+                      driver: "json-file"
+                      options:
+                        max-size: "100m"
+                        max-file: "3"
+                
+                volumes:
+                  anythingllm_storage:
+                  anythingllm_logs:
+                DOCKER_COMPOSE_EOF
+                
+                # Set correct ownership
+                chown -R ec2-user:ec2-user /home/ec2-user/anythingllm
+                
+                # Start AnythingLLM
+                sudo -u ec2-user docker-compose up -d
+                
+                echo "AnythingLLM starting with ${ANYTHINGLLM_MEMORY_MB}MB memory allocation"
+                echo "AI POC setup complete! Available 24/7 for testing and evaluation."
+                echo "Region: $CF_REGION_NAME | Spot Instance: $CF_USE_SPOT"
+                EOF
+                
+                chmod +x /home/ec2-user/setup-anythingllm.sh
+                
+                # Run the setup (with some delay to ensure Docker is ready)
+                sleep 30
+                /home/ec2-user/setup-anythingllm.sh
+                
+                # Create nginx configuration for proxy and health checks
+                cat << 'NGINXCONF' > /etc/nginx/nginx.conf
+                user nginx;
+                worker_processes auto;
+                error_log /var/log/nginx/error.log;
+                pid /run/nginx.pid;
+                
+                events {
+                    worker_connections 1024;
+                }
+                
+                http {
+                    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+                                    '$status $body_bytes_sent "$http_referer" '
+                                    '"$http_user_agent" "$http_x_forwarded_for"';
+                
+                    access_log /var/log/nginx/access.log main;
+                
+                    sendfile on;
+                    tcp_nopush on;
+                    tcp_nodelay on;
+                    keepalive_timeout 65;
+                    types_hash_max_size 2048;
+                
+                    include /etc/nginx/mime.types;
+                    default_type application/octet-stream;
+                
+                    server {
+                        listen 80;
+                        server_name _;
+                
+                        # Health check endpoint
+                        location /health {
+                            access_log off;
+                            return 200 '{"status":"healthy","anythingllm":"running","ai_poc_mode":true,"region":"'
+              - '                        "memory_allocated_percent": "'
+              - !FindInMap [RegionConfig, !Ref "AWS::Region", RegionName]
+              - |
+                ","spot_instance":"'
+              - !Ref UseSpotInstances
+              - |
+                ","cleanup_date":"'
+              - !Ref ProjectCleanupDate
+              - |
+                "}';
+                            add_header Content-Type application/json;
+                        }
+                
+                        # Proxy all other requests to AnythingLLM
+                        location / {
+                            proxy_pass http://localhost:3001;
+                            proxy_set_header Host $host;
+                            proxy_set_header X-Real-IP $remote_addr;
+                            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                            proxy_set_header X-Forwarded-Proto $scheme;
+                            proxy_buffering off;
+                            proxy_request_buffering off;
+                            proxy_http_version 1.1;
+                            proxy_set_header Upgrade $http_upgrade;
+                            proxy_set_header Connection "upgrade";
+                            
+                            # Handle all HTTP methods including POST
+                            proxy_method $request_method;
+                            client_max_body_size 100M;
+                            proxy_read_timeout 300s;
+                            proxy_connect_timeout 75s;
+                        }
+                    }
+                }
+                NGINXCONF
+                
+                # Set correct SELinux context for nginx (if SELinux is enabled)
+                setsebool -P httpd_can_network_connect 1 2>/dev/null || true
+                
+                # Start and enable nginx
+                systemctl enable nginx
+                systemctl start nginx
+                
+                # Wait for AnythingLLM to be ready before starting nginx
+                echo "Waiting for AnythingLLM to be ready..."
+                for i in {1..30}; do
+                    if curl -f http://localhost:3001 >/dev/null 2>&1; then
+                        echo "AnythingLLM is ready!"
+                        break
+                    fi
+                    echo "Waiting... ($i/30)"
+                    sleep 10
+                done
+                
+                # Restart nginx to ensure it's working with AnythingLLM
+                systemctl restart nginx
+                
+                # Signal CloudFormation that setup is complete
+              - "/opt/aws/bin/cfn-signal -e $? --stack "
+              - !Ref "AWS::StackName"
+              - " --resource EC2Instance --region "
+              - !Ref "AWS::Region"
+              - "\n"
+        TagSpecifications:
+          - ResourceType: instance
+            Tags:
+              - Key: Name
+                Value: !Sub "${AWS::StackName}-ai-poc-ec2"
+              - Key: Project
+                Value: "AI-POC"
+              - Key: CleanupDate
+                Value: !Ref ProjectCleanupDate
+              - Key: Purpose
+                Value: "AI POC - Available 24/7"
+              - Key: Region
+                Value: !FindInMap [RegionConfig, !Ref "AWS::Region", RegionName]
+          - ResourceType: volume
+            Tags:
+              - Key: Name
+                Value: !Sub "${AWS::StackName}-ai-poc-volume"
+              - Key: Project
+                Value: "AI-POC"
+              - Key: CleanupDate
+                Value: !Ref ProjectCleanupDate
+
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Condition: UseOnDemand
+    DependsOn:
+      - LaunchTemplate
+      - SubnetPublicA
+    Properties:
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      SubnetId: !Ref SubnetPublicA
+    CreationPolicy:
+      ResourceSignal:
+        Count: 1
+        Timeout: PT15M
+
+  SpotFleetRequest:
+    Type: AWS::EC2::SpotFleet
+    Condition: UseSpot
+    DependsOn:
+      - LaunchTemplate
+      - SpotFleetRole
+      - SubnetPublicA
+    Properties:
+      SpotFleetRequestConfigData:
+        IamFleetRole: !GetAtt SpotFleetRole.Arn
+        AllocationStrategy: lowestPrice
+        TargetCapacity: 1
+        SpotPrice: '0.05'
+        LaunchTemplateConfigs:
+          - LaunchTemplateSpecification:
+              LaunchTemplateId: !Ref LaunchTemplate
+              Version: !GetAtt LaunchTemplate.LatestVersionNumber
+            Overrides:
+              - InstanceType: !Ref InstanceType
+                SubnetId: !Ref SubnetPublicA
+
+  SpotFleetRole:
+    Type: AWS::IAM::Role
+    Condition: UseSpot
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: spotfleet.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2SpotFleetTaggingRole
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-spot-fleet-role"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  ### Load Balancer & Target Group (Single AZ for cost savings) ###
+  ALB:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    DependsOn:
+      - SubnetPublicA
+      - SubnetPublicB
+      - SGALB
+    Properties:
+      Name: !Sub "${AWS::StackName}-ai-poc-alb"
+      Subnets:
+        - !Ref SubnetPublicA
+        - !Ref SubnetPublicB
+      SecurityGroups:
+        - !Ref SGALB
+      Scheme: internet-facing
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-alb"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  # Minimal second subnet required for ALB (cost-optimized)
+  SubnetPublicB:
+    Type: AWS::EC2::Subnet
+    DependsOn: VPC
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.2.0/28  # Very small subnet to minimize costs
+      AvailabilityZone: !Select [1, !GetAZs '']
+      MapPublicIpOnLaunch: false  # No public IPs needed
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-pub-b-minimal"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  PubBRouteTableAssoc:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    DependsOn:
+      - SubnetPublicB
+      - RouteTablePublic
+    Properties:
+      SubnetId: !Ref SubnetPublicB
+      RouteTableId: !Ref RouteTablePublic
+
+  TargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    DependsOn: VPC
+    Properties:
+      Name: !Sub "${AWS::StackName}-ai-poc-tg"
+      VpcId: !Ref VPC
+      Protocol: HTTP
+      Port: 80
+      TargetType: instance
+      Targets:
+        - !If [UseSpot, !Ref "AWS::NoValue", {Id: !Ref EC2Instance}]
+      HealthCheckProtocol: HTTP
+      HealthCheckPath: /health
+      HealthCheckIntervalSeconds: 60  # Longer intervals for cost savings
+      HealthCheckTimeoutSeconds: 10
+      HealthyThresholdCount: 2
+      UnhealthyThresholdCount: 5  # More tolerant for spot instances
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-target-group"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  ListenerHTTPS:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Condition: HasCertificate
+    DependsOn:
+      - ALB
+      - TargetGroup
+    Properties:
+      LoadBalancerArn: !Ref ALB
+      Port: 443
+      Protocol: HTTPS
+      Certificates:
+        - CertificateArn: !Ref CertificateArn
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup
+
+  ListenerHTTP:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Condition: HasCertificate
+    DependsOn: ALB
+    Properties:
+      LoadBalancerArn: !Ref ALB
+      Port: 80
+      Protocol: HTTP
+      DefaultActions:
+        - Type: redirect
+          RedirectConfig:
+            Protocol: HTTPS
+            Port: 443
+            StatusCode: HTTP_301
+
+  ListenerHTTPOnly:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Condition: NoCertificate
+    DependsOn:
+      - ALB
+      - TargetGroup
+    Properties:
+      LoadBalancerArn: !Ref ALB
+      Port: 80
+      Protocol: HTTP
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup
+
+  ### AWS WAF ###
+  WebACL:
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      Name: !Sub "${AWS::StackName}-waf"
+      Scope: REGIONAL
+      DefaultAction:
+        Allow: {}
+      VisibilityConfig:
+        SampledRequestsEnabled: true
+        CloudWatchMetricsEnabled: true
+        MetricName: "AIStackWebACL"
+      Rules:
+        - Name: AWSManagedCommon
+          Priority: 0
+          Statement:
+            ManagedRuleGroupStatement:
+              VendorName: AWS
+              Name: AWSManagedRulesCommonRuleSet
+          OverrideAction: { None: {} }
+          VisibilityConfig:
+            SampledRequestsEnabled: true
+            CloudWatchMetricsEnabled: true
+            MetricName: "AWSManagedCommonRules"
+        - Name: AWSManagedSQLi
+          Priority: 1
+          Statement:
+            ManagedRuleGroupStatement:
+              VendorName: AWS
+              Name: AWSManagedRulesSQLiRuleSet
+          OverrideAction: { None: {} }
+          VisibilityConfig:
+            SampledRequestsEnabled: true
+            CloudWatchMetricsEnabled: true
+            MetricName: "AWSManagedSQLiRules"
+        - Name: AWSManagedKnownBadInputs
+          Priority: 2
+          Statement:
+            ManagedRuleGroupStatement:
+              VendorName: AWS
+              Name: AWSManagedRulesKnownBadInputsRuleSet
+          OverrideAction: { None: {} }
+          VisibilityConfig:
+            SampledRequestsEnabled: true
+            CloudWatchMetricsEnabled: true
+            MetricName: "AWSManagedKnownBadInputsRules"
+
+  WAFAssociation:
+    Type: AWS::WAFv2::WebACLAssociation
+    DependsOn:
+      - ALB
+      - WebACL
+    Properties:
+      ResourceArn: !Ref ALB
+      WebACLArn: !GetAtt WebACL.Arn
+
+  ### Essential CloudWatch Log Groups (POC-level monitoring) ###
+  SystemLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/ai-poc/${AWS::StackName}/system'
+      RetentionInDays: 7  # Short retention for POC
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-system-logs"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+  AnythingLLMLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/ai-poc/${AWS::StackName}/anythingllm'
+      RetentionInDays: 7  # Short retention for POC
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-anythingllm-logs"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
+Outputs:
+  LoadBalancerDNS:
+    Description: "ALB DNS name (point your domain here)"
+    Value: !GetAtt ALB.DNSName
+
+  LoadBalancerURL:
+    Description: "Direct URL to access your AI agent"
+    Value: !Sub ["${Protocol}://${DNS}", {Protocol: !If [HasCertificate, "https", "http"], DNS: !GetAtt ALB.DNSName}]
+
+  InstanceInfo:
+    Description: "Instance deployment type and cost savings"
+    Value: !If [UseSpot, !Sub "Spot Fleet up to 70% cost savings Target: ${InstanceType}", !Sub "OnDemand Instance: ${EC2Instance} ${InstanceType}"]
+
+  MemoryAllocation:
+    Description: "AnythingLLM memory configuration"
+    Value: !Sub ["${MemoryPercent}% of instance memory (${ExpectedMemory}MB on ${InstanceType})", {MemoryPercent: !Ref AnythingLLMMemoryPercent, ExpectedMemory: !FindInMap [InstanceMemory, !Ref InstanceType, TotalMemoryMB]}]
+
+  RegionOptimization:
+    Description: "Australian region deployment status"
+    Value: !Sub ["Deployed in ${RegionName} | AU Optimized: ${IsOptimized}", {RegionName: !FindInMap [RegionConfig, !Ref "AWS::Region", RegionName], IsOptimized: !If [IsAustralianRegion, "Yes", "No (consider AU regions)"]}]
+
+  SSMSessionManagerURL:
+    Description: "Connect to EC2 via Session Manager (no SSH key needed)"
+    Value: !Sub "https://console.aws.amazon.com/systems-manager/session-manager/sessions?region=${AWS::Region}"
+
+  CloudWatchLogs:
+    Description: "Basic CloudWatch logging (POC level)"
+    Value: !Sub "System: ${SystemLogGroup} | AnythingLLM: ${AnythingLLMLogGroup} | Retention: 7 days"
+
+  AIPOCSetup:
+    Description: "AI POC configuration summary"
+    Value: !Sub ["AI POC ready 24/7! Region: ${RegionName} | Memory: ${MemoryPercent}% | Cleanup date: ${ProjectCleanupDate} | WAF: Enabled | Bedrock: Ready", {RegionName: !FindInMap [RegionConfig, !Ref "AWS::Region", RegionName], MemoryPercent: !Ref AnythingLLMMemoryPercent}]

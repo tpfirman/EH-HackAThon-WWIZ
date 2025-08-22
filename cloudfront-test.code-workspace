@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "cloudflare-template",
+			"path": "../cloudflare-template"
+		}
+	],
+	"settings": {}
+}
