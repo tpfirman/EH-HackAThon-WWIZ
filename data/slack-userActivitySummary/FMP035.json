@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP035",
+  "upn": "logan.gonzalez@fullmetalproductions.com",
+  "firstName": "Logan",
+  "lastName": "Gonzalez",
+  "displayName": "Logan Gonzalez",
+  "slackUserId": "U3414183460",
+  "slackUsername": "logan.gonzalez",
+  "slackDisplayName": "Logan Gonzalez",
+  "slackEmail": "logan.gonzalez@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2022-04-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C6392732548",
+      "channelName": "qa",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2022-04-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 20,
+      "reactionsLastWeek": 4,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2022-04-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 8,
+      "reactionsLastWeek": 5,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 13,
+    "totalDirectMessages": 8,
+    "messagesSentLastWeek": 28,
+    "reactionsLastWeek": 45,
+    "filesSharedLastWeek": 2,
+    "threadsStartedLastWeek": 1,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

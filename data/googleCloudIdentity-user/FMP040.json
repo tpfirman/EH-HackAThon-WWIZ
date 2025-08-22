@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP040",
+  "firstName": "Lily",
+  "lastName": "Evans",
+  "email": "lily.evans@fullmetalproductions.com",
+  "upn": "lily.evans@fullmetalproductions.com",
+  "displayName": "Lily Evans",
+  "primaryEmail": "lily.evans@fullmetalproductions.com",
+  "aliases": [
+    "l.evans@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Marketing",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-08-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP040",
+      "Department": "Marketing",
+      "Manager": "Sarah Chen"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

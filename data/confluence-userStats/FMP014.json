@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP014",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e13",
+  "displayName": "Samantha Lee",
+  "firstName": "Samantha",
+  "lastName": "Lee",
+  "email": "samantha.lee@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 16,
+      "pagesModified": 26,
+      "commentsAdded": 30
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 9,
+      "pagesModified": 25,
+      "commentsAdded": 7
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 25,
+    "totalPagesModified": 51,
+    "totalCommentsAdded": 37,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 13
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 16,
+      "pagesModified": 26,
+      "commentsAdded": 30
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 9,
+      "pagesModified": 25,
+      "commentsAdded": 7
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 15,
+    "commentsLastMonth": 3
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP005",
+  "firstName": "Emily",
+  "lastName": "Johnson",
+  "email": "emily.johnson@fullmetalproductions.com",
+  "upn": "emily.johnson@fullmetalproductions.com",
+  "displayName": "Emily Johnson",
+  "primaryEmail": "emily.johnson@fullmetalproductions.com",
+  "aliases": [
+    "e.johnson@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Development",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-06-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP005",
+      "Department": "Development",
+      "Manager": "Alex Thompson"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

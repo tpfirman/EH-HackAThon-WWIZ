@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP034",
+  "upn": "harper.baker@fullmetalproductions.com",
+  "firstName": "Harper",
+  "lastName": "Baker",
+  "displayName": "Harper Baker",
+  "slackUserId": "U4795479301",
+  "slackUsername": "harper.baker",
+  "slackDisplayName": "Harper Baker",
+  "slackEmail": "harper.baker@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-08-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C3703151572",
+      "channelName": "qa",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-08-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 15,
+      "reactionsLastWeek": 5,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-08-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 4,
+      "reactionsLastWeek": 16,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 8,
+    "totalDirectMessages": 11,
+    "messagesSentLastWeek": 40,
+    "reactionsLastWeek": 24,
+    "filesSharedLastWeek": 2,
+    "threadsStartedLastWeek": 1,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

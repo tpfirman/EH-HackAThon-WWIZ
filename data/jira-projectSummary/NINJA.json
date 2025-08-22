@@ -1,0 +1,52 @@
+{
+  "projectKey": "NINJA",
+  "projectName": "Shadow Ninja Chronicles",
+  "projectType": "software",
+  "projectCategory": "Game Development",
+  "description": "Shadow Ninja Chronicles - Released",
+  "lead": "Jordan Martinez",
+  "issueTypeScheme": "Game Development Issue Types",
+  "workflowScheme": "Game Development Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "NINJA-100",
+      "epicName": "Core Gameplay Systems",
+      "statusCounts": {
+        "Done": 15
+      }
+    },
+    {
+      "epicKey": "NINJA-200",
+      "epicName": "Post-Launch Support",
+      "statusCounts": {
+        "To Do": 2,
+        "In Progress": 1,
+        "Done": 11
+      }
+    }
+  ],
+  "usersAndRoles": [],
+  "projectStats": {
+    "totalIssues": 29,
+    "openIssues": 3,
+    "completedIssues": 26,
+    "totalTimeSpent": "737h 58m",
+    "averageResolutionTime": "1.3 days"
+  },
+  "components": [
+    "Gameplay",
+    "UI",
+    "Audio",
+    "Graphics",
+    "Networking"
+  ],
+  "versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

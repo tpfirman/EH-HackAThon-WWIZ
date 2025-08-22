@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP028",
+  "upn": "ava.allen@fullmetalproductions.com",
+  "firstName": "Ava",
+  "lastName": "Allen",
+  "displayName": "Ava Allen",
+  "userPrincipalName": "ava.allen@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:youtubecontentteam@thread.v2",
+      "teamName": "YouTube Content Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-01-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-01-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 8,
+    "messagesSentLastWeek": 37,
+    "reactionsLastWeek": 29,
+    "meetingsAttendedLastWeek": 11,
+    "callsInitiatedLastWeek": 2,
+    "filesSharedLastWeek": 1,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP027",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e26",
+  "displayName": "Liam Walker",
+  "firstName": "Liam",
+  "lastName": "Walker",
+  "email": "liam.walker@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 14,
+      "commentsAdded": 10
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 1,
+    "totalPagesModified": 14,
+    "totalCommentsAdded": 10,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 7
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 14,
+      "commentsAdded": 10
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 4,
+    "pagesModifiedLastMonth": 3,
+    "commentsLastMonth": 4
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

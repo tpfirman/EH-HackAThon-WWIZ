@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP050",
+  "firstName": "Leo",
+  "lastName": "Cook",
+  "email": "leo.cook@fullmetalproductions.com",
+  "upn": "leo.cook@fullmetalproductions.com",
+  "displayName": "Leo Cook",
+  "jobTitle": "Junior Developer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 490 204 106",
+  "businessPhones": [
+    "+61 3 9145 4730"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2023-01-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

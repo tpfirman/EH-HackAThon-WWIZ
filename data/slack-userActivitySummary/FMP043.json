@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP043",
+  "upn": "mason.collins@fullmetalproductions.com",
+  "firstName": "Mason",
+  "lastName": "Collins",
+  "displayName": "Mason Collins",
+  "slackUserId": "U5802470399",
+  "slackUsername": "mason.collins",
+  "slackDisplayName": "Mason Collins",
+  "slackEmail": "mason.collins@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-09-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C8886975078",
+      "channelName": "operations",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-09-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 23,
+      "reactionsLastWeek": 11,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-09-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 10,
+      "reactionsLastWeek": 6,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 15,
+    "totalDirectMessages": 8,
+    "messagesSentLastWeek": 27,
+    "reactionsLastWeek": 26,
+    "filesSharedLastWeek": 8,
+    "threadsStartedLastWeek": 1,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

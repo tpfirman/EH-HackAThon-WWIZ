@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP015",
+  "firstName": "Chris",
+  "lastName": "Anderson",
+  "email": "chris.anderson@fullmetalproductions.com",
+  "upn": "chris.anderson@fullmetalproductions.com",
+  "displayName": "Chris Anderson",
+  "primaryEmail": "chris.anderson@fullmetalproductions.com",
+  "aliases": [
+    "c.anderson@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Game Design",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-02-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP015",
+      "Department": "Game Design",
+      "Manager": "Jordan Martinez"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

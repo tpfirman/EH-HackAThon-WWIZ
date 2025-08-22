@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP033",
+  "upn": "benjamin.adams@fullmetalproductions.com",
+  "firstName": "Benjamin",
+  "lastName": "Adams",
+  "displayName": "Benjamin Adams",
+  "slackUserId": "U3329040842",
+  "slackUsername": "benjamin.adams",
+  "slackDisplayName": "Benjamin Adams",
+  "slackEmail": "benjamin.adams@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-03-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C4688591158",
+      "channelName": "qa",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-03-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 12,
+      "reactionsLastWeek": 10,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-03-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 3,
+      "reactionsLastWeek": 18,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 6,
+    "totalDirectMessages": 10,
+    "messagesSentLastWeek": 22,
+    "reactionsLastWeek": 29,
+    "filesSharedLastWeek": 7,
+    "threadsStartedLastWeek": 0,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low",
+    "onlineStatus": "away"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

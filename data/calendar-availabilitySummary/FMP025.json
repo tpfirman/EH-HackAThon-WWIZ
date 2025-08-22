@@ -1,0 +1,48 @@
+{
+  "ehsId": "FMP025",
+  "upn": "oliver.clark@fullmetalproductions.com",
+  "firstName": "Oliver",
+  "lastName": "Clark",
+  "displayName": "Oliver Clark",
+  "workingHours": {
+    "timezone": "Australia/Melbourne",
+    "monday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "tuesday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "wednesday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "thursday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "friday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "saturday": null,
+    "sunday": null
+  },
+  "availabilitySummary": {
+    "currentStatus": "In a meeting",
+    "nextMeeting": {
+      "title": "Team Standup",
+      "start": "2025-08-23T14:00:00Z",
+      "end": "2025-08-23T15:00:00Z"
+    },
+    "weeklyMeetingLoad": {
+      "totalMeetingHours": 16,
+      "focusTimeHours": 19,
+      "availableHours": 14,
+      "meetingDensity": "moderate"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "calendar-availabilitySummary"
+}

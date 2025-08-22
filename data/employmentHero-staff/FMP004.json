@@ -1,0 +1,15 @@
+{
+  "ehsId": "FMP004",
+  "firstName": "Alex",
+  "lastName": "Thompson",
+  "positionTitle": "Lead Developer",
+  "team": "Development",
+  "manager": "Sarah Chen",
+  "lengthOfService": "5 years 4 months",
+  "startDate": "2020-04-01",
+  "department": "Development",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

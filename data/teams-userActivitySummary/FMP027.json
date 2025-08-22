@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP027",
+  "upn": "liam.walker@fullmetalproductions.com",
+  "firstName": "Liam",
+  "lastName": "Walker",
+  "displayName": "Liam Walker",
+  "userPrincipalName": "liam.walker@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:youtubecontentteam@thread.v2",
+      "teamName": "YouTube Content Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2020-10-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2020-10-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 12,
+    "messagesSentLastWeek": 15,
+    "reactionsLastWeek": 18,
+    "meetingsAttendedLastWeek": 12,
+    "callsInitiatedLastWeek": 5,
+    "filesSharedLastWeek": 4,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

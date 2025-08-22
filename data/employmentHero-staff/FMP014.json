@@ -1,0 +1,15 @@
+{
+  "ehsId": "FMP014",
+  "firstName": "Samantha",
+  "lastName": "Lee",
+  "positionTitle": "Senior Game Designer",
+  "team": "Game Design",
+  "manager": "Jordan Martinez",
+  "lengthOfService": "5 years 1 month",
+  "startDate": "2020-07-15",
+  "department": "Game Design",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

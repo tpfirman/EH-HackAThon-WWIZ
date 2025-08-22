@@ -1,0 +1,52 @@
+{
+  "projectKey": "SPACE",
+  "projectName": "Space Colony Builder",
+  "projectType": "software",
+  "projectCategory": "Game Development",
+  "description": "Space Colony Builder - Released",
+  "lead": "Jordan Martinez",
+  "issueTypeScheme": "Game Development Issue Types",
+  "workflowScheme": "Game Development Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "SPACE-100",
+      "epicName": "Core Gameplay Systems",
+      "statusCounts": {
+        "Done": 28
+      }
+    },
+    {
+      "epicKey": "SPACE-200",
+      "epicName": "Post-Launch Support",
+      "statusCounts": {
+        "To Do": 1,
+        "In Progress": 1,
+        "Done": 12
+      }
+    }
+  ],
+  "usersAndRoles": [],
+  "projectStats": {
+    "totalIssues": 42,
+    "openIssues": 2,
+    "completedIssues": 40,
+    "totalTimeSpent": "612h 47m",
+    "averageResolutionTime": "1.3 days"
+  },
+  "components": [
+    "Gameplay",
+    "UI",
+    "Audio",
+    "Graphics",
+    "Networking"
+  ],
+  "versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

@@ -1,0 +1,15 @@
+{
+  "ehsId": "FMP003",
+  "firstName": "Michael",
+  "lastName": "Rodriguez",
+  "positionTitle": "CFO",
+  "team": "Executive",
+  "manager": "Tim Firman",
+  "lengthOfService": "5 years 5 months",
+  "startDate": "2020-03-01",
+  "department": "Executive",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}
