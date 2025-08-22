@@ -404,21 +404,10 @@ fi
 # Verify container started
 log_step "Verifying container startup..."
 sleep 5
-
-# Check if container exists and is running
-CONTAINER_STATUS=$(sudo -u ec2-user docker ps --filter "name=anythingllm" --format "{{.Status}}" 2>/dev/null || echo "")
-if [ -n "$CONTAINER_STATUS" ]; then
-    log_success "AnythingLLM container is running: $CONTAINER_STATUS"
+if sudo -u ec2-user docker ps --filter "name=anythingllm" --format "{{.Names}}" | grep -q anythingllm; then
+    log_success "AnythingLLM container is running"
 else
-    log_warning "Container not found in running state, checking all containers..."
-    ALL_CONTAINERS=$(sudo -u ec2-user docker ps -a --filter "name=anythingllm" --format "{{.Names}}: {{.Status}}" 2>/dev/null || echo "None")
-    log "All AnythingLLM containers: $ALL_CONTAINERS"
-    
-    # Try to get container logs if container exists but isn't running
-    if sudo -u ec2-user docker ps -a --filter "name=anythingllm" --quiet | head -1 >/dev/null 2>&1; then
-        log "Checking container logs for startup issues..."
-        sudo -u ec2-user docker logs anythingllm 2>&1 | tail -20 | tee -a "$SETUP_LOG" || log_warning "Could not retrieve container logs"
-    fi
+    log_warning "Container may still be starting - check logs: docker logs anythingllm"
 fi
 
 echo -e "${GREEN}AnythingLLM starting with ${ANYTHINGLLM_MEMORY_MB}MB memory allocation${NC}"
@@ -635,9 +624,9 @@ final_verification() {
         log "ec2-user group memberships: $docker_groups"
 
         if echo "$docker_groups" | grep -q docker; then
-            log "? ec2-user is properly added to docker group"
+            log "✓ ec2-user is properly added to docker group"
         else
-            log_warning "? ec2-user docker group membership verification failed"
+            log_warning "✗ ec2-user docker group membership verification failed"
         fi
 
         # Docker socket permissions
@@ -653,9 +642,9 @@ final_verification() {
     local health_response=""
     health_response=$(curl -s -w "%{http_code}" -o /dev/null http://localhost/health 2>/dev/null || echo "000")
     if [ "$health_response" = "200" ]; then
-        log "? Health endpoint responding correctly"
+        log "✓ Health endpoint responding correctly"
     else
-        log_warning "? Health endpoint not responding (HTTP: $health_response)"
+        log_warning "✗ Health endpoint not responding (HTTP: $health_response)"
     fi
 
     return 0
