@@ -834,6 +834,3 @@ echo -e "${GREEN}${WHITE}=== AI POC Setup Complete ===${NC}"
 echo -e "${CYAN}All services started successfully with enhanced error handling!${NC}"
 echo -e "${BLUE}Access your AI POC at: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)${NC}"
 log_success "=== AI POC Setup Complete ==="
-
- 
- 
