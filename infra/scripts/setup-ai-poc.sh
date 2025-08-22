@@ -3,7 +3,11 @@
 # This script is pulled from GitHub to prevent instance replacement on updates
 # IDEMPOTENT: Safe to re-run multiple times
 
-set -e
+# Remove strict error handling initially to allow better error recovery
+set +e
+
+# Enable debug mode to track script execution
+set -x
 
 # Color definitions for console output
 RED='\033[0;31m'
@@ -18,6 +22,13 @@ NC='\033[0m' # No Color
 # Create lock file to track setup progress
 SETUP_LOCK="/var/log/ai-poc-setup.lock"
 SETUP_LOG="/var/log/ai-poc-setup.log"
+
+# Immediately start logging
+echo "=== AI POC SETUP SCRIPT STARTED ===" | tee -a "$SETUP_LOG"
+echo "Script path: $0" | tee -a "$SETUP_LOG"
+echo "Working directory: $(pwd)" | tee -a "$SETUP_LOG"
+echo "User: $(whoami)" | tee -a "$SETUP_LOG"
+echo "Date: $(date)" | tee -a "$SETUP_LOG"
 
 echo -e "${CYAN}=== AI POC Setup Starting ===${NC}" | tee -a "$SETUP_LOG"
 echo "Timestamp: $(date)" | tee -a "$SETUP_LOG"
@@ -130,15 +141,15 @@ if [ -f "$SETUP_LOCK" ] && [ "$(cat $SETUP_LOCK)" = "COMPLETE" ]; then
     log_step "Setup already completed. Checking services..."
     
     # Quick health check of services with error handling
-    if systemctl is-active --quiet docker && systemctl is-active --quiet nginx; then
-        if safe_docker "docker ps --filter name=anythingllm --quiet" > /dev/null 2>&1; then
+    if command -v docker &> /dev/null && systemctl is-active --quiet docker && systemctl is-active --quiet nginx; then
+        if docker ps --filter name=anythingllm --quiet &> /dev/null; then
             log_success "All services running. Setup verification complete."
             exit 0
         else
             log_warning "AnythingLLM container not running, will restart services"
         fi
     else
-        log_warning "Docker or nginx services not active"
+        log_warning "Docker or nginx services not active or not installed"
     fi
     log_step "Services need restart. Continuing with setup..."
 fi
@@ -146,28 +157,85 @@ fi
 echo "RUNNING" > "$SETUP_LOCK"
 
 # Install essential packages including curl for health checks
-log "Updating system packages..."
-yum update -y 2>&1 | tee -a "$SETUP_LOG"
-yum update -y amazon-linux-extras 2>&1 | tee -a "$SETUP_LOG"
-amazon-linux-extras enable openssl11 2>&1 | tee -a "$SETUP_LOG"
-yum clean metadata 2>&1 | tee -a "$SETUP_LOG"
+log_step "Updating system packages..."
 
+# Update packages with error tolerance
+if yum update -y 2>&1 | tee -a "$SETUP_LOG"; then
+    log_success "System packages updated successfully"
+else
+    log_warning "System package update had issues, continuing..."
+fi
 
+if yum update -y amazon-linux-extras 2>&1 | tee -a "$SETUP_LOG"; then
+    log_success "Amazon Linux extras updated successfully"
+else
+    log_warning "Amazon Linux extras update had issues, continuing..."
+fi
 
-log "Installing essential packages..."
-yum install -y curl 2>&1 | tee -a "$SETUP_LOG"
+if amazon-linux-extras enable openssl11 2>&1 | tee -a "$SETUP_LOG"; then
+    log_success "OpenSSL11 enabled successfully"
+else
+    log_warning "OpenSSL11 enable had issues, continuing..."
+fi
+
+if yum clean metadata 2>&1 | tee -a "$SETUP_LOG"; then
+    log_success "YUM metadata cleaned successfully"
+else
+    log_warning "YUM clean had issues, continuing..."
+fi
+
+log_step "Installing essential packages..."
+if yum install -y curl 2>&1 | tee -a "$SETUP_LOG"; then
+    log_success "Essential packages installed successfully"
+else
+    log_error "Failed to install essential packages - this may cause issues"
+    # Don't exit here, try to continue
+fi
 
 
 # Install latest Docker from Amazon Linux Extras and enable
+log_step "=== STARTING DOCKER INSTALLATION SECTION ==="
+log "Current user: $(whoami)"
+log "Current directory: $(pwd)"
+log "Checking if Docker command exists..."
+
 if ! command -v docker &> /dev/null; then
-    log_step "Installing Docker..."
-    if ! amazon-linux-extras install docker=latest -y 2>&1 | tee -a "$SETUP_LOG"; then
-        log_error "Failed to install Docker"
-        exit 1
+    log_step "Docker not found, proceeding with installation..."
+    log_step "Installing Docker via amazon-linux-extras..."
+    
+    # Check if amazon-linux-extras is available
+    if ! command -v amazon-linux-extras &> /dev/null; then
+        log_error "amazon-linux-extras command not found! This may not be Amazon Linux 2"
+        log_error "Attempting alternative installation method..."
+        
+        # Fallback to direct yum install
+        log_step "Trying direct yum install of docker..."
+        if yum install -y docker 2>&1 | tee -a "$SETUP_LOG"; then
+            log_success "Docker installed via yum"
+        else
+            log_error "Failed to install Docker via yum as well"
+            exit 1
+        fi
+    else
+        log "amazon-linux-extras command found, proceeding..."
+        if amazon-linux-extras install docker=latest -y 2>&1 | tee -a "$SETUP_LOG"; then
+            log_success "Docker installation completed via amazon-linux-extras"
+        else
+            log_error "Failed to install Docker via amazon-linux-extras"
+            log_error "Attempting fallback installation method..."
+            
+            # Fallback to direct yum install
+            log_step "Trying direct yum install of docker..."
+            if yum install -y docker 2>&1 | tee -a "$SETUP_LOG"; then
+                log_success "Docker installed via yum fallback"
+            else
+                log_error "Failed to install Docker via any method"
+                exit 1
+            fi
+        fi
     fi
-    log_success "Docker installation completed"
 else
-    log "Docker already installed, skipping..."
+    log_success "Docker already installed, skipping installation..."
 fi
 
 # Start and enable Docker service with error handling
@@ -722,9 +790,9 @@ final_verification() {
         log "ec2-user group memberships: $docker_groups"
         
         if echo "$docker_groups" | grep -q docker; then
-            log "âœ“ ec2-user is properly added to docker group"
+            log "✓ ec2-user is properly added to docker group"
         else
-            log_warning "âœ— ec2-user docker group membership verification failed"
+            log_warning "✗ ec2-user docker group membership verification failed"
         fi
         
         # Docker socket permissions
@@ -740,9 +808,9 @@ final_verification() {
     local health_response=""
     health_response=$(curl -s -w "%{http_code}" -o /dev/null http://localhost/health 2>/dev/null || echo "000")
     if [ "$health_response" = "200" ]; then
-        log "âœ“ Health endpoint responding correctly"
+        log "✓ Health endpoint responding correctly"
     else
-        log_warning "âœ— Health endpoint not responding (HTTP: $health_response)"
+        log_warning "✗ Health endpoint not responding (HTTP: $health_response)"
     fi
     
     return 0
@@ -766,3 +834,6 @@ echo -e "${GREEN}${WHITE}=== AI POC Setup Complete ===${NC}"
 echo -e "${CYAN}All services started successfully with enhanced error handling!${NC}"
 echo -e "${BLUE}Access your AI POC at: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)${NC}"
 log_success "=== AI POC Setup Complete ==="
+
+ 
+ 
