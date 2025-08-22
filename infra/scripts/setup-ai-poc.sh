@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 # AI POC Setup Script - External version to avoid CloudFormation UserData changes
 # This script is pulled from GitHub to prevent instance replacement on updates
 # IDEMPOTENT: Safe to re-run multiple times
@@ -344,6 +344,16 @@ if [ -f "$SCRIPT_DIR/setup-anythingllm.sh" ]; then
     chown ec2-user:ec2-user /home/ec2-user/setup-anythingllm.sh
 else
     log_error "setup-anythingllm.sh not found in script directory: $SCRIPT_DIR"
+    exit 1
+fi
+
+# Copy Docker Compose configuration
+if [ -f "$SCRIPT_DIR/docker-compose.yml" ]; then
+    log_step "Copying Docker Compose configuration..."
+    cp "$SCRIPT_DIR/docker-compose.yml" /home/ec2-user/anythingllm/docker-compose.yml
+    chown ec2-user:ec2-user /home/ec2-user/anythingllm/docker-compose.yml
+else
+    log_error "docker-compose.yml not found in script directory: $SCRIPT_DIR"
     exit 1
 fi
 

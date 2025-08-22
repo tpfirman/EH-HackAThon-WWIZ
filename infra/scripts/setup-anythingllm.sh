@@ -56,41 +56,15 @@ if docker ps | grep -q anythingllm; then
     docker rm anythingllm || true
 fi
 
-# Convert comma-separated env vars to Docker format
-ENV_VARS="${CF_ENV_VARS:-NODE_ENV=production,DISABLE_TELEMETRY=true}"
-DOCKER_ENV=""
-IFS=',' read -ra ADDR <<< "$ENV_VARS"
-for i in "${ADDR[@]}"; do
-  DOCKER_ENV="$DOCKER_ENV\n                - \"$i\""
-done
+# Verify docker-compose.yml exists (should be copied by main script)
+if [ ! -f "docker-compose.yml" ]; then
+    log_error "docker-compose.yml not found in /home/ec2-user/anythingllm/"
+    exit 1
+fi
 
-log_step "Creating Docker Compose configuration..."
-cat << DOCKER_COMPOSE_EOF > docker-compose.yml
-version: '3.8'
-services:
-  anythingllm:
-    image: mintplexlabs/anythingllm:latest
-    container_name: anythingllm
-    ports:
-      - "3001:3001"
-    volumes:
-      - ./storage:/app/server/storage
-      - ./logs:/app/server/logs
-    environment:$(echo -e "$DOCKER_ENV")
-      - STORAGE_DIR=/app/server/storage
-      - LOG_LEVEL=info
-    restart: unless-stopped
-    mem_limit: ${ANYTHINGLLM_MEMORY_MB}m
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
-        max-file: "3"
-
-volumes:
-  anythingllm_storage:
-  anythingllm_logs:
-DOCKER_COMPOSE_EOF
+log_step "Using Docker Compose configuration from file..."
+log "Docker Compose file contents:"
+cat docker-compose.yml | tee -a "$SETUP_LOG"
 
 # Set correct ownership with error handling
 log_step "Setting file ownership for AnythingLLM..."
