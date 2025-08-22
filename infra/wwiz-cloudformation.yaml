@@ -56,6 +56,11 @@ Parameters:
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
     Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
 
+  GitHubBranch:
+    Type: String
+    Default: WIP
+    Description: GitHub branch to pull setup scripts from (WIP, main, etc.)
+
 Mappings:
   # Instance memory mapping for percentage-based allocation
   InstanceMemory:
@@ -306,6 +311,7 @@ Resources:
           Fn::Base64: !Join
             - ""
             - - "#!/bin/bash\n"
+              - "# AI POC Setup - External Script Approach (prevents instance replacement)\n"
               - "export CF_MEMORY_PERCENT="
               - !Ref AnythingLLMMemoryPercent
               - "\n"
@@ -327,231 +333,48 @@ Resources:
               - "export CF_AWS_REGION='"
               - !Ref "AWS::Region"
               - "'\n"
+              - "export CF_ALB_DNS_NAME='"
+              - !GetAtt ApplicationLoadBalancer.DNSName
+              - "'\n"
+              - "export CF_GITHUB_BRANCH='"
+              - !Ref GitHubBranch
+              - "'\n"
               - |
+                # Install git and curl first
                 yum update -y
+                yum install -y git curl
                 
-                # Install essential packages including curl for health checks
-                yum install -y curl
+                # Download and execute setup script from GitHub
+                GITHUB_URL="https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/${CF_GITHUB_BRANCH}/infra/scripts/setup-ai-poc.sh"
+                echo "Downloading setup script from: $GITHUB_URL"
                 
-                # Install latest Docker from Amazon Linux Extras and enable
-                amazon-linux-extras install docker=latest -y
-                systemctl start docker
-                systemctl enable docker
-                usermod -a -G docker ec2-user
-                
-                # Install latest nginx from Amazon Linux Extras
-                amazon-linux-extras install nginx1=latest -y
-                
-                # Install latest OpenSSL 1.1 from Amazon Linux Extras (resolves urllib3 compatibility)
-                amazon-linux-extras install openssl11=latest -y
-                
-                # Verify installations and get versions
-                echo "=== Installed Versions ===" > /var/log/package-versions.log
-                docker --version >> /var/log/package-versions.log
-                docker compose version >> /var/log/package-versions.log
-                nginx -v >> /var/log/package-versions.log 2>&1
-                openssl version >> /var/log/package-versions.log
-                
-                # Ensure Docker is fully started before proceeding
-                sleep 10
-                
-                # Calculate memory allocation based on percentage
-                TOTAL_MEMORY_KB=$(grep MemTotal /proc/meminfo | awk '{print $2}')
-                TOTAL_MEMORY_MB=$((TOTAL_MEMORY_KB / 1024))
-                ANYTHINGLLM_MEMORY_MB=$((TOTAL_MEMORY_MB * CF_MEMORY_PERCENT / 100))
-                ANYTHINGLLM_MEMORY_RESERVATION_MB=$((ANYTHINGLLM_MEMORY_MB * 60 / 100))
-                
-                echo "Instance Memory: ${TOTAL_MEMORY_MB}MB, AnythingLLM Allocation: ${ANYTHINGLLM_MEMORY_MB}MB (${CF_MEMORY_PERCENT}%)" > /var/log/memory-allocation.log
-                
-                # Basic CloudWatch logging setup (minimal for POC)
-                yum install -y awslogs
-                cat << 'EOF' > /etc/awslogs/awslogs.conf
-                [general]
-                state_file = /var/lib/awslogs/agent-state
-                
-                [/var/log/messages]
-                file = /var/log/messages
-              - "log_group_name = /ai-poc/"
-              - !Ref "AWS::StackName"
-              - |
-                /system
-                log_stream_name = {instance_id}
-                datetime_format = %b %d %H:%M:%S
-                
-                [/var/log/anythingllm.log]
-                file = /home/ec2-user/anythingllm/logs/server.log
-              - "log_group_name = /ai-poc/"
-              - !Ref "AWS::StackName"
-              - |
-                /anythingllm
-                log_stream_name = {instance_id}
-                datetime_format = %Y-%m-%d %H:%M:%S
-                EOF
-                
-                # Set region for CloudWatch logs
-              - "sed -i 's/region = us-east-1/region = "
-              - !Ref "AWS::Region"
-              - |
-                /' /etc/awslogs/awscli.conf
-                systemctl start awslogsd
-                systemctl enable awslogsd
-                
-                # Create AnythingLLM setup script with dynamic memory allocation
-                cat << 'EOF' > /home/ec2-user/setup-anythingllm.sh
-                #!/bin/bash
-                
-                # Create docker-compose.yml for AnythingLLM with dynamic memory
-                mkdir -p /home/ec2-user/anythingllm/{logs,storage}
-                cd /home/ec2-user/anythingllm
-                
-                # Convert comma-separated env vars to Docker format
-                ENV_VARS="$CF_ENV_VARS"
-                DOCKER_ENV=""
-                IFS=',' read -ra ADDR <<< "$ENV_VARS"
-                for i in "${ADDR[@]}"; do
-                  DOCKER_ENV="$DOCKER_ENV\n                - \"$i\""
-                done
-                
-                cat << DOCKER_COMPOSE_EOF > docker-compose.yml
-                version: '3.8'
-                services:
-                  anythingllm:
-                    image: mintplexlabs/anythingllm:latest
-                    container_name: anythingllm
-                    ports:
-                      - "3001:3001"
-                    volumes:
-                      - ./storage:/app/server/storage
-                      - ./logs:/app/server/logs
-                    environment:$(echo -e "$DOCKER_ENV")
-                      - STORAGE_DIR=/app/server/storage
-                      - LOG_LEVEL=info
-                    restart: unless-stopped
-                    deploy:
-                      resources:
-                        limits:
-                          memory: ${ANYTHINGLLM_MEMORY_MB}M
-                        reservations:
-                          memory: ${ANYTHINGLLM_MEMORY_RESERVATION_MB}M
-                    logging:
-                      driver: "json-file"
-                      options:
-                        max-size: "100m"
-                        max-file: "3"
-                
-                volumes:
-                  anythingllm_storage:
-                  anythingllm_logs:
-                DOCKER_COMPOSE_EOF
-                
-                # Set correct ownership
-                chown -R ec2-user:ec2-user /home/ec2-user/anythingllm
-                
-                # Start AnythingLLM
-                sudo -u ec2-user docker compose up -d
-                
-                echo "AnythingLLM starting with ${ANYTHINGLLM_MEMORY_MB}MB memory allocation"
-                echo "AI POC setup complete! Available 24/7 for testing and evaluation."
-                echo "Region: $CF_REGION_NAME | Spot Instance: $CF_USE_SPOT"
-                EOF
-                
-                chmod +x /home/ec2-user/setup-anythingllm.sh
-                
-                # Run the setup (with some delay to ensure Docker is ready)
-                sleep 30
-                /home/ec2-user/setup-anythingllm.sh
-                
-                # Create nginx configuration for proxy and health checks
-                cat << 'NGINXCONF' > /etc/nginx/nginx.conf
-                user nginx;
-                worker_processes auto;
-                error_log /var/log/nginx/error.log;
-                pid /run/nginx.pid;
-                
-                events {
-                    worker_connections 1024;
-                }
-                
-                http {
-                    log_format main '$remote_addr - $remote_user [$time_local] "$request" '
-                                    '$status $body_bytes_sent "$http_referer" '
-                                    '"$http_user_agent" "$http_x_forwarded_for"';
-                
-                    access_log /var/log/nginx/access.log main;
-                
-                    sendfile on;
-                    tcp_nopush on;
-                    tcp_nodelay on;
-                    keepalive_timeout 65;
-                    types_hash_max_size 2048;
-                
-                    include /etc/nginx/mime.types;
-                    default_type application/octet-stream;
-                
-                    server {
-                        listen 80;
-                        server_name _;
-                
-                        # Health check endpoint
-                        location /health {
-                            access_log off;
-                            return 200 '{"status":"healthy","anythingllm":"running","ai_poc_mode":true,"region":"Sydney","spot_instance":"true","cleanup_date":"2025-12-31"}';
-                            add_header Content-Type application/json;
-                        }
-                
-                        # Proxy all other requests to AnythingLLM
-                        location / {
-                            proxy_pass http://localhost:3001;
-                            proxy_set_header Host $host;
-                            proxy_set_header X-Real-IP $remote_addr;
-                            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                            proxy_set_header X-Forwarded-Proto $scheme;
-                            proxy_buffering off;
-                            proxy_request_buffering off;
-                            proxy_http_version 1.1;
-                            proxy_set_header Upgrade $http_upgrade;
-                            proxy_set_header Connection "upgrade";
-                            
-                            # Handle all HTTP methods including POST
-                            proxy_method $request_method;
-                            client_max_body_size 100M;
-                            proxy_read_timeout 300s;
-                            proxy_connect_timeout 75s;
-                        }
-                    }
-                }
-                NGINXCONF
-                
-                # Set correct SELinux context for nginx (if SELinux is enabled)
-                setsebool -P httpd_can_network_connect 1 2>/dev/null || true
-                
-                # Test nginx configuration before starting
-                nginx -t
-                
-                # Start and enable nginx
-                systemctl enable nginx
-                systemctl start nginx
-                
-                # Wait for AnythingLLM to be ready before finalizing
-                echo "Waiting for AnythingLLM to be ready..."
-                for i in {1..30}; do
-                    if curl -f http://localhost:3001 >/dev/null 2>&1; then
-                        echo "AnythingLLM is ready!"
+                # Download with retries
+                for i in {1..5}; do
+                    if curl -fsSL "$GITHUB_URL" -o /tmp/setup-ai-poc.sh; then
+                        echo "Setup script downloaded successfully"
                         break
                     fi
-                    echo "Waiting... ($i/30)"
+                    echo "Download attempt $i failed, retrying in 10 seconds..."
                     sleep 10
                 done
                 
-                # Ensure nginx is working with AnythingLLM
-                systemctl status nginx --no-pager
-                systemctl restart nginx
-                
-                # Final status check
-                echo "=== Final Status ===" >> /var/log/package-versions.log
-                systemctl is-active docker >> /var/log/package-versions.log
-                systemctl is-active nginx >> /var/log/package-versions.log
-                docker ps >> /var/log/package-versions.log
+                # Verify download and execute
+                if [ -f /tmp/setup-ai-poc.sh ]; then
+                    chmod +x /tmp/setup-ai-poc.sh
+                    echo "Executing setup script..."
+                    /tmp/setup-ai-poc.sh 2>&1 | tee /var/log/ai-poc-setup.log
+                    
+                    # Download additional utility scripts
+                    curl -fsSL "https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/${CF_GITHUB_BRANCH}/infra/scripts/check-status.sh" -o /usr/local/bin/check-status.sh
+                    curl -fsSL "https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/${CF_GITHUB_BRANCH}/infra/scripts/cleanup.sh" -o /usr/local/bin/cleanup.sh
+                    curl -fsSL "https://raw.githubusercontent.com/tpfirman/EH-HackAThon-WWIZ/${CF_GITHUB_BRANCH}/infra/scripts/connect-info.sh" -o /usr/local/bin/connect-info.sh
+                    chmod +x /usr/local/bin/*.sh
+                    
+                    echo "AI POC setup complete via external script"
+                else
+                    echo "ERROR: Failed to download setup script from GitHub"
+                    exit 1
+                fi
                 
                 # Signal CloudFormation that setup is complete
               - "/opt/aws/bin/cfn-signal -e $? --stack "
