@@ -333,21 +333,27 @@ Resources:
                 # Install essential packages including curl for health checks
                 yum install -y curl
                 
-                # Install Docker from Amazon Linux Extras
-                amazon-linux-extras install docker -y
+                # Install latest Docker from Amazon Linux Extras and enable
+                amazon-linux-extras install docker=latest -y
                 systemctl start docker
                 systemctl enable docker
                 usermod -a -G docker ec2-user
                 
-                # Install nginx from Amazon Linux Extras
-                amazon-linux-extras install nginx1 -y
+                # Install latest nginx from Amazon Linux Extras
+                amazon-linux-extras install nginx1=latest -y
                 
-                # Install OpenSSL 1.1 from Amazon Linux Extras (resolves urllib3 compatibility)
-                amazon-linux-extras install openssl11 -y
+                # Install latest OpenSSL 1.1 from Amazon Linux Extras (resolves urllib3 compatibility)
+                amazon-linux-extras install openssl11=latest -y
                 
-                # Install Docker Compose
-                curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-                chmod +x /usr/local/bin/docker-compose
+                # Verify installations and get versions
+                echo "=== Installed Versions ===" > /var/log/package-versions.log
+                docker --version >> /var/log/package-versions.log
+                docker compose version >> /var/log/package-versions.log
+                nginx -v >> /var/log/package-versions.log 2>&1
+                openssl version >> /var/log/package-versions.log
+                
+                # Ensure Docker is fully started before proceeding
+                sleep 10
                 
                 # Calculate memory allocation based on percentage
                 TOTAL_MEMORY_KB=$(grep MemTotal /proc/meminfo | awk '{print $2}')
@@ -442,7 +448,7 @@ Resources:
                 chown -R ec2-user:ec2-user /home/ec2-user/anythingllm
                 
                 # Start AnythingLLM
-                sudo -u ec2-user docker-compose up -d
+                sudo -u ec2-user docker compose up -d
                 
                 echo "AnythingLLM starting with ${ANYTHINGLLM_MEMORY_MB}MB memory allocation"
                 echo "AI POC setup complete! Available 24/7 for testing and evaluation."
@@ -489,16 +495,7 @@ Resources:
                         # Health check endpoint
                         location /health {
                             access_log off;
-                            return 200 '{"status":"healthy","anythingllm":"running","ai_poc_mode":true,"region":"'
-              - !FindInMap [RegionConfig, !Ref "AWS::Region", RegionName]
-              - |
-                ","spot_instance":"'
-              - !Ref UseSpotInstances
-              - |
-                ","cleanup_date":"'
-              - !Ref ProjectCleanupDate
-              - |
-                "}';
+                            return 200 '{"status":"healthy","anythingllm":"running","ai_poc_mode":true,"region":"Sydney","spot_instance":"true","cleanup_date":"2025-12-31"}';
                             add_header Content-Type application/json;
                         }
                 
@@ -528,11 +525,14 @@ Resources:
                 # Set correct SELinux context for nginx (if SELinux is enabled)
                 setsebool -P httpd_can_network_connect 1 2>/dev/null || true
                 
+                # Test nginx configuration before starting
+                nginx -t
+                
                 # Start and enable nginx
                 systemctl enable nginx
                 systemctl start nginx
                 
-                # Wait for AnythingLLM to be ready before starting nginx
+                # Wait for AnythingLLM to be ready before finalizing
                 echo "Waiting for AnythingLLM to be ready..."
                 for i in {1..30}; do
                     if curl -f http://localhost:3001 >/dev/null 2>&1; then
@@ -543,8 +543,15 @@ Resources:
                     sleep 10
                 done
                 
-                # Restart nginx to ensure it's working with AnythingLLM
+                # Ensure nginx is working with AnythingLLM
+                systemctl status nginx --no-pager
                 systemctl restart nginx
+                
+                # Final status check
+                echo "=== Final Status ===" >> /var/log/package-versions.log
+                systemctl is-active docker >> /var/log/package-versions.log
+                systemctl is-active nginx >> /var/log/package-versions.log
+                docker ps >> /var/log/package-versions.log
                 
                 # Signal CloudFormation that setup is complete
               - "/opt/aws/bin/cfn-signal -e $? --stack "
