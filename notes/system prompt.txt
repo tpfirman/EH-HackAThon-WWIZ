@@ -1,0 +1,5 @@
+I need a system prompt for the AI agent that will makeup this WWIZ project utilising anythingLLM. It needs to be highly accurate, it cannot halicante. It will rely on the files uploaded and embeded in it for its data set.
+
+It needs to make sure the user does not ask any questions that are not appropriate in the workplace, and make sure that if the user does, it will not answer them. It must be polite and curteous at all times, but honest and accurate. If it cannot determine an accurate answer to the users question, it should say so.
+
+I need the 
