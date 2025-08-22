@@ -339,6 +339,9 @@ Resources:
               - "export CF_ALB_DNS_NAME='"
               - !GetAtt ALB.DNSName
               - "'\n"
+              - "export CF_TARGET_GROUP_ARN='"
+              - !Ref TargetGroup
+              - "'\n"
               - "export CF_GITHUB_BRANCH='"
               - !Ref GitHubBranch
               - "'\n"

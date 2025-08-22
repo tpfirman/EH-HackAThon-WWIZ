@@ -442,6 +442,35 @@ if ! systemctl start nginx 2>&1 | tee -a "$SETUP_LOG"; then
 fi
 log_success "Nginx service started and enabled"
 
+# Register with ALB target group if using spot instances
+if [ "${CF_USE_SPOT:-true}" = "true" ] && [ -n "${CF_TARGET_GROUP_ARN:-}" ]; then
+    log_step "Registering spot instance with ALB target group..."
+    
+    # Get instance ID from metadata
+    INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id 2>/dev/null)
+    
+    if [ -n "$INSTANCE_ID" ]; then
+        log "Instance ID: $INSTANCE_ID"
+        log "Target Group ARN: $CF_TARGET_GROUP_ARN"
+        
+        # Register with target group
+        if aws elbv2 register-targets \
+            --target-group-arn "$CF_TARGET_GROUP_ARN" \
+            --targets Id="$INSTANCE_ID" \
+            --region "${CF_AWS_REGION:-ap-southeast-2}" 2>&1 | tee -a "$SETUP_LOG"; then
+            log_success "Successfully registered instance with target group"
+        else
+            log_warning "Failed to register with target group, but continuing setup"
+        fi
+    else
+        log_warning "Could not retrieve instance ID for target group registration"
+    fi
+elif [ "${CF_USE_SPOT:-true}" = "false" ]; then
+    log "Using on-demand instance - target group registration handled by CloudFormation"
+else
+    log_warning "Target group ARN not provided - skipping registration"
+fi
+
 # Wait for AnythingLLM to be ready before finalizing
 log_step "Waiting for AnythingLLM to be ready..."
 READY=false
