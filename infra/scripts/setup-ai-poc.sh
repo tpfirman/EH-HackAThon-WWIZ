@@ -124,7 +124,7 @@ fi
 if ! rpm -q openssl1 &> /dev/null; then
     log "Installing OpenSSL 1.1..."
     amazon-linux-extras install openssl1 -y 2>&1 | tee -a "$SETUP_LOG"
-    yum install openssl11 openssl11-devel 2>&1 | tee -a "$SETUP_LOG"
+    yum install -y openssl11 openssl11-devel 2>&1 | tee -a "$SETUP_LOG"
 else
     log "OpenSSL 1.1 already installed, skipping..."
 fi

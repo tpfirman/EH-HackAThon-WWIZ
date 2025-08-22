@@ -357,7 +357,7 @@ Resources:
                 
                 # Execute the setup script from the cloned repository
                 echo "Executing setup script from Git repository..."
-                chmod +x ./infra/scripts/*.sh
+                chmod +x infra/scripts/*.sh
                 ./infra/scripts/setup-ai-poc.sh 2>&1 | tee /var/log/ai-poc-git-setup.log
                 
                 # Download utility scripts to system locations for easy access
