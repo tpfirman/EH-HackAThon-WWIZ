@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP006",
+  "upn": "david.kim@fullmetalproductions.com",
+  "firstName": "David",
+  "lastName": "Kim",
+  "displayName": "David Kim",
+  "slackUserId": "U9700681343",
+  "slackUsername": "david.kim",
+  "slackDisplayName": "David Kim",
+  "slackEmail": "david.kim@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-08-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C8821034509",
+      "channelName": "development",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-08-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 8,
+      "reactionsLastWeek": 9,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-08-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 6,
+      "reactionsLastWeek": 14,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 10,
+    "totalDirectMessages": 4,
+    "messagesSentLastWeek": 45,
+    "reactionsLastWeek": 43,
+    "filesSharedLastWeek": 3,
+    "threadsStartedLastWeek": 4,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

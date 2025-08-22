@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP014",
+  "firstName": "Samantha",
+  "lastName": "Lee",
+  "email": "samantha.lee@fullmetalproductions.com",
+  "upn": "samantha.lee@fullmetalproductions.com",
+  "displayName": "Samantha Lee",
+  "jobTitle": "Senior Game Designer",
+  "department": "Game Design",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 482 261 106",
+  "businessPhones": [
+    "+61 3 1379 4531"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-07-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Game Design_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

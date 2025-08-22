@@ -1,5 +1,6 @@
 # Environment variables
 .env
+.env.*
 
 # SSL certificates and keys
 nginx/certs/
@@ -33,3 +34,7 @@ Thumbs.db
 
 # Let's Encrypt working directory
 nginx/www/.well-known/
+
+.venv/
+infra/cfnlint.txt
+

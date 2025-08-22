@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./storage:/app/server/storage
+      - ./logs:/app/server/logs
+    environment:
+      - NODE_ENV=production
+      - DISABLE_TELEMETRY=true
+      - STORAGE_DIR=/app/server/storage
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    mem_limit: ${ANYTHINGLLM_MEMORY_MB:-2048}m
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "3"
+
+volumes:
+  anythingllm_storage:
+  anythingllm_logs:

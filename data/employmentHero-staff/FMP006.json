@@ -1,0 +1,15 @@
+{
+  "ehsId": "FMP006",
+  "firstName": "David",
+  "lastName": "Kim",
+  "positionTitle": "Senior Developer",
+  "team": "Development",
+  "manager": "Alex Thompson",
+  "lengthOfService": "5 years 0 months",
+  "startDate": "2020-08-01",
+  "department": "Development",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

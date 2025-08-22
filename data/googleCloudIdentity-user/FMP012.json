@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP012",
+  "firstName": "Mark",
+  "lastName": "Wilson",
+  "email": "mark.wilson@fullmetalproductions.com",
+  "upn": "mark.wilson@fullmetalproductions.com",
+  "displayName": "Mark Wilson",
+  "primaryEmail": "mark.wilson@fullmetalproductions.com",
+  "aliases": [
+    "m.wilson@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Development",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-09-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP012",
+      "Department": "Development",
+      "Manager": "Alex Thompson"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

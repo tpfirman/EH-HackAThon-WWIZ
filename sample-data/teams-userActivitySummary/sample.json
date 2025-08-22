@@ -1,0 +1,81 @@
+{
+  "ehsId": "EHS001234",
+  "upn": "john.smith@company.com",
+  "firstName": "John",
+  "lastName": "Smith", 
+  "displayName": "John Smith",
+  "userPrincipalName": "john.smith@company.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:abc123def456@thread.v2",
+      "teamName": "Platform Engineering",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2022-04-20T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:def456ghi789@thread.v2", 
+      "teamName": "Engineering All Hands",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2022-04-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activeTeamsChannels": [
+    {
+      "channelId": "19:123abc456def@thread.tacv2",
+      "channelName": "General",
+      "teamName": "Platform Engineering",
+      "channelType": "standard",
+      "membershipType": "member",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 12,
+      "reactionsLastWeek": 8
+    },
+    {
+      "channelId": "19:456def789ghi@thread.tacv2",
+      "channelName": "Development",
+      "teamName": "Platform Engineering", 
+      "channelType": "standard",
+      "membershipType": "member",
+      "lastActivity": "2025-08-22T15:20:00Z",
+      "messagesSentLastWeek": 25,
+      "reactionsLastWeek": 15
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 8,
+    "messagesSentLastWeek": 37,
+    "reactionsLastWeek": 23,
+    "meetingsAttendedLastWeek": 8,
+    "callsInitiatedLastWeek": 3,
+    "filesSharedLastWeek": 5,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high"
+  },
+  "recentActivity": [
+    {
+      "type": "message",
+      "channelName": "Development",
+      "teamName": "Platform Engineering",
+      "timestamp": "2025-08-23T08:45:00Z",
+      "action": "sent message"
+    },
+    {
+      "type": "file_share",
+      "channelName": "General", 
+      "teamName": "Platform Engineering",
+      "timestamp": "2025-08-22T14:30:00Z",
+      "action": "shared document"
+    }
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

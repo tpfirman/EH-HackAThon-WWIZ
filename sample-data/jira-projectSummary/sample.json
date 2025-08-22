@@ -1,0 +1,55 @@
+{
+  "projectKey": "PLAT",
+  "projectName": "Platform Engineering",
+  "projectType": "software",
+  "projectCategory": "Engineering",
+  "description": "Core platform infrastructure and services",
+  "lead": "Jane Doe",
+  "issueTypeScheme": "Default Issue Type Scheme",
+  "workflowScheme": "Platform Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "PLAT-100",
+      "epicName": "API Gateway Improvements", 
+      "statusCounts": {
+        "To Do": 5,
+        "In Progress": 3,
+        "Code Review": 2,
+        "Done": 12
+      }
+    },
+    {
+      "epicKey": "PLAT-200",
+      "epicName": "Database Migration",
+      "statusCounts": {
+        "To Do": 8,
+        "In Progress": 1,
+        "Code Review": 0,
+        "Done": 3
+      }
+    }
+  ],
+  "usersAndRoles": [
+    {
+      "ehsId": "EHS001234",
+      "displayName": "John Smith",
+      "roles": ["Developer", "Administrator"]
+    },
+    {
+      "ehsId": "EHS001235", 
+      "displayName": "Jane Doe",
+      "roles": ["Project Lead", "Administrator"]
+    }
+  ],
+  "projectStats": {
+    "totalIssues": 34,
+    "openIssues": 17,
+    "completedIssues": 17,
+    "totalTimeSpent": "240h 15m",
+    "averageResolutionTime": "3.2 days"
+  },
+  "components": ["API", "Database", "Authentication", "Monitoring"],
+  "versions": ["1.0.0", "1.1.0", "1.2.0-beta"],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

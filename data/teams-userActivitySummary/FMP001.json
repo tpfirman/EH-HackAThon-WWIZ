@@ -1,0 +1,43 @@
+{
+  "ehsId": "FMP001",
+  "upn": "tim.firman@fullmetalproductions.com",
+  "firstName": "Tim",
+  "lastName": "Firman",
+  "displayName": "Tim Firman",
+  "userPrincipalName": "tim.firman@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:executiveteam@thread.v2",
+      "teamName": "Executive Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "owner",
+      "joinedDate": "2020-01-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2020-01-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 5,
+    "messagesSentLastWeek": 40,
+    "reactionsLastWeek": 33,
+    "meetingsAttendedLastWeek": 6,
+    "callsInitiatedLastWeek": 1,
+    "filesSharedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

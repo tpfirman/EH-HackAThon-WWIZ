@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP039",
+  "firstName": "Henry",
+  "lastName": "Phillips",
+  "email": "henry.phillips@fullmetalproductions.com",
+  "upn": "henry.phillips@fullmetalproductions.com",
+  "displayName": "Henry Phillips",
+  "primaryEmail": "henry.phillips@fullmetalproductions.com",
+  "aliases": [
+    "h.phillips@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Finance",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-05-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP039",
+      "Department": "Finance",
+      "Manager": "Grace Roberts"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

@@ -1,0 +1,137 @@
+{
+  "projectKey": "HORROR",
+  "projectName": "Midnight Terror",
+  "projectType": "software",
+  "projectCategory": "Game Development",
+  "description": "Midnight Terror - In Production",
+  "lead": "Tim Firman",
+  "issueTypeScheme": "Game Development Issue Types",
+  "workflowScheme": "Game Development Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "HORROR-100",
+      "epicName": "Core Gameplay Systems",
+      "statusCounts": {
+        "To Do": 8,
+        "In Progress": 4,
+        "Code Review": 1,
+        "Testing": 4,
+        "Done": 9
+      }
+    },
+    {
+      "epicKey": "HORROR-200",
+      "epicName": "Art & Animation",
+      "statusCounts": {
+        "To Do": 4,
+        "In Progress": 4,
+        "Review": 2,
+        "Done": 12
+      }
+    },
+    {
+      "epicKey": "HORROR-300",
+      "epicName": "Audio & Music",
+      "statusCounts": {
+        "To Do": 3,
+        "In Progress": 2,
+        "Done": 4
+      }
+    }
+  ],
+  "usersAndRoles": [
+    {
+      "ehsId": "FMP004",
+      "displayName": "Alex Thompson",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP005",
+      "displayName": "Emily Johnson",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP006",
+      "displayName": "David Kim",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP007",
+      "displayName": "Jessica Williams",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP008",
+      "displayName": "Ryan O'Connor",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP009",
+      "displayName": "Lisa Zhang",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP010",
+      "displayName": "James Brown",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP011",
+      "displayName": "Amy Davis",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP012",
+      "displayName": "Mark Wilson",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "ehsId": "FMP013",
+      "displayName": "Jordan Martinez",
+      "roles": [
+        "Designer"
+      ]
+    }
+  ],
+  "projectStats": {
+    "totalIssues": 57,
+    "openIssues": 32,
+    "completedIssues": 25,
+    "totalTimeSpent": "445h 28m",
+    "averageResolutionTime": "4.3 days"
+  },
+  "components": [
+    "Gameplay",
+    "UI",
+    "Audio",
+    "Graphics",
+    "Networking"
+  ],
+  "versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

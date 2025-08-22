@@ -1,0 +1,28 @@
+{
+  "ehsId": "EHS001234",
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@company.com",
+  "upn": "john.smith@company.com",
+  "displayName": "John Smith",
+  "primaryEmail": "john.smith@company.com",
+  "aliases": ["j.smith@company.com"],
+  "orgUnitPath": "/Engineering/Platform",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2022-04-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "EHS001234",
+      "Department": "Engineering",
+      "Manager": "Jane Doe"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

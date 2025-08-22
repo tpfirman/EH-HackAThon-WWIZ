@@ -1,0 +1,45 @@
+{
+  "ehsId": "FMP026",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e25",
+  "displayName": "Emma Lewis",
+  "firstName": "Emma",
+  "lastName": "Lewis",
+  "email": "emma.lewis@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "YTCHAN",
+      "projectName": "YouTube Channel",
+      "roles": [
+        "Content Creator"
+      ]
+    },
+    {
+      "projectKey": "STREAM",
+      "projectName": "Live Streaming",
+      "roles": [
+        "Producer"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "youtube-content-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 10,
+    "inProgressIssues": 3,
+    "completedThisMonth": 12,
+    "totalTimeLoggedThisMonth": "43h 47m",
+    "averageTimePerIssue": "6h 26m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 6,
+    "issuesResolvedLastMonth": 10,
+    "commentsLastMonth": 6
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

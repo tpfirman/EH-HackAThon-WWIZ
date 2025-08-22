@@ -1,0 +1,50 @@
+{
+  "projectKey": "MCBUILD",
+  "projectName": "MC Advanced Building",
+  "projectType": "software",
+  "projectCategory": "Minecraft Mods",
+  "description": "MC Advanced Building - Released",
+  "lead": "Jordan Martinez",
+  "issueTypeScheme": "Game Development Issue Types",
+  "workflowScheme": "Game Development Workflow",
+  "ticketsByEpicAndStatus": [
+    {
+      "epicKey": "MCBUILD-100",
+      "epicName": "Core Gameplay Systems",
+      "statusCounts": {
+        "Done": 28
+      }
+    },
+    {
+      "epicKey": "MCBUILD-200",
+      "epicName": "Post-Launch Support",
+      "statusCounts": {
+        "To Do": 2,
+        "In Progress": 0,
+        "Done": 11
+      }
+    }
+  ],
+  "usersAndRoles": [],
+  "projectStats": {
+    "totalIssues": 41,
+    "openIssues": 2,
+    "completedIssues": 39,
+    "totalTimeSpent": "256h 49m",
+    "averageResolutionTime": "6.1 days"
+  },
+  "components": [
+    "Core",
+    "API",
+    "Config"
+  ],
+  "versions": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-projectSummary"
+}

@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP050",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e49",
+  "displayName": "Leo Cook",
+  "firstName": "Leo",
+  "lastName": "Cook",
+  "email": "leo.cook@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 15,
+      "pagesModified": 33,
+      "commentsAdded": 7
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 20,
+      "commentsAdded": 4
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 23,
+    "totalPagesModified": 53,
+    "totalCommentsAdded": 11,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 13
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 15,
+      "pagesModified": 33,
+      "commentsAdded": 7
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 20,
+      "commentsAdded": 4
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 6,
+    "commentsLastMonth": 11
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

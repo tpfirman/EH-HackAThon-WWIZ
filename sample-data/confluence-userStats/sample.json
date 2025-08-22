@@ -1,0 +1,57 @@
+{
+  "ehsId": "EHS001234",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4ef5",
+  "displayName": "John Smith",
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@company.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "ENG",
+      "spaceName": "Engineering",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 23,
+      "commentsAdded": 15
+    },
+    {
+      "spaceKey": "PLAT",
+      "spaceName": "Platform Team",
+      "role": "administrator", 
+      "pagesCreated": 12,
+      "pagesModified": 45,
+      "commentsAdded": 32
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 20,
+    "totalPagesModified": 68,
+    "totalCommentsAdded": 47,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 15
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "PLAT",
+      "spaceName": "Platform Team",
+      "activityScore": 89,
+      "recentActivity": "Created API documentation page",
+      "lastActiveDate": "2025-08-22"
+    },
+    {
+      "spaceKey": "ENG", 
+      "spaceName": "Engineering",
+      "activityScore": 67,
+      "recentActivity": "Updated coding standards",
+      "lastActiveDate": "2025-08-20"
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 3,
+    "pagesModifiedLastMonth": 12,
+    "commentsLastMonth": 8
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

@@ -1,0 +1,65 @@
+{
+  "spaceKey": "PLAT",
+  "spaceName": "Platform Team",
+  "spaceType": "team",
+  "description": "Documentation and knowledge sharing for the Platform Engineering team",
+  "homepageTitle": "Platform Team Home",
+  "articles": [
+    {
+      "pageId": "12345",
+      "title": "API Gateway Architecture",
+      "type": "page",
+      "summary": "Comprehensive guide to our API Gateway implementation, including authentication, rate limiting, and monitoring.",
+      "author": "John Smith",
+      "authorEhsId": "EHS001234",
+      "created": "2025-07-15T10:00:00Z",
+      "lastModified": "2025-08-20T14:30:00Z",
+      "wordCount": 2450,
+      "viewCount": 156,
+      "labels": ["architecture", "api", "gateway"]
+    },
+    {
+      "pageId": "12346", 
+      "title": "Database Migration Runbook",
+      "type": "page",
+      "summary": "Step-by-step procedures for database migrations including rollback strategies and testing protocols.",
+      "author": "Jane Doe",
+      "authorEhsId": "EHS001235",
+      "created": "2025-08-01T09:15:00Z", 
+      "lastModified": "2025-08-22T11:45:00Z",
+      "wordCount": 1890,
+      "viewCount": 89,
+      "labels": ["database", "migration", "runbook"]
+    }
+  ],
+  "contributors": [
+    {
+      "ehsId": "EHS001234",
+      "displayName": "John Smith",
+      "role": "administrator",
+      "pagesCreated": 12,
+      "pagesModified": 45,
+      "lastActivity": "2025-08-22T14:30:00Z"
+    },
+    {
+      "ehsId": "EHS001235",
+      "displayName": "Jane Doe", 
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 23,
+      "lastActivity": "2025-08-22T11:45:00Z"
+    }
+  ],
+  "activitySummary": {
+    "totalPages": 45,
+    "totalBlogPosts": 8,
+    "totalComments": 127,
+    "totalAttachments": 89,
+    "averageViewsPerPage": 78,
+    "mostViewedPage": "API Gateway Architecture",
+    "recentlyUpdatedPages": 12,
+    "activeContributors": 8
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

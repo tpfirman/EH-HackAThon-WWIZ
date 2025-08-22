@@ -1,0 +1,45 @@
+{
+  "ehsId": "FMP030",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e29",
+  "displayName": "Mia Lopez",
+  "firstName": "Mia",
+  "lastName": "Lopez",
+  "email": "mia.lopez@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "YTCHAN",
+      "projectName": "YouTube Channel",
+      "roles": [
+        "Content Creator"
+      ]
+    },
+    {
+      "projectKey": "STREAM",
+      "projectName": "Live Streaming",
+      "roles": [
+        "Producer"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "youtube-content-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 7,
+    "inProgressIssues": 1,
+    "completedThisMonth": 3,
+    "totalTimeLoggedThisMonth": "27h 56m",
+    "averageTimePerIssue": "5h 24m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 8,
+    "issuesResolvedLastMonth": 6,
+    "commentsLastMonth": 9
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

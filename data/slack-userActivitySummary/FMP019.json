@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP019",
+  "upn": "lucas.garcia@fullmetalproductions.com",
+  "firstName": "Lucas",
+  "lastName": "Garcia",
+  "displayName": "Lucas Garcia",
+  "slackUserId": "U7706160731",
+  "slackUsername": "lucas.garcia",
+  "slackDisplayName": "Lucas Garcia",
+  "slackEmail": "lucas.garcia@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-09-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C5060479322",
+      "channelName": "art-and-animation",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-09-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 23,
+      "reactionsLastWeek": 11,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-09-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 3,
+      "reactionsLastWeek": 13,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 11,
+    "totalDirectMessages": 9,
+    "messagesSentLastWeek": 40,
+    "reactionsLastWeek": 13,
+    "filesSharedLastWeek": 2,
+    "threadsStartedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

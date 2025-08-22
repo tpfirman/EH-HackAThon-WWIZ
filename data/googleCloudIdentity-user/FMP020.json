@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP020",
+  "firstName": "Zoe",
+  "lastName": "Mitchell",
+  "email": "zoe.mitchell@fullmetalproductions.com",
+  "upn": "zoe.mitchell@fullmetalproductions.com",
+  "displayName": "Zoe Mitchell",
+  "primaryEmail": "zoe.mitchell@fullmetalproductions.com",
+  "aliases": [
+    "z.mitchell@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Art & Animation",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-01-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP020",
+      "Department": "Art & Animation",
+      "Manager": "Maya Patel"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

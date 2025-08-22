@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP040",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e39",
+  "displayName": "Lily Evans",
+  "firstName": "Lily",
+  "lastName": "Evans",
+  "email": "lily.evans@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [],
+  "jiraGroups": [
+    "jira-software-users",
+    "marketing-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 10,
+    "inProgressIssues": 5,
+    "completedThisMonth": 5,
+    "totalTimeLoggedThisMonth": "56h 32m",
+    "averageTimePerIssue": "5h 23m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 4,
+    "issuesResolvedLastMonth": 8,
+    "commentsLastMonth": 6
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

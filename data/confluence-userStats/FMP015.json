@@ -1,0 +1,59 @@
+{
+  "ehsId": "FMP015",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e14",
+  "displayName": "Chris Anderson",
+  "firstName": "Chris",
+  "lastName": "Anderson",
+  "email": "chris.anderson@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 11,
+      "pagesModified": 23,
+      "commentsAdded": 15
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 23,
+      "commentsAdded": 13
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 18,
+    "totalPagesModified": 46,
+    "totalCommentsAdded": 28,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 3
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 11,
+      "pagesModified": 23,
+      "commentsAdded": 15
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 23,
+      "commentsAdded": 13
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 9,
+    "commentsLastMonth": 2
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

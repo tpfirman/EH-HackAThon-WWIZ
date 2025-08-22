@@ -1,0 +1,30 @@
+{
+  "ehsId": "FMP031",
+  "firstName": "William",
+  "lastName": "Hill",
+  "email": "william.hill@fullmetalproductions.com",
+  "upn": "william.hill@fullmetalproductions.com",
+  "displayName": "William Hill",
+  "jobTitle": "Social Media Manager",
+  "department": "YouTube Content",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 446 629 761",
+  "businessPhones": [
+    "+61 3 1244 9688"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-09-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "YouTube Content_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}
