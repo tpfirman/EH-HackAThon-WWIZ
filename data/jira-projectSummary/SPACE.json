@@ -12,26 +12,26 @@
       "epicKey": "SPACE-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "Done": 28
+        "Done": 25
       }
     },
     {
       "epicKey": "SPACE-200",
       "epicName": "Post-Launch Support",
       "statusCounts": {
-        "To Do": 1,
-        "In Progress": 1,
+        "To Do": 2,
+        "In Progress": 0,
         "Done": 12
       }
     }
   ],
   "usersAndRoles": [],
   "projectStats": {
-    "totalIssues": 42,
+    "totalIssues": 39,
     "openIssues": 2,
-    "completedIssues": 40,
-    "totalTimeSpent": "612h 47m",
-    "averageResolutionTime": "1.3 days"
+    "completedIssues": 37,
+    "totalTimeSpent": "663h 43m",
+    "averageResolutionTime": "2.4 days"
   },
   "components": [
     "Gameplay",

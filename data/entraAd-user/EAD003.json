@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP003",
+  "fileId": "EAD003",
+  "firstName": "Michael",
+  "lastName": "Rodriguez",
+  "email": "michael.rodriguez@fullmetalproductions.com",
+  "upn": "michael.rodriguez@fullmetalproductions.com",
+  "displayName": "Michael Rodriguez",
+  "jobTitle": "CFO",
+  "department": "Executive",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 499 251 754",
+  "businessPhones": [
+    "+61 3 2597 6250"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-03-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Executive_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

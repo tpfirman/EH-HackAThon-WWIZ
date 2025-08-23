@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP033",
+  "fileId": "CNF033",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e32",
+  "displayName": "Benjamin Adams",
+  "firstName": "Benjamin",
+  "lastName": "Adams",
+  "email": "benjamin.adams@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 7,
+      "commentsAdded": 3
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 1,
+    "totalPagesModified": 7,
+    "totalCommentsAdded": 3,
+    "totalBlogPostsCreated": 1,
+    "totalAttachmentsUploaded": 4
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 7,
+      "commentsAdded": 3
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 7,
+    "commentsLastMonth": 5
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

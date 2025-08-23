@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP034",
+  "fileId": "CNF034",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e33",
+  "displayName": "Harper Baker",
+  "firstName": "Harper",
+  "lastName": "Baker",
+  "email": "harper.baker@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 4,
+      "commentsAdded": 5
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 3,
+    "totalPagesModified": 4,
+    "totalCommentsAdded": 5,
+    "totalBlogPostsCreated": 1,
+    "totalAttachmentsUploaded": 14
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 4,
+      "commentsAdded": 5
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 13,
+    "commentsLastMonth": 6
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

@@ -80,20 +80,49 @@ def extractFileList(documentsData):
     
     return files
 
-def deleteDocument(serverUrl, apiKey, docName):
-    """Delete a specific document"""
-    endpoint = f"{serverUrl}/api/v1/document/{docName}"
+def deleteDocuments(serverUrl: str, apiKey: str, matchingFiles: List[Dict[str, str]]) -> bool:
+    """Deletes provided documents in batches of 10"""
+    batchSize = 10
+    totalFiles = len(matchingFiles)
     
+    print(f"Deleting {totalFiles} files in batches of {batchSize}")
+    
+    # Split files into batches
+    for i in range(0, totalFiles, batchSize):
+        batch = matchingFiles[i:i + batchSize]
+        batchNum = (i // batchSize) + 1
+        totalBatches = (totalFiles + batchSize - 1) // batchSize
+        
+        print(f"Processing batch {batchNum}/{totalBatches} ({len(batch)} files)")
+        
+        # Process this batch
+        success = deleteDocumentsBatch(serverUrl, apiKey, batch, batchNum)
+        if not success:
+            print(f"Batch {batchNum} failed - aborting deletion process")
+            return False
+    
+    print(f"Successfully deleted all {totalFiles} files")
+    return True
+
+def deleteDocumentsBatch(serverUrl: str, apiKey: str, batchFiles: List[Dict[str, str]], batchNum: int) -> bool:
+    """Delete a single batch of documents"""
+    endpoint = f"{serverUrl}/api/v1/system/remove-documents"
+    postBody = generatePostBody(batchFiles)
+    headers = getHeaders(apiKey)
+    
+    payload = json.dumps(postBody)
+
     try:
-        response = requests.delete(endpoint, headers=getHeaders(apiKey))
+        response = requests.delete(endpoint, headers=headers, data=payload)
+        
         if response.status_code == 200:
-            print(f"Deleted: {docName}")
+            print(f"Batch {batchNum}: Successfully deleted {len(batchFiles)} files")
             return True
         else:
-            print(f"Failed to delete {docName}: {response.status_code} - {response.text}")
+            print(f"Batch {batchNum}: Failed to delete files: {response.status_code} - {response.text}")
             return False
     except Exception as e:
-        print(f"Error deleting {docName}: {str(e)}")
+        print(f"Batch {batchNum}: Error deleting files: {str(e)}")
         return False
 
 def main():
@@ -103,7 +132,7 @@ def main():
         print("  python cleanup_documents.py delete <filename>       # Delete specific file")
         print("  python cleanup_documents.py delete-pattern <pattern> # Delete files matching pattern")
         print("  python cleanup_documents.py count                   # Count total files")
-        return
+        os.sys.exit(1)
     
     env = loadEnv()
     serverUrl = env.get("ANYTHINGLLM_URL")
@@ -146,13 +175,25 @@ def main():
     elif command == "delete" and len(sys.argv) == 3:
         filename = sys.argv[2]
         print(f"Deleting: {filename}")
-        deleteDocument(serverUrl, apiKey, filename)
+        
+        docs = listAllDocuments(serverUrl, apiKey)
+        if docs:
+            files = extractFileList(docs)
+            matchingFiles = [f for f in files if f['name'] == filename]
+            
+            if not matchingFiles:
+                print(f"File not found: {filename}")
+                return
+            
+            deleteFiles = deleteDocuments(serverUrl, apiKey, matchingFiles)
+            if deleteFiles:
+                print(f"Successfully deleted: {filename}")
+            else:
+                print(f"Failed to delete: {filename}")
     
     elif command == "delete-pattern":
         pattern = sys.argv[2] if len(sys.argv) > 2 else ""
         print(f"Deleting files matching pattern: '{pattern}'")
-        print(f"Pattern length: {len(pattern)}")
-        print(f"sys.argv: {sys.argv}")
         
         docs = listAllDocuments(serverUrl, apiKey)
         if docs:
@@ -173,16 +214,26 @@ def main():
             
             confirm = input(f"\nDelete {len(matchingFiles)} files? (y/N): ")
             if confirm.lower() == 'y':
-                deleted = 0
-                for file in matchingFiles:
-                    if deleteDocument(serverUrl, apiKey, file['name']):
-                        deleted += 1
-                print(f"\nDeleted {deleted} out of {len(matchingFiles)} files")
+                deleteFiles = deleteDocuments(serverUrl, apiKey, matchingFiles)
+                if deleteFiles:
+                    print(f"Successfully deleted {len(matchingFiles)} files")
+                else:
+                    print("Failed to delete files")
             else:
                 print("Cancelled")
     
     else:
         print("Invalid command. Use 'list', 'count', 'delete <filename>', or 'delete-pattern <pattern>'")
+
+def generatePostBody(matchingFiles: list[dict]) -> dict:
+    """Accepts a list of document metadata and generates the request body for deletion"""
+    fileNames: list[str] = []
+    for file in matchingFiles:
+        fullName = file['name']
+        if fullName and fullName not in fileNames:
+            fileNames.append(fullName)
+
+    return {"names": fileNames}
 
 if __name__ == "__main__":
     main()

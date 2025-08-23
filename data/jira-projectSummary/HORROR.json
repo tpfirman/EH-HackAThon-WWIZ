@@ -12,11 +12,11 @@
       "epicKey": "HORROR-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "To Do": 8,
+        "To Do": 7,
         "In Progress": 4,
-        "Code Review": 1,
-        "Testing": 4,
-        "Done": 9
+        "Code Review": 0,
+        "Testing": 3,
+        "Done": 10
       }
     },
     {
@@ -24,9 +24,9 @@
       "epicName": "Art & Animation",
       "statusCounts": {
         "To Do": 4,
-        "In Progress": 4,
-        "Review": 2,
-        "Done": 12
+        "In Progress": 3,
+        "Review": 0,
+        "Done": 16
       }
     },
     {
@@ -35,7 +35,7 @@
       "statusCounts": {
         "To Do": 3,
         "In Progress": 2,
-        "Done": 4
+        "Done": 8
       }
     }
   ],
@@ -112,11 +112,11 @@
     }
   ],
   "projectStats": {
-    "totalIssues": 57,
-    "openIssues": 32,
-    "completedIssues": 25,
-    "totalTimeSpent": "445h 28m",
-    "averageResolutionTime": "4.3 days"
+    "totalIssues": 60,
+    "openIssues": 26,
+    "completedIssues": 34,
+    "totalTimeSpent": "356h 54m",
+    "averageResolutionTime": "5.9 days"
   },
   "components": [
     "Gameplay",

@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP012",
+  "fileId": "SLK012",
+  "upn": "mark.wilson@fullmetalproductions.com",
+  "firstName": "Mark",
+  "lastName": "Wilson",
+  "displayName": "Mark Wilson",
+  "slackUserId": "U3252627290",
+  "slackUsername": "mark.wilson",
+  "slackDisplayName": "Mark Wilson",
+  "slackEmail": "mark.wilson@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-09-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C5101368758",
+      "channelName": "development",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-09-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 13,
+      "reactionsLastWeek": 7,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-09-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 6,
+      "reactionsLastWeek": 19,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 15,
+    "totalDirectMessages": 6,
+    "messagesSentLastWeek": 22,
+    "reactionsLastWeek": 31,
+    "filesSharedLastWeek": 7,
+    "threadsStartedLastWeek": 0,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "away"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

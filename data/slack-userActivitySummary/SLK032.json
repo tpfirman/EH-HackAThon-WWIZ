@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP032",
+  "fileId": "SLK032",
+  "upn": "charlotte.green@fullmetalproductions.com",
+  "firstName": "Charlotte",
+  "lastName": "Green",
+  "displayName": "Charlotte Green",
+  "slackUserId": "U6428911118",
+  "slackUsername": "charlotte.green",
+  "slackDisplayName": "Charlotte Green",
+  "slackEmail": "charlotte.green@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-11-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C6667677441",
+      "channelName": "qa",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-11-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 12,
+      "reactionsLastWeek": 8,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-11-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 3,
+      "reactionsLastWeek": 6,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 14,
+    "totalDirectMessages": 12,
+    "messagesSentLastWeek": 28,
+    "reactionsLastWeek": 26,
+    "filesSharedLastWeek": 1,
+    "threadsStartedLastWeek": 3,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

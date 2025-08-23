@@ -12,7 +12,7 @@
       "epicKey": "MCTECH-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "Done": 30
+        "Done": 29
       }
     },
     {
@@ -21,17 +21,17 @@
       "statusCounts": {
         "To Do": 2,
         "In Progress": 2,
-        "Done": 11
+        "Done": 8
       }
     }
   ],
   "usersAndRoles": [],
   "projectStats": {
-    "totalIssues": 45,
+    "totalIssues": 41,
     "openIssues": 4,
-    "completedIssues": 41,
-    "totalTimeSpent": "567h 0m",
-    "averageResolutionTime": "2.5 days"
+    "completedIssues": 37,
+    "totalTimeSpent": "333h 13m",
+    "averageResolutionTime": "3.3 days"
   },
   "components": [
     "Core",

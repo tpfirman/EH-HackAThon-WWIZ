@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP001",
+  "fileId": "EAD001",
+  "firstName": "Tim",
+  "lastName": "Firman",
+  "email": "tim.firman@fullmetalproductions.com",
+  "upn": "tim.firman@fullmetalproductions.com",
+  "displayName": "Tim Firman",
+  "jobTitle": "CEO",
+  "department": "Executive",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 442 641 484",
+  "businessPhones": [
+    "+61 3 9463 4920"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-01-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Executive_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

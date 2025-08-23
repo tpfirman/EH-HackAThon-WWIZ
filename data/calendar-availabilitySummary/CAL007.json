@@ -1,0 +1,49 @@
+{
+  "ehsId": "FMP007",
+  "fileId": "CAL007",
+  "upn": "jessica.williams@fullmetalproductions.com",
+  "firstName": "Jessica",
+  "lastName": "Williams",
+  "displayName": "Jessica Williams",
+  "workingHours": {
+    "timezone": "Australia/Melbourne",
+    "monday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "tuesday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "wednesday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "thursday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "friday": {
+      "start": "09:00",
+      "end": "17:00"
+    },
+    "saturday": null,
+    "sunday": null
+  },
+  "availabilitySummary": {
+    "currentStatus": "Focus time",
+    "nextMeeting": {
+      "title": "Sprint Planning",
+      "start": "2025-08-23T14:00:00Z",
+      "end": "2025-08-23T15:00:00Z"
+    },
+    "weeklyMeetingLoad": {
+      "totalMeetingHours": 15,
+      "focusTimeHours": 19,
+      "availableHours": 14,
+      "meetingDensity": "heavy"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "calendar-availabilitySummary"
+}

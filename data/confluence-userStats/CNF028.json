@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP028",
+  "fileId": "CNF028",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e27",
+  "displayName": "Ava Allen",
+  "firstName": "Ava",
+  "lastName": "Allen",
+  "email": "ava.allen@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 14,
+      "commentsAdded": 2
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 4,
+    "totalPagesModified": 14,
+    "totalCommentsAdded": 2,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 7
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 14,
+      "commentsAdded": 2
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 4,
+    "pagesModifiedLastMonth": 4,
+    "commentsLastMonth": 10
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

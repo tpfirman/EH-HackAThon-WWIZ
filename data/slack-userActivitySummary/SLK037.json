@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP037",
+  "fileId": "SLK037",
+  "upn": "elijah.carter@fullmetalproductions.com",
+  "firstName": "Elijah",
+  "lastName": "Carter",
+  "displayName": "Elijah Carter",
+  "slackUserId": "U3524692142",
+  "slackUsername": "elijah.carter",
+  "slackDisplayName": "Elijah Carter",
+  "slackEmail": "elijah.carter@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-11-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C7401643599",
+      "channelName": "hr",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-11-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 10,
+      "reactionsLastWeek": 7,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-11-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 3,
+      "reactionsLastWeek": 13,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 6,
+    "totalDirectMessages": 7,
+    "messagesSentLastWeek": 41,
+    "reactionsLastWeek": 14,
+    "filesSharedLastWeek": 4,
+    "threadsStartedLastWeek": 3,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

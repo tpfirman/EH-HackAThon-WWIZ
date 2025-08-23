@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP005",
+  "fileId": "SLK005",
+  "upn": "emily.johnson@fullmetalproductions.com",
+  "firstName": "Emily",
+  "lastName": "Johnson",
+  "displayName": "Emily Johnson",
+  "slackUserId": "U2722453595",
+  "slackUsername": "emily.johnson",
+  "slackDisplayName": "Emily Johnson",
+  "slackEmail": "emily.johnson@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-06-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C8830634325",
+      "channelName": "development",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-06-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 9,
+      "reactionsLastWeek": 18,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-06-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 6,
+      "reactionsLastWeek": 18,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 6,
+    "totalDirectMessages": 12,
+    "messagesSentLastWeek": 49,
+    "reactionsLastWeek": 26,
+    "filesSharedLastWeek": 5,
+    "threadsStartedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP043",
+  "fileId": "GCI043",
+  "firstName": "Mason",
+  "lastName": "Collins",
+  "email": "mason.collins@fullmetalproductions.com",
+  "upn": "mason.collins@fullmetalproductions.com",
+  "displayName": "Mason Collins",
+  "primaryEmail": "mason.collins@fullmetalproductions.com",
+  "aliases": [
+    "m.collins@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Operations",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-09-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": true,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP043",
+      "Department": "Operations",
+      "Manager": "Sarah Chen"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

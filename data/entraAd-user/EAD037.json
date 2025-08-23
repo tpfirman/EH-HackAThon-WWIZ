@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP037",
+  "fileId": "EAD037",
+  "firstName": "Elijah",
+  "lastName": "Carter",
+  "email": "elijah.carter@fullmetalproductions.com",
+  "upn": "elijah.carter@fullmetalproductions.com",
+  "displayName": "Elijah Carter",
+  "jobTitle": "HR Coordinator",
+  "department": "HR",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 435 610 125",
+  "businessPhones": [
+    "+61 3 7291 6025"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-11-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "HR_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

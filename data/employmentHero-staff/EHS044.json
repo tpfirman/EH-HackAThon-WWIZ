@@ -1,0 +1,16 @@
+{
+  "ehsId": "FMP044",
+  "fileId": "EHS044",
+  "firstName": "Avery",
+  "lastName": "Edwards",
+  "positionTitle": "IT Support",
+  "team": "Operations",
+  "manager": "Mason Collins",
+  "lengthOfService": "4 years 4 months",
+  "startDate": "2021-04-01",
+  "department": "Operations",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP003",
+  "fileId": "SLK003",
+  "upn": "michael.rodriguez@fullmetalproductions.com",
+  "firstName": "Michael",
+  "lastName": "Rodriguez",
+  "displayName": "Michael Rodriguez",
+  "slackUserId": "U2273348609",
+  "slackUsername": "michael.rodriguez",
+  "slackDisplayName": "Michael Rodriguez",
+  "slackEmail": "michael.rodriguez@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-03-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C3931857522",
+      "channelName": "executive",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-03-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 12,
+      "reactionsLastWeek": 13,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-03-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 9,
+      "reactionsLastWeek": 11,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 15,
+    "totalDirectMessages": 11,
+    "messagesSentLastWeek": 41,
+    "reactionsLastWeek": 40,
+    "filesSharedLastWeek": 4,
+    "threadsStartedLastWeek": 3,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

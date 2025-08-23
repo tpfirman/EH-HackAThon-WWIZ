@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP038",
+  "fileId": "CNF038",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e37",
+  "displayName": "Grace Roberts",
+  "firstName": "Grace",
+  "lastName": "Roberts",
+  "email": "grace.roberts@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 10,
+      "commentsAdded": 5
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 4,
+    "totalPagesModified": 10,
+    "totalCommentsAdded": 5,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 6
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 10,
+      "commentsAdded": 5
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 14,
+    "commentsLastMonth": 7
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

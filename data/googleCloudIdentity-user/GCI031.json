@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP031",
+  "fileId": "GCI031",
+  "firstName": "William",
+  "lastName": "Hill",
+  "email": "william.hill@fullmetalproductions.com",
+  "upn": "william.hill@fullmetalproductions.com",
+  "displayName": "William Hill",
+  "primaryEmail": "william.hill@fullmetalproductions.com",
+  "aliases": [
+    "w.hill@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/YouTube Content",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-09-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP031",
+      "Department": "YouTube Content",
+      "Manager": "Emma Lewis"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

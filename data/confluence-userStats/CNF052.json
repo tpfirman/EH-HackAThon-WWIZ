@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP052",
+  "fileId": "CNF052",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e51",
+  "displayName": "Caleb Murphy",
+  "firstName": "Caleb",
+  "lastName": "Murphy",
+  "email": "caleb.murphy@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 7,
+      "commentsAdded": 9
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 5,
+    "totalPagesModified": 7,
+    "totalCommentsAdded": 9,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 4
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 7,
+      "commentsAdded": 9
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 1,
+    "pagesModifiedLastMonth": 6,
+    "commentsLastMonth": 10
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

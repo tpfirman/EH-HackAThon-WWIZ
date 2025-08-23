@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP051",
+  "fileId": "GCI051",
+  "firstName": "Hazel",
+  "lastName": "Bell",
+  "email": "hazel.bell@fullmetalproductions.com",
+  "upn": "hazel.bell@fullmetalproductions.com",
+  "displayName": "Hazel Bell",
+  "primaryEmail": "hazel.bell@fullmetalproductions.com",
+  "aliases": [
+    "h.bell@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Game Design",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2023-03-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP051",
+      "Department": "Game Design",
+      "Manager": "Jordan Martinez"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

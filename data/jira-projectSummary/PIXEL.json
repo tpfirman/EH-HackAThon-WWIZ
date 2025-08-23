@@ -12,7 +12,7 @@
       "epicKey": "PIXEL-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "Done": 21
+        "Done": 15
       }
     },
     {
@@ -20,18 +20,18 @@
       "epicName": "Post-Launch Support",
       "statusCounts": {
         "To Do": 3,
-        "In Progress": 2,
-        "Done": 7
+        "In Progress": 0,
+        "Done": 10
       }
     }
   ],
   "usersAndRoles": [],
   "projectStats": {
-    "totalIssues": 33,
-    "openIssues": 5,
-    "completedIssues": 28,
-    "totalTimeSpent": "635h 31m",
-    "averageResolutionTime": "6.4 days"
+    "totalIssues": 28,
+    "openIssues": 3,
+    "completedIssues": 25,
+    "totalTimeSpent": "395h 59m",
+    "averageResolutionTime": "6.3 days"
   },
   "components": [
     "Gameplay",

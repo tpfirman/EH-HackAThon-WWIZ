@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP049",
+  "fileId": "GCI049",
+  "firstName": "Scarlett",
+  "lastName": "Reed",
+  "email": "scarlett.reed@fullmetalproductions.com",
+  "upn": "scarlett.reed@fullmetalproductions.com",
+  "displayName": "Scarlett Reed",
+  "primaryEmail": "scarlett.reed@fullmetalproductions.com",
+  "aliases": [
+    "s.reed@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/YouTube Content",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2022-10-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP049",
+      "Department": "YouTube Content",
+      "Manager": "Emma Lewis"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

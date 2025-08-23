@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP002",
+  "fileId": "GCI002",
+  "firstName": "Sarah",
+  "lastName": "Chen",
+  "email": "sarah.chen@fullmetalproductions.com",
+  "upn": "sarah.chen@fullmetalproductions.com",
+  "displayName": "Sarah Chen",
+  "primaryEmail": "sarah.chen@fullmetalproductions.com",
+  "aliases": [
+    "s.chen@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Executive",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-02-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": true,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP002",
+      "Department": "Executive",
+      "Manager": "Tim Firman"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

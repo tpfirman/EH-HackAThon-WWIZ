@@ -1,0 +1,46 @@
+{
+  "ehsId": "FMP028",
+  "fileId": "JIR028",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e27",
+  "displayName": "Ava Allen",
+  "firstName": "Ava",
+  "lastName": "Allen",
+  "email": "ava.allen@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "YTCHAN",
+      "projectName": "YouTube Channel",
+      "roles": [
+        "Content Creator"
+      ]
+    },
+    {
+      "projectKey": "STREAM",
+      "projectName": "Live Streaming",
+      "roles": [
+        "Producer"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "youtube-content-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 20,
+    "inProgressIssues": 4,
+    "completedThisMonth": 15,
+    "totalTimeLoggedThisMonth": "45h 29m",
+    "averageTimePerIssue": "2h 35m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 4,
+    "issuesResolvedLastMonth": 2,
+    "commentsLastMonth": 5
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

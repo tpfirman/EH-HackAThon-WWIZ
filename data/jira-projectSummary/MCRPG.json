@@ -12,7 +12,7 @@
       "epicKey": "MCRPG-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "Done": 27
+        "Done": 21
       }
     },
     {
@@ -20,18 +20,18 @@
       "epicName": "Post-Launch Support",
       "statusCounts": {
         "To Do": 3,
-        "In Progress": 0,
-        "Done": 8
+        "In Progress": 1,
+        "Done": 10
       }
     }
   ],
   "usersAndRoles": [],
   "projectStats": {
-    "totalIssues": 38,
-    "openIssues": 3,
-    "completedIssues": 35,
-    "totalTimeSpent": "213h 57m",
-    "averageResolutionTime": "7.2 days"
+    "totalIssues": 35,
+    "openIssues": 4,
+    "completedIssues": 31,
+    "totalTimeSpent": "675h 11m",
+    "averageResolutionTime": "2.6 days"
   },
   "components": [
     "Core",

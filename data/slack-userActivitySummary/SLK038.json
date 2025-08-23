@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP038",
+  "fileId": "SLK038",
+  "upn": "grace.roberts@fullmetalproductions.com",
+  "firstName": "Grace",
+  "lastName": "Roberts",
+  "displayName": "Grace Roberts",
+  "slackUserId": "U7860289045",
+  "slackUsername": "grace.roberts",
+  "slackDisplayName": "Grace Roberts",
+  "slackEmail": "grace.roberts@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-07-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C3465659492",
+      "channelName": "finance",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-07-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 8,
+      "reactionsLastWeek": 15,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-07-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 7,
+      "reactionsLastWeek": 11,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 9,
+    "totalDirectMessages": 8,
+    "messagesSentLastWeek": 39,
+    "reactionsLastWeek": 36,
+    "filesSharedLastWeek": 4,
+    "threadsStartedLastWeek": 1,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

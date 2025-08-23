@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP044",
+  "fileId": "EAD044",
+  "firstName": "Avery",
+  "lastName": "Edwards",
+  "email": "avery.edwards@fullmetalproductions.com",
+  "upn": "avery.edwards@fullmetalproductions.com",
+  "displayName": "Avery Edwards",
+  "jobTitle": "IT Support",
+  "department": "Operations",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 470 606 416",
+  "businessPhones": [
+    "+61 3 2692 4885"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-04-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Operations_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

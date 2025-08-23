@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP047",
+  "fileId": "CNF047",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e46",
+  "displayName": "Luna Morris",
+  "firstName": "Luna",
+  "lastName": "Morris",
+  "email": "luna.morris@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 14,
+      "commentsAdded": 7
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 2,
+    "totalPagesModified": 14,
+    "totalCommentsAdded": 7,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 15
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 14,
+      "commentsAdded": 7
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 4,
+    "pagesModifiedLastMonth": 10,
+    "commentsLastMonth": 8
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP013",
+  "fileId": "CNF013",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e12",
+  "displayName": "Jordan Martinez",
+  "firstName": "Jordan",
+  "lastName": "Martinez",
+  "email": "jordan.martinez@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 18,
+      "pagesModified": 40,
+      "commentsAdded": 13
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 24,
+      "commentsAdded": 11
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 24,
+    "totalPagesModified": 64,
+    "totalCommentsAdded": 24,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 6
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 18,
+      "pagesModified": 40,
+      "commentsAdded": 13
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 24,
+      "commentsAdded": 11
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 3,
+    "pagesModifiedLastMonth": 10,
+    "commentsLastMonth": 5
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

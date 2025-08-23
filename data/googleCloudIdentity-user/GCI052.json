@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP052",
+  "fileId": "GCI052",
+  "firstName": "Caleb",
+  "lastName": "Murphy",
+  "email": "caleb.murphy@fullmetalproductions.com",
+  "upn": "caleb.murphy@fullmetalproductions.com",
+  "displayName": "Caleb Murphy",
+  "primaryEmail": "caleb.murphy@fullmetalproductions.com",
+  "aliases": [
+    "c.murphy@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Art & Animation",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2023-05-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP052",
+      "Department": "Art & Animation",
+      "Manager": "Maya Patel"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

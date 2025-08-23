@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP002",
+  "fileId": "EAD002",
+  "firstName": "Sarah",
+  "lastName": "Chen",
+  "email": "sarah.chen@fullmetalproductions.com",
+  "upn": "sarah.chen@fullmetalproductions.com",
+  "displayName": "Sarah Chen",
+  "jobTitle": "COO",
+  "department": "Executive",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 442 549 676",
+  "businessPhones": [
+    "+61 3 7935 5253"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-02-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Executive_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

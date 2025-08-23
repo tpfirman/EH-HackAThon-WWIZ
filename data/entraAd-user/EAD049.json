@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP049",
+  "fileId": "EAD049",
+  "firstName": "Scarlett",
+  "lastName": "Reed",
+  "email": "scarlett.reed@fullmetalproductions.com",
+  "upn": "scarlett.reed@fullmetalproductions.com",
+  "displayName": "Scarlett Reed",
+  "jobTitle": "Video Editor",
+  "department": "YouTube Content",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 412 643 734",
+  "businessPhones": [
+    "+61 3 2453 8001"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2022-10-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "YouTube Content_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

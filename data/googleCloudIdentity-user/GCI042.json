@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP042",
+  "fileId": "GCI042",
+  "firstName": "Chloe",
+  "lastName": "Parker",
+  "email": "chloe.parker@fullmetalproductions.com",
+  "upn": "chloe.parker@fullmetalproductions.com",
+  "displayName": "Chloe Parker",
+  "primaryEmail": "chloe.parker@fullmetalproductions.com",
+  "aliases": [
+    "c.parker@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Marketing",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-10-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP042",
+      "Department": "Marketing",
+      "Manager": "Lily Evans"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP041",
+  "fileId": "EAD041",
+  "firstName": "Jackson",
+  "lastName": "Turner",
+  "email": "jackson.turner@fullmetalproductions.com",
+  "upn": "jackson.turner@fullmetalproductions.com",
+  "displayName": "Jackson Turner",
+  "jobTitle": "Community Manager",
+  "department": "Marketing",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 469 563 470",
+  "businessPhones": [
+    "+61 3 7729 3510"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-02-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Marketing_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

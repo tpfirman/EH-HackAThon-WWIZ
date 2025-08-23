@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP045",
+  "fileId": "CNF045",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e44",
+  "displayName": "Evelyn Stewart",
+  "firstName": "Evelyn",
+  "lastName": "Stewart",
+  "email": "evelyn.stewart@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 9,
+      "commentsAdded": 8
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 5,
+    "totalPagesModified": 9,
+    "totalCommentsAdded": 8,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 4
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 9,
+      "commentsAdded": 8
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 6,
+    "commentsLastMonth": 3
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

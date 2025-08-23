@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP006",
+  "fileId": "CNF006",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e05",
+  "displayName": "David Kim",
+  "firstName": "David",
+  "lastName": "Kim",
+  "email": "david.kim@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 14,
+      "pagesModified": 26,
+      "commentsAdded": 14
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 12,
+      "commentsAdded": 4
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 17,
+    "totalPagesModified": 38,
+    "totalCommentsAdded": 18,
+    "totalBlogPostsCreated": 1,
+    "totalAttachmentsUploaded": 12
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 14,
+      "pagesModified": 26,
+      "commentsAdded": 14
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 12,
+      "commentsAdded": 4
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 4,
+    "pagesModifiedLastMonth": 5,
+    "commentsLastMonth": 5
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

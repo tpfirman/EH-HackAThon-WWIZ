@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP035",
+  "fileId": "CNF035",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e34",
+  "displayName": "Logan Gonzalez",
+  "firstName": "Logan",
+  "lastName": "Gonzalez",
+  "email": "logan.gonzalez@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 9,
+      "commentsAdded": 5
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 3,
+    "totalPagesModified": 9,
+    "totalCommentsAdded": 5,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 10
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 9,
+      "commentsAdded": 5
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 3,
+    "pagesModifiedLastMonth": 9,
+    "commentsLastMonth": 11
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

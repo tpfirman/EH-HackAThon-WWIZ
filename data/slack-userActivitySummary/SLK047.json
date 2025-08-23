@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP047",
+  "fileId": "SLK047",
+  "upn": "luna.morris@fullmetalproductions.com",
+  "firstName": "Luna",
+  "lastName": "Morris",
+  "displayName": "Luna Morris",
+  "slackUserId": "U5003548948",
+  "slackUsername": "luna.morris",
+  "slackDisplayName": "Luna Morris",
+  "slackEmail": "luna.morris@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2022-08-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C4004366149",
+      "channelName": "qa",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2022-08-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 21,
+      "reactionsLastWeek": 16,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2022-08-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 7,
+      "reactionsLastWeek": 19,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 13,
+    "totalDirectMessages": 11,
+    "messagesSentLastWeek": 36,
+    "reactionsLastWeek": 28,
+    "filesSharedLastWeek": 5,
+    "threadsStartedLastWeek": 0,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

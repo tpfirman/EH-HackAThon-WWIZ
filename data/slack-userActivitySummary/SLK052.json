@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP052",
+  "fileId": "SLK052",
+  "upn": "caleb.murphy@fullmetalproductions.com",
+  "firstName": "Caleb",
+  "lastName": "Murphy",
+  "displayName": "Caleb Murphy",
+  "slackUserId": "U4202992286",
+  "slackUsername": "caleb.murphy",
+  "slackDisplayName": "Caleb Murphy",
+  "slackEmail": "caleb.murphy@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2023-05-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C5152960090",
+      "channelName": "art-and-animation",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2023-05-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 21,
+      "reactionsLastWeek": 3,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2023-05-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 4,
+      "reactionsLastWeek": 11,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 6,
+    "totalDirectMessages": 4,
+    "messagesSentLastWeek": 33,
+    "reactionsLastWeek": 12,
+    "filesSharedLastWeek": 5,
+    "threadsStartedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

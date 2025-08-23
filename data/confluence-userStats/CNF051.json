@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP051",
+  "fileId": "CNF051",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e50",
+  "displayName": "Hazel Bell",
+  "firstName": "Hazel",
+  "lastName": "Bell",
+  "email": "hazel.bell@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 19,
+      "pagesModified": 17,
+      "commentsAdded": 14
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 11,
+      "pagesModified": 16,
+      "commentsAdded": 8
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 30,
+    "totalPagesModified": 33,
+    "totalCommentsAdded": 22,
+    "totalBlogPostsCreated": 1,
+    "totalAttachmentsUploaded": 5
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 19,
+      "pagesModified": 17,
+      "commentsAdded": 14
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 11,
+      "pagesModified": 16,
+      "commentsAdded": 8
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 1,
+    "pagesModifiedLastMonth": 10,
+    "commentsLastMonth": 9
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

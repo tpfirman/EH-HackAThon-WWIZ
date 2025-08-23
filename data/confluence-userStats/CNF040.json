@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP040",
+  "fileId": "CNF040",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e39",
+  "displayName": "Lily Evans",
+  "firstName": "Lily",
+  "lastName": "Evans",
+  "email": "lily.evans@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 15,
+      "commentsAdded": 4
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 2,
+    "totalPagesModified": 15,
+    "totalCommentsAdded": 4,
+    "totalBlogPostsCreated": 1,
+    "totalAttachmentsUploaded": 14
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 15,
+      "commentsAdded": 4
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 13,
+    "commentsLastMonth": 7
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

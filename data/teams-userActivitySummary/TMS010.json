@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP010",
+  "fileId": "TMS010",
+  "upn": "james.brown@fullmetalproductions.com",
+  "firstName": "James",
+  "lastName": "Brown",
+  "displayName": "James Brown",
+  "userPrincipalName": "james.brown@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:developmentteam@thread.v2",
+      "teamName": "Development Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2022-01-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2022-01-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 8,
+    "messagesSentLastWeek": 16,
+    "reactionsLastWeek": 16,
+    "meetingsAttendedLastWeek": 12,
+    "callsInitiatedLastWeek": 3,
+    "filesSharedLastWeek": 7,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

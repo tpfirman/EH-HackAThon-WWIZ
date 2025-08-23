@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP034",
+  "fileId": "GCI034",
+  "firstName": "Harper",
+  "lastName": "Baker",
+  "email": "harper.baker@fullmetalproductions.com",
+  "upn": "harper.baker@fullmetalproductions.com",
+  "displayName": "Harper Baker",
+  "primaryEmail": "harper.baker@fullmetalproductions.com",
+  "aliases": [
+    "h.baker@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/QA",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-08-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP034",
+      "Department": "QA",
+      "Manager": "Charlotte Green"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

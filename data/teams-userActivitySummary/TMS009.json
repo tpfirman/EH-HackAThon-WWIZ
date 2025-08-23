@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP009",
+  "fileId": "TMS009",
+  "upn": "lisa.zhang@fullmetalproductions.com",
+  "firstName": "Lisa",
+  "lastName": "Zhang",
+  "displayName": "Lisa Zhang",
+  "userPrincipalName": "lisa.zhang@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:developmentteam@thread.v2",
+      "teamName": "Development Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-05-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-05-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 4,
+    "messagesSentLastWeek": 51,
+    "reactionsLastWeek": 9,
+    "meetingsAttendedLastWeek": 3,
+    "callsInitiatedLastWeek": 3,
+    "filesSharedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

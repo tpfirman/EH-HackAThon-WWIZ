@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP001",
+  "fileId": "SLK001",
+  "upn": "tim.firman@fullmetalproductions.com",
+  "firstName": "Tim",
+  "lastName": "Firman",
+  "displayName": "Tim Firman",
+  "slackUserId": "U9822060592",
+  "slackUsername": "tim.firman",
+  "slackDisplayName": "Tim Firman",
+  "slackEmail": "tim.firman@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2020-01-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C8138047785",
+      "channelName": "executive",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2020-01-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 25,
+      "reactionsLastWeek": 14,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2020-01-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 11,
+      "reactionsLastWeek": 13,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 6,
+    "totalDirectMessages": 11,
+    "messagesSentLastWeek": 39,
+    "reactionsLastWeek": 24,
+    "filesSharedLastWeek": 8,
+    "threadsStartedLastWeek": 0,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

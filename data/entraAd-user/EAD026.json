@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP026",
+  "fileId": "EAD026",
+  "firstName": "Emma",
+  "lastName": "Lewis",
+  "email": "emma.lewis@fullmetalproductions.com",
+  "upn": "emma.lewis@fullmetalproductions.com",
+  "displayName": "Emma Lewis",
+  "jobTitle": "Content Director",
+  "department": "YouTube Content",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 418 546 850",
+  "businessPhones": [
+    "+61 3 5291 2758"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-06-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "YouTube Content_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP023",
+  "fileId": "TMS023",
+  "upn": "ethan.hall@fullmetalproductions.com",
+  "firstName": "Ethan",
+  "lastName": "Hall",
+  "displayName": "Ethan Hall",
+  "userPrincipalName": "ethan.hall@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:art&animationteam@thread.v2",
+      "teamName": "Art & Animation Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2022-02-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2022-02-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 11,
+    "messagesSentLastWeek": 29,
+    "reactionsLastWeek": 22,
+    "meetingsAttendedLastWeek": 9,
+    "callsInitiatedLastWeek": 2,
+    "filesSharedLastWeek": 3,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

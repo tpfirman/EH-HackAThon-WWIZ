@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP029",
+  "fileId": "EAD029",
+  "firstName": "Noah",
+  "lastName": "Wright",
+  "email": "noah.wright@fullmetalproductions.com",
+  "upn": "noah.wright@fullmetalproductions.com",
+  "displayName": "Noah Wright",
+  "jobTitle": "Video Editor",
+  "department": "YouTube Content",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 463 816 790",
+  "businessPhones": [
+    "+61 3 2452 1670"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-06-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "YouTube Content_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

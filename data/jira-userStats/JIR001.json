@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP001",
+  "fileId": "JIR001",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e00",
+  "displayName": "Tim Firman",
+  "firstName": "Tim",
+  "lastName": "Firman",
+  "email": "tim.firman@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [],
+  "jiraGroups": [
+    "jira-software-users",
+    "executive-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 6,
+    "inProgressIssues": 3,
+    "completedThisMonth": 8,
+    "totalTimeLoggedThisMonth": "49h 56m",
+    "averageTimePerIssue": "5h 0m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 8,
+    "issuesResolvedLastMonth": 2,
+    "commentsLastMonth": 20
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

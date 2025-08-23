@@ -12,7 +12,7 @@
       "epicKey": "CYBR-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "Done": 27
+        "Done": 30
       }
     },
     {
@@ -20,18 +20,18 @@
       "epicName": "Post-Launch Support",
       "statusCounts": {
         "To Do": 1,
-        "In Progress": 1,
-        "Done": 7
+        "In Progress": 2,
+        "Done": 11
       }
     }
   ],
   "usersAndRoles": [],
   "projectStats": {
-    "totalIssues": 36,
-    "openIssues": 2,
-    "completedIssues": 34,
-    "totalTimeSpent": "649h 34m",
-    "averageResolutionTime": "7.9 days"
+    "totalIssues": 44,
+    "openIssues": 3,
+    "completedIssues": 41,
+    "totalTimeSpent": "494h 27m",
+    "averageResolutionTime": "4.6 days"
   },
   "components": [
     "Gameplay",

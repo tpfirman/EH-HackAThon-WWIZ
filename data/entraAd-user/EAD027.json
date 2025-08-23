@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP027",
+  "fileId": "EAD027",
+  "firstName": "Liam",
+  "lastName": "Walker",
+  "email": "liam.walker@fullmetalproductions.com",
+  "upn": "liam.walker@fullmetalproductions.com",
+  "displayName": "Liam Walker",
+  "jobTitle": "Video Producer",
+  "department": "YouTube Content",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 491 149 534",
+  "businessPhones": [
+    "+61 3 8258 8872"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-10-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "YouTube Content_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

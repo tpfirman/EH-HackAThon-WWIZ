@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP024",
+  "fileId": "EAD024",
+  "firstName": "Sophia",
+  "lastName": "Young",
+  "email": "sophia.young@fullmetalproductions.com",
+  "upn": "sophia.young@fullmetalproductions.com",
+  "displayName": "Sophia Young",
+  "jobTitle": "Animator",
+  "department": "Art & Animation",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 497 406 667",
+  "businessPhones": [
+    "+61 3 2175 7883"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-10-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Art & Animation_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP024",
+  "fileId": "CNF024",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e23",
+  "displayName": "Sophia Young",
+  "firstName": "Sophia",
+  "lastName": "Young",
+  "email": "sophia.young@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 8,
+      "commentsAdded": 2
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 5,
+    "totalPagesModified": 8,
+    "totalCommentsAdded": 2,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 12
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 8,
+      "commentsAdded": 2
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 13,
+    "commentsLastMonth": 3
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

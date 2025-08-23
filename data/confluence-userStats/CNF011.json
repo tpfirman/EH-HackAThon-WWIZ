@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP011",
+  "fileId": "CNF011",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e10",
+  "displayName": "Amy Davis",
+  "firstName": "Amy",
+  "lastName": "Davis",
+  "email": "amy.davis@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 14,
+      "pagesModified": 33,
+      "commentsAdded": 19
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 16,
+      "commentsAdded": 13
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 19,
+    "totalPagesModified": 49,
+    "totalCommentsAdded": 32,
+    "totalBlogPostsCreated": 1,
+    "totalAttachmentsUploaded": 14
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 14,
+      "pagesModified": 33,
+      "commentsAdded": 19
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 16,
+      "commentsAdded": 13
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 1,
+    "pagesModifiedLastMonth": 5,
+    "commentsLastMonth": 12
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

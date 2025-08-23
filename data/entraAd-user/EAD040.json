@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP040",
+  "fileId": "EAD040",
+  "firstName": "Lily",
+  "lastName": "Evans",
+  "email": "lily.evans@fullmetalproductions.com",
+  "upn": "lily.evans@fullmetalproductions.com",
+  "displayName": "Lily Evans",
+  "jobTitle": "Marketing Director",
+  "department": "Marketing",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 417 453 933",
+  "businessPhones": [
+    "+61 3 7803 2462"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-08-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Marketing_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

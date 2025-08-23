@@ -12,30 +12,30 @@
       "epicKey": "MMORPG-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "To Do": 8,
+        "To Do": 7,
         "In Progress": 2,
-        "Code Review": 2,
-        "Testing": 2,
-        "Done": 14
+        "Code Review": 0,
+        "Testing": 1,
+        "Done": 13
       }
     },
     {
       "epicKey": "MMORPG-200",
       "epicName": "Art & Animation",
       "statusCounts": {
-        "To Do": 10,
-        "In Progress": 4,
+        "To Do": 8,
+        "In Progress": 2,
         "Review": 1,
-        "Done": 14
+        "Done": 8
       }
     },
     {
       "epicKey": "MMORPG-300",
       "epicName": "Audio & Music",
       "statusCounts": {
-        "To Do": 3,
+        "To Do": 5,
         "In Progress": 1,
-        "Done": 7
+        "Done": 6
       }
     }
   ],
@@ -112,11 +112,11 @@
     }
   ],
   "projectStats": {
-    "totalIssues": 68,
-    "openIssues": 33,
-    "completedIssues": 35,
-    "totalTimeSpent": "499h 16m",
-    "averageResolutionTime": "5.2 days"
+    "totalIssues": 54,
+    "openIssues": 27,
+    "completedIssues": 27,
+    "totalTimeSpent": "701h 34m",
+    "averageResolutionTime": "5.8 days"
   },
   "components": [
     "Gameplay",

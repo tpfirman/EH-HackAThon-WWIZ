@@ -1,0 +1,46 @@
+{
+  "ehsId": "FMP017",
+  "fileId": "JIR017",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e16",
+  "displayName": "Kevin Moore",
+  "firstName": "Kevin",
+  "lastName": "Moore",
+  "email": "kevin.moore@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "MMORPG",
+      "projectName": "Fantasy Realm Online",
+      "roles": [
+        "Designer"
+      ]
+    },
+    {
+      "projectKey": "HORROR",
+      "projectName": "Midnight Terror",
+      "roles": [
+        "Designer"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "game-design-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 6,
+    "inProgressIssues": 3,
+    "completedThisMonth": 10,
+    "totalTimeLoggedThisMonth": "30h 58m",
+    "averageTimePerIssue": "8h 3m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 5,
+    "issuesResolvedLastMonth": 4,
+    "commentsLastMonth": 12
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

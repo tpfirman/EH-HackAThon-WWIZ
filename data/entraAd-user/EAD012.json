@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP012",
+  "fileId": "EAD012",
+  "firstName": "Mark",
+  "lastName": "Wilson",
+  "email": "mark.wilson@fullmetalproductions.com",
+  "upn": "mark.wilson@fullmetalproductions.com",
+  "displayName": "Mark Wilson",
+  "jobTitle": "DevOps Engineer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 423 624 668",
+  "businessPhones": [
+    "+61 3 7296 8962"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-09-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

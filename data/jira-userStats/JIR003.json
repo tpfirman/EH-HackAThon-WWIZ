@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP003",
+  "fileId": "JIR003",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e02",
+  "displayName": "Michael Rodriguez",
+  "firstName": "Michael",
+  "lastName": "Rodriguez",
+  "email": "michael.rodriguez@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [],
+  "jiraGroups": [
+    "jira-software-users",
+    "executive-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 16,
+    "inProgressIssues": 3,
+    "completedThisMonth": 10,
+    "totalTimeLoggedThisMonth": "54h 22m",
+    "averageTimePerIssue": "6h 21m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 8,
+    "issuesResolvedLastMonth": 6,
+    "commentsLastMonth": 30
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

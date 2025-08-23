@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP048",
+  "fileId": "CNF048",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e47",
+  "displayName": "Grayson Rogers",
+  "firstName": "Grayson",
+  "lastName": "Rogers",
+  "email": "grayson.rogers@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 7,
+      "commentsAdded": 5
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 5,
+    "totalPagesModified": 7,
+    "totalCommentsAdded": 5,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 14
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 7,
+      "commentsAdded": 5
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 9,
+    "commentsLastMonth": 12
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

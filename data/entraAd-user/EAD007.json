@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP007",
+  "fileId": "EAD007",
+  "firstName": "Jessica",
+  "lastName": "Williams",
+  "email": "jessica.williams@fullmetalproductions.com",
+  "upn": "jessica.williams@fullmetalproductions.com",
+  "displayName": "Jessica Williams",
+  "jobTitle": "Developer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 449 623 295",
+  "businessPhones": [
+    "+61 3 2011 3060"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-01-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

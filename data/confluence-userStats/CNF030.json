@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP030",
+  "fileId": "CNF030",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e29",
+  "displayName": "Mia Lopez",
+  "firstName": "Mia",
+  "lastName": "Lopez",
+  "email": "mia.lopez@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 4,
+      "commentsAdded": 7
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 4,
+    "totalPagesModified": 4,
+    "totalCommentsAdded": 7,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 11
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 4,
+      "commentsAdded": 7
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 9,
+    "commentsLastMonth": 2
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

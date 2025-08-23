@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP016",
+  "fileId": "GCI016",
+  "firstName": "Rachel",
+  "lastName": "Taylor",
+  "email": "rachel.taylor@fullmetalproductions.com",
+  "upn": "rachel.taylor@fullmetalproductions.com",
+  "displayName": "Rachel Taylor",
+  "primaryEmail": "rachel.taylor@fullmetalproductions.com",
+  "aliases": [
+    "r.taylor@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Game Design",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-08-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP016",
+      "Department": "Game Design",
+      "Manager": "Jordan Martinez"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

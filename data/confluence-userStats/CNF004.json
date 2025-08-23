@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP004",
+  "fileId": "CNF004",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e03",
+  "displayName": "Alex Thompson",
+  "firstName": "Alex",
+  "lastName": "Thompson",
+  "email": "alex.thompson@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 13,
+      "commentsAdded": 21
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 6,
+      "commentsAdded": 9
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 16,
+    "totalPagesModified": 19,
+    "totalCommentsAdded": 30,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 5
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 13,
+      "commentsAdded": 21
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 6,
+      "commentsAdded": 9
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 11,
+    "commentsLastMonth": 11
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

@@ -1,0 +1,53 @@
+{
+  "ehsId": "FMP007",
+  "fileId": "JIR007",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e06",
+  "displayName": "Jessica Williams",
+  "firstName": "Jessica",
+  "lastName": "Williams",
+  "email": "jessica.williams@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "MMORPG",
+      "projectName": "Fantasy Realm Online",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "projectKey": "HORROR",
+      "projectName": "Midnight Terror",
+      "roles": [
+        "Developer"
+      ]
+    },
+    {
+      "projectKey": "CYBR",
+      "projectName": "CyberRealm",
+      "roles": [
+        "Developer"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "development-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 8,
+    "inProgressIssues": 2,
+    "completedThisMonth": 10,
+    "totalTimeLoggedThisMonth": "20h 17m",
+    "averageTimePerIssue": "3h 55m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 3,
+    "issuesResolvedLastMonth": 6,
+    "commentsLastMonth": 23
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

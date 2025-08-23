@@ -372,11 +372,13 @@ def uploadFilesToFolders(filesToUpload: Dict[str, Tuple[bytes, str]], serverUrl:
         if workspaces:
             data['addToWorkspaces'] = workspaces
         if targetFolder:
-            data['documentPath'] = targetFolder
+            targetEndpoint = f'{endpoint}/{targetFolder}'
+        else:
+            targetEndpoint = endpoint
         
         try:
-            response = requests.post(endpoint, headers=headers, files=files, data=data)
-            
+            response = requests.post(targetEndpoint, headers=headers, files=files, data=data)
+
             if response.status_code == 200:
                 uploadCount += 1
                 
@@ -384,10 +386,10 @@ def uploadFilesToFolders(filesToUpload: Dict[str, Tuple[bytes, str]], serverUrl:
                 for document in jsonResponse.get('documents', []):
                     result.append(document['location'])
                     
-                print(f"Uploaded: {filename} -> {targetFolder or 'root'} ({uploadCount}/{totalFiles})")
+                print(f"Uploaded: {filename} ({uploadCount}/{totalFiles})")
             else:
                 print(f"Failed to upload {filename}: {response.status_code} - {response.text}")
-                
+
         except Exception as e:
             print(f"Error uploading {filename}: {str(e)}")
             

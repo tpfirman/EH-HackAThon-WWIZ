@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP025",
+  "fileId": "SLK025",
+  "upn": "oliver.clark@fullmetalproductions.com",
+  "firstName": "Oliver",
+  "lastName": "Clark",
+  "displayName": "Oliver Clark",
+  "slackUserId": "U3262691189",
+  "slackUsername": "oliver.clark",
+  "slackDisplayName": "Oliver Clark",
+  "slackEmail": "oliver.clark@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-12-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C1598532174",
+      "channelName": "art-and-animation",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-12-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 18,
+      "reactionsLastWeek": 13,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-12-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 4,
+      "reactionsLastWeek": 11,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 6,
+    "totalDirectMessages": 8,
+    "messagesSentLastWeek": 31,
+    "reactionsLastWeek": 23,
+    "filesSharedLastWeek": 7,
+    "threadsStartedLastWeek": 3,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "do_not_disturb"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

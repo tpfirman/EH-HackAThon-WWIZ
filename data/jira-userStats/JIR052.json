@@ -1,0 +1,46 @@
+{
+  "ehsId": "FMP052",
+  "fileId": "JIR052",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e51",
+  "displayName": "Caleb Murphy",
+  "firstName": "Caleb",
+  "lastName": "Murphy",
+  "email": "caleb.murphy@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "MMORPG",
+      "projectName": "Fantasy Realm Online",
+      "roles": [
+        "Artist"
+      ]
+    },
+    {
+      "projectKey": "HORROR",
+      "projectName": "Midnight Terror",
+      "roles": [
+        "Artist"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "art-animation-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 5,
+    "inProgressIssues": 2,
+    "completedThisMonth": 7,
+    "totalTimeLoggedThisMonth": "35h 27m",
+    "averageTimePerIssue": "6h 59m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 5,
+    "issuesResolvedLastMonth": 7,
+    "commentsLastMonth": 23
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

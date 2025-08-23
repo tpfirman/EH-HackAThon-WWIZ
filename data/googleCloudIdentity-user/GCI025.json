@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP025",
+  "fileId": "GCI025",
+  "firstName": "Oliver",
+  "lastName": "Clark",
+  "email": "oliver.clark@fullmetalproductions.com",
+  "upn": "oliver.clark@fullmetalproductions.com",
+  "displayName": "Oliver Clark",
+  "primaryEmail": "oliver.clark@fullmetalproductions.com",
+  "aliases": [
+    "o.clark@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Art & Animation",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-12-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP025",
+      "Department": "Art & Animation",
+      "Manager": "Maya Patel"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

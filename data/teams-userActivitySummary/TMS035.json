@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP035",
+  "fileId": "TMS035",
+  "upn": "logan.gonzalez@fullmetalproductions.com",
+  "firstName": "Logan",
+  "lastName": "Gonzalez",
+  "displayName": "Logan Gonzalez",
+  "userPrincipalName": "logan.gonzalez@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:qateam@thread.v2",
+      "teamName": "QA Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2022-04-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2022-04-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 9,
+    "messagesSentLastWeek": 36,
+    "reactionsLastWeek": 9,
+    "meetingsAttendedLastWeek": 4,
+    "callsInitiatedLastWeek": 3,
+    "filesSharedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

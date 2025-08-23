@@ -1,0 +1,53 @@
+{
+  "ehsId": "FMP033",
+  "fileId": "JIR033",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e32",
+  "displayName": "Benjamin Adams",
+  "firstName": "Benjamin",
+  "lastName": "Adams",
+  "email": "benjamin.adams@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "MMORPG",
+      "projectName": "Fantasy Realm Online",
+      "roles": [
+        "QA"
+      ]
+    },
+    {
+      "projectKey": "HORROR",
+      "projectName": "Midnight Terror",
+      "roles": [
+        "QA"
+      ]
+    },
+    {
+      "projectKey": "YTCHAN",
+      "projectName": "YouTube Channel",
+      "roles": [
+        "QA"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "qa-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 12,
+    "inProgressIssues": 1,
+    "completedThisMonth": 15,
+    "totalTimeLoggedThisMonth": "32h 45m",
+    "averageTimePerIssue": "3h 49m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 3,
+    "issuesResolvedLastMonth": 3,
+    "commentsLastMonth": 7
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}
