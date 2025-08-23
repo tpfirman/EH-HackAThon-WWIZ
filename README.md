@@ -59,7 +59,6 @@ Information is gathered from multiple sources, parsed and formatted to build a d
 The AI Agent at no stage will have direct access to any sensitive systems. Instead, a collection of scripted scheduled and triggered tasks are used to query, format and store the data, before making it available to the chat agent.
 
 ### 🏗️ Architecture
-*Work in Progress*
 
 - **Hosting**: AWS for Compute and frontend
 - **LLM**: AWS Bedrock, most likely using Nova
@@ -125,15 +124,6 @@ The AI Agent at no stage will have direct access to any sensitive systems. Inste
 11. **Video pitch**
 
 12. **Get some sleep before work on Monday!** 😴
-   - Required documentation for submission
-   - Standard product documentation
-   - Identified risks
-   - Any known issues
-   - Anything that was planned but ran out of time for
-
-9. **Video pitch**
-
-10. **Get some sleep before work on Monday!** 😴
 
 ---
 
@@ -180,6 +170,7 @@ The AI POC is deployed and functional:
 ### Known Issues
 
 See [GitHub Issues](https://github.com/tpfirman/EH-HackAThon-WWIZ/issues) for current automation improvements in progress.
+
 
 ## 📝 Notes
 

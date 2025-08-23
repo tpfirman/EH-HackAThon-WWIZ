@@ -1,2 +1,39 @@
+# Environment variables
+.env
+.env.*
+
+# SSL certificates and keys
+nginx/certs/
+nginx/ssl/
+
+# Storage and data
+storage/
+
+# Docker volumes
+volumes/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup files
+*.backup
+*.bak
+
+# Let's Encrypt working directory
+nginx/www/.well-known/
+
 .venv/
 infra/cfnlint.txt
