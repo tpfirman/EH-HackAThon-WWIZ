@@ -49,8 +49,18 @@ Parameters:
 
   CertificateArn:
     Type: String
-    Description: ACM ARN for your HTTPS domain (e.g. poc.example.com)
+    Description: ACM ARN for your HTTPS domain (e.g. poc.example.com) - leave empty to create new certificate for wwiz.firman.id.au
     Default: ""
+
+  DomainName:
+    Type: String
+    Description: Domain name for SSL certificate
+    Default: "wwiz.firman.id.au"
+
+  HostedZoneId:
+    Type: String
+    Description: Route 53 Hosted Zone ID for DNS validation (leave empty for manual validation)
+    Default: "Z1FVTK8DVTLO3K"
 
   AmiId:
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
@@ -96,11 +106,12 @@ Mappings:
 
 Conditions:
   HasCertificate: !Not [!Equals [!Ref CertificateArn, ""]]
+  CreateCertificate: !Equals [!Ref CertificateArn, ""]
   UseSpot: !Equals [!Ref UseSpotInstances, 'true']
   RestrictAccess: !Not [!Equals [!Ref AllowedCIDR, '0.0.0.0/0']]
   IsAustralianRegion: !Or [!Equals [!Ref "AWS::Region", "ap-southeast-2"], !Equals [!Ref "AWS::Region", "ap-southeast-4"]]
   UseOnDemand: !Not [!Equals [!Ref UseSpotInstances, 'true']]
-  NoCertificate: !Equals [!Ref CertificateArn, ""]
+  HasAnyCertificate: !Or [!Condition HasCertificate, !Condition CreateCertificate]
 
 Resources:
 
@@ -183,7 +194,16 @@ Resources:
       GroupDescription: ALB security group (AI POC cost-optimized)
       VpcId: !Ref VPC
       SecurityGroupIngress:
-        - !If [HasCertificate, {IpProtocol: tcp, FromPort: 443, ToPort: 443, CidrIp: !Ref AllowedCIDR, Description: "HTTPS access"}, {IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: !Ref AllowedCIDR, Description: "HTTP access"}]
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: !Ref AllowedCIDR
+          Description: "HTTP access"
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: !Ref AllowedCIDR
+          Description: "HTTPS access"
       SecurityGroupEgress:
         - IpProtocol: -1
           CidrIp: 0.0.0.0/0
@@ -521,6 +541,24 @@ Resources:
       SubnetId: !Ref SubnetPublicB
       RouteTableId: !Ref RouteTablePublic
 
+  ### SSL Certificate (ACM) ###
+  SSLCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Condition: CreateCertificate
+    Properties:
+      DomainName: !Ref DomainName
+      ValidationMethod: DNS
+      DomainValidationOptions:
+        - DomainName: !Ref DomainName
+          HostedZoneId: !Ref HostedZoneId
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::StackName}-ssl-certificate"
+        - Key: Project
+          Value: "AI-POC"
+        - Key: CleanupDate
+          Value: !Ref ProjectCleanupDate
+
   TargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     DependsOn: VPC
@@ -551,7 +589,7 @@ Resources:
 
   ListenerHTTPS:
     Type: AWS::ElasticLoadBalancingV2::Listener
-    Condition: HasCertificate
+    Condition: HasAnyCertificate
     DependsOn:
       - ALB
       - TargetGroup
@@ -560,29 +598,13 @@ Resources:
       Port: 443
       Protocol: HTTPS
       Certificates:
-        - CertificateArn: !Ref CertificateArn
+        - CertificateArn: !If [HasCertificate, !Ref CertificateArn, !Ref SSLCertificate]
       DefaultActions:
         - Type: forward
           TargetGroupArn: !Ref TargetGroup
 
-  ListenerHTTP:
-    Type: AWS::ElasticLoadBalancingV2::Listener
-    Condition: HasCertificate
-    DependsOn: ALB
-    Properties:
-      LoadBalancerArn: !Ref ALB
-      Port: 80
-      Protocol: HTTP
-      DefaultActions:
-        - Type: redirect
-          RedirectConfig:
-            Protocol: HTTPS
-            Port: 443
-            StatusCode: HTTP_301
-
   ListenerHTTPOnly:
     Type: AWS::ElasticLoadBalancingV2::Listener
-    Condition: NoCertificate
     DependsOn:
       - ALB
       - TargetGroup
@@ -591,8 +613,15 @@ Resources:
       Port: 80
       Protocol: HTTP
       DefaultActions:
-        - Type: forward
-          TargetGroupArn: !Ref TargetGroup
+        - !If 
+          - HasAnyCertificate
+          - Type: redirect
+            RedirectConfig:
+              Protocol: HTTPS
+              Port: 443
+              StatusCode: HTTP_301
+          - Type: forward
+            TargetGroupArn: !Ref TargetGroup
 
   ### AWS WAF ###
   WebACL:
@@ -684,7 +713,12 @@ Outputs:
 
   LoadBalancerURL:
     Description: "Direct URL to access your AI agent"
-    Value: !Sub ["${Protocol}://${DNS}", {Protocol: !If [HasCertificate, "https", "http"], DNS: !GetAtt ALB.DNSName}]
+    Value: !Sub ["${Protocol}://${DNS}", {Protocol: !If [HasAnyCertificate, "https", "http"], DNS: !GetAtt ALB.DNSName}]
+
+  SSLCertificateInfo:
+    Condition: CreateCertificate
+    Description: "SSL Certificate created for domain"
+    Value: !Sub ["Certificate created for ${Domain} - ARN: ${CertArn}", {Domain: !Ref DomainName, CertArn: !Ref SSLCertificate}]
 
   InstanceInfo:
     Description: "Instance deployment type and cost savings"
