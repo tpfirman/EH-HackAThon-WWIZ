@@ -13,6 +13,7 @@ services:
       - DISABLE_TELEMETRY=true
       - STORAGE_DIR=/app/server/storage
       - LOG_LEVEL=info
+      - JWT_SECRET=GmzuGUzDB5YrC8GYBjGqNTsfWc3xyDecQX44EtL7foSHUNbvp5QjPQvcsqAvZYfR
     restart: unless-stopped
     mem_limit: ${ANYTHINGLLM_MEMORY_MB:-2048}m
     logging:
