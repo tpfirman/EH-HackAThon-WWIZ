@@ -18,7 +18,7 @@
       - [Milestone 3 - Documentation and Presentation ✅](#milestone-3---documentation-and-presentation-)
   - [🏆 Technical Achievements](#-technical-achievements)
   - [🚀 Getting Started](#-getting-started)
-    - [Current Status: **PRODUCTION READY** ✅](#current-status-production-ready-)
+    - [Current Status: **PRE-PRODUCTION READY** ✅](#current-status-pre-production-ready-)
     - [Quick Start](#quick-start)
     - [Architecture](#architecture)
     - [Known Issues](#known-issues)
@@ -183,7 +183,7 @@ The AI Agent never has direct access to sensitive systems. Instead, scheduled da
 
 ## 🚀 Getting Started
 
-### Current Status: **PRODUCTION READY** ✅
+### Current Status: **PRE-PRODUCTION READY** ✅
 
 The AI POC is fully deployed and operational:
 
@@ -245,7 +245,7 @@ See project documentation in `docs/` folder for detailed troubleshooting guides.
 
 **48-Hour Hackathon Results:**
 - ✅ **Concept Validated**: WWIZ successfully answers complex workplace queries
-- ✅ **Production Ready**: Deployed and accessible at `wwiz.firman.id.au`
+- ✅ **PRE-PRODUCTION READY**: Deployed and accessible at `wwiz.firman.id.au`
 - ✅ **Real Data**: 426+ documents from 10 corporate data sources
 - ✅ **AI Integration**: AWS Bedrock Nova providing intelligent responses
 - ✅ **Full Infrastructure**: CloudFormation, monitoring, security, and scaling
