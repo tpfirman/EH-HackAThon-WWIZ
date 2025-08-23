@@ -37,4 +37,3 @@ nginx/www/.well-known/
 
 .venv/
 infra/cfnlint.txt
-
