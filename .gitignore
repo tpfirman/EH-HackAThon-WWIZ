@@ -4,6 +4,7 @@
 **/.env.*
 !**/.env*example*
 !**/.env*example
+data-handling/dataImport/.importedFiles.env
 
 # SSL certificates and keys
 nginx/certs/
@@ -40,3 +41,4 @@ nginx/www/.well-known/
 
 .venv/
 infra/cfnlint.txt
+
