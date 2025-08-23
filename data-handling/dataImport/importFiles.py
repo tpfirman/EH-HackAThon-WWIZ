@@ -18,11 +18,9 @@ Project: WWIZ (Who's Who in the Zoo)
 
 import requests
 import os
-import json
-import re
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple
 
-# Global configuration variablespip 
+# Global configuration variables
 serverUrl: str
 apiKey: str
 filePath: str
