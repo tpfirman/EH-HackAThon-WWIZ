@@ -22,7 +22,7 @@ import json
 import re
 from typing import Dict, List, Tuple, Optional
 
-# Global configuration variables
+# Global configuration variablespip 
 serverUrl: str
 apiKey: str
 filePath: str
@@ -452,8 +452,8 @@ def loadEnv() -> Dict[str, str]:
         Dictionary of environment variables
     """
     env = {}
-    envPath = ".importFiles.env"  # Look for .env in current directory
-    
+    envPath = os.path.join("data-handling", "dataImport", ".importFiles.env")
+
     if not os.path.exists(envPath):
         print(f"Environment file not found: {envPath}")
         exit(1)
