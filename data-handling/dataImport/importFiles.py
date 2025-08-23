@@ -113,6 +113,15 @@ def buildFileListWithFolders(filePath: str, recursive: bool, smallBatchRun: bool
     
     filesDict: Dict[str, Tuple[bytes, str]] = {}
     
+    if not os.path.exists(filePath) or not os.path.isdir(filePath):
+        print(f"Error: {filePath} does not exist or is not a directory")
+        os.exit(1)
+        
+    # Check if the directory is empty
+    if not any(os.scandir(filePath)):
+        print(f"Error: Directory {filePath} is empty")
+        os.exit(1)
+    
     if recursive:
         for root, dirs, files in os.walk(filePath):
             for file in files:
