@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP007",
+  "fileId": "SLK007",
+  "upn": "jessica.williams@fullmetalproductions.com",
+  "firstName": "Jessica",
+  "lastName": "Williams",
+  "displayName": "Jessica Williams",
+  "slackUserId": "U1449201386",
+  "slackUsername": "jessica.williams",
+  "slackDisplayName": "Jessica Williams",
+  "slackEmail": "jessica.williams@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-01-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C3365487768",
+      "channelName": "development",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-01-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 11,
+      "reactionsLastWeek": 9,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-01-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 12,
+      "reactionsLastWeek": 9,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 8,
+    "totalDirectMessages": 7,
+    "messagesSentLastWeek": 37,
+    "reactionsLastWeek": 45,
+    "filesSharedLastWeek": 3,
+    "threadsStartedLastWeek": 0,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "away"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

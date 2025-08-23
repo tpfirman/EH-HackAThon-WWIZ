@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP048",
+  "fileId": "GCI048",
+  "firstName": "Grayson",
+  "lastName": "Rogers",
+  "email": "grayson.rogers@fullmetalproductions.com",
+  "upn": "grayson.rogers@fullmetalproductions.com",
+  "displayName": "Grayson Rogers",
+  "primaryEmail": "grayson.rogers@fullmetalproductions.com",
+  "aliases": [
+    "g.rogers@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Art & Animation",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2022-09-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP048",
+      "Department": "Art & Animation",
+      "Manager": "Maya Patel"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

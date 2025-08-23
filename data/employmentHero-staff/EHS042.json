@@ -1,0 +1,16 @@
+{
+  "ehsId": "FMP042",
+  "fileId": "EHS042",
+  "firstName": "Chloe",
+  "lastName": "Parker",
+  "positionTitle": "Marketing Coordinator",
+  "team": "Marketing",
+  "manager": "Lily Evans",
+  "lengthOfService": "3 years 10 months",
+  "startDate": "2021-10-15",
+  "department": "Marketing",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

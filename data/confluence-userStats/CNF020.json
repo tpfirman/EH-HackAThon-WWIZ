@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP020",
+  "fileId": "CNF020",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e19",
+  "displayName": "Zoe Mitchell",
+  "firstName": "Zoe",
+  "lastName": "Mitchell",
+  "email": "zoe.mitchell@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 11,
+      "commentsAdded": 2
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 2,
+    "totalPagesModified": 11,
+    "totalCommentsAdded": 2,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 2
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 11,
+      "commentsAdded": 2
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 3,
+    "pagesModifiedLastMonth": 6,
+    "commentsLastMonth": 11
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

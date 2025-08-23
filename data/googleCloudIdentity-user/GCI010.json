@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP010",
+  "fileId": "GCI010",
+  "firstName": "James",
+  "lastName": "Brown",
+  "email": "james.brown@fullmetalproductions.com",
+  "upn": "james.brown@fullmetalproductions.com",
+  "displayName": "James Brown",
+  "primaryEmail": "james.brown@fullmetalproductions.com",
+  "aliases": [
+    "j.brown@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Development",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2022-01-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP010",
+      "Department": "Development",
+      "Manager": "Alex Thompson"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

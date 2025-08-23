@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP031",
+  "fileId": "CNF031",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e30",
+  "displayName": "William Hill",
+  "firstName": "William",
+  "lastName": "Hill",
+  "email": "william.hill@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 9,
+      "commentsAdded": 2
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 1,
+    "totalPagesModified": 9,
+    "totalCommentsAdded": 2,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 13
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 9,
+      "commentsAdded": 2
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 7,
+    "commentsLastMonth": 8
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

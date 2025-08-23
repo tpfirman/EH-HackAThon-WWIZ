@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP046",
+  "fileId": "CNF046",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e45",
+  "displayName": "Sebastian Sanchez",
+  "firstName": "Sebastian",
+  "lastName": "Sanchez",
+  "email": "sebastian.sanchez@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 11,
+      "pagesModified": 26,
+      "commentsAdded": 22
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 8,
+      "commentsAdded": 5
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 13,
+    "totalPagesModified": 34,
+    "totalCommentsAdded": 27,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 11
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 11,
+      "pagesModified": 26,
+      "commentsAdded": 22
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 8,
+      "commentsAdded": 5
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 1,
+    "pagesModifiedLastMonth": 7,
+    "commentsLastMonth": 2
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

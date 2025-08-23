@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP009",
+  "fileId": "CNF009",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e08",
+  "displayName": "Lisa Zhang",
+  "firstName": "Lisa",
+  "lastName": "Zhang",
+  "email": "lisa.zhang@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 9,
+      "pagesModified": 11,
+      "commentsAdded": 15
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 12,
+      "commentsAdded": 7
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 11,
+    "totalPagesModified": 23,
+    "totalCommentsAdded": 22,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 8
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 9,
+      "pagesModified": 11,
+      "commentsAdded": 15
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 2,
+      "pagesModified": 12,
+      "commentsAdded": 7
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 12,
+    "commentsLastMonth": 2
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

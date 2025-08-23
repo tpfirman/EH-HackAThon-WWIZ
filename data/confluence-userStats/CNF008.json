@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP008",
+  "fileId": "CNF008",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e07",
+  "displayName": "Ryan O'Connor",
+  "firstName": "Ryan",
+  "lastName": "O'Connor",
+  "email": "ryan.o'connor@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 26,
+      "commentsAdded": 9
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 13,
+      "commentsAdded": 8
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 9,
+    "totalPagesModified": 39,
+    "totalCommentsAdded": 17,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 14
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 26,
+      "commentsAdded": 9
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 13,
+      "commentsAdded": 8
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 6,
+    "commentsLastMonth": 6
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

@@ -19,7 +19,7 @@
       "epicKey": "TOWER-200",
       "epicName": "Post-Launch Support",
       "statusCounts": {
-        "To Do": 1,
+        "To Do": 3,
         "In Progress": 1,
         "Done": 11
       }
@@ -27,11 +27,11 @@
   ],
   "usersAndRoles": [],
   "projectStats": {
-    "totalIssues": 38,
-    "openIssues": 2,
+    "totalIssues": 40,
+    "openIssues": 4,
     "completedIssues": 36,
-    "totalTimeSpent": "239h 40m",
-    "averageResolutionTime": "1.4 days"
+    "totalTimeSpent": "318h 56m",
+    "averageResolutionTime": "5.6 days"
   },
   "components": [
     "Gameplay",

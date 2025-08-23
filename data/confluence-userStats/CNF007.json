@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP007",
+  "fileId": "CNF007",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e06",
+  "displayName": "Jessica Williams",
+  "firstName": "Jessica",
+  "lastName": "Williams",
+  "email": "jessica.williams@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 10,
+      "pagesModified": 20,
+      "commentsAdded": 14
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 7,
+      "commentsAdded": 3
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 13,
+    "totalPagesModified": 27,
+    "totalCommentsAdded": 17,
+    "totalBlogPostsCreated": 0,
+    "totalAttachmentsUploaded": 7
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 10,
+      "pagesModified": 20,
+      "commentsAdded": 14
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 7,
+      "commentsAdded": 3
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 4,
+    "pagesModifiedLastMonth": 9,
+    "commentsLastMonth": 7
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

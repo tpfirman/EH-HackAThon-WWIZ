@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP042",
+  "fileId": "JIR042",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e41",
+  "displayName": "Chloe Parker",
+  "firstName": "Chloe",
+  "lastName": "Parker",
+  "email": "chloe.parker@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [],
+  "jiraGroups": [
+    "jira-software-users",
+    "marketing-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 7,
+    "inProgressIssues": 5,
+    "completedThisMonth": 15,
+    "totalTimeLoggedThisMonth": "41h 26m",
+    "averageTimePerIssue": "2h 2m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 8,
+    "issuesResolvedLastMonth": 11,
+    "commentsLastMonth": 28
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

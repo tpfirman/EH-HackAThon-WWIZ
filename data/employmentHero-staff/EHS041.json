@@ -1,0 +1,16 @@
+{
+  "ehsId": "FMP041",
+  "fileId": "EHS041",
+  "firstName": "Jackson",
+  "lastName": "Turner",
+  "positionTitle": "Community Manager",
+  "team": "Marketing",
+  "manager": "Lily Evans",
+  "lengthOfService": "4 years 6 months",
+  "startDate": "2021-02-15",
+  "department": "Marketing",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

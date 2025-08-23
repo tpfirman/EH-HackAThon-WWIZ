@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP006",
+  "fileId": "EAD006",
+  "firstName": "David",
+  "lastName": "Kim",
+  "email": "david.kim@fullmetalproductions.com",
+  "upn": "david.kim@fullmetalproductions.com",
+  "displayName": "David Kim",
+  "jobTitle": "Senior Developer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 431 672 632",
+  "businessPhones": [
+    "+61 3 8173 4844"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-08-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

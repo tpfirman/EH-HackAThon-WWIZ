@@ -1,0 +1,16 @@
+{
+  "ehsId": "FMP010",
+  "fileId": "EHS010",
+  "firstName": "James",
+  "lastName": "Brown",
+  "positionTitle": "Junior Developer",
+  "team": "Development",
+  "manager": "Alex Thompson",
+  "lengthOfService": "3 years 7 months",
+  "startDate": "2022-01-15",
+  "department": "Development",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

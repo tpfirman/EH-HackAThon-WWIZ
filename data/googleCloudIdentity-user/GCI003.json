@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP003",
+  "fileId": "GCI003",
+  "firstName": "Michael",
+  "lastName": "Rodriguez",
+  "email": "michael.rodriguez@fullmetalproductions.com",
+  "upn": "michael.rodriguez@fullmetalproductions.com",
+  "displayName": "Michael Rodriguez",
+  "primaryEmail": "michael.rodriguez@fullmetalproductions.com",
+  "aliases": [
+    "m.rodriguez@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Executive",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-03-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": true,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP003",
+      "Department": "Executive",
+      "Manager": "Tim Firman"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

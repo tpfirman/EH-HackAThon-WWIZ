@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP045",
+  "fileId": "EAD045",
+  "firstName": "Evelyn",
+  "lastName": "Stewart",
+  "email": "evelyn.stewart@fullmetalproductions.com",
+  "upn": "evelyn.stewart@fullmetalproductions.com",
+  "displayName": "Evelyn Stewart",
+  "jobTitle": "Office Manager",
+  "department": "Operations",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 483 189 636",
+  "businessPhones": [
+    "+61 3 1796 6884"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-12-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Operations_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

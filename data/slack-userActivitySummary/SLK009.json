@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP009",
+  "fileId": "SLK009",
+  "upn": "lisa.zhang@fullmetalproductions.com",
+  "firstName": "Lisa",
+  "lastName": "Zhang",
+  "displayName": "Lisa Zhang",
+  "slackUserId": "U9494261976",
+  "slackUsername": "lisa.zhang",
+  "slackDisplayName": "Lisa Zhang",
+  "slackEmail": "lisa.zhang@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-05-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C8898173806",
+      "channelName": "development",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-05-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 15,
+      "reactionsLastWeek": 10,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-05-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 11,
+      "reactionsLastWeek": 11,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 13,
+    "totalDirectMessages": 6,
+    "messagesSentLastWeek": 21,
+    "reactionsLastWeek": 28,
+    "filesSharedLastWeek": 7,
+    "threadsStartedLastWeek": 3,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate",
+    "onlineStatus": "away"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

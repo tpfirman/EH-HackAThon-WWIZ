@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP002",
+  "fileId": "CNF002",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e01",
+  "displayName": "Sarah Chen",
+  "firstName": "Sarah",
+  "lastName": "Chen",
+  "email": "sarah.chen@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 5,
+      "commentsAdded": 7
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 1,
+    "totalPagesModified": 5,
+    "totalCommentsAdded": 7,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 4
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 5,
+      "commentsAdded": 7
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 6,
+    "commentsLastMonth": 8
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

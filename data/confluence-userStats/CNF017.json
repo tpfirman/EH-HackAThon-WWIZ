@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP017",
+  "fileId": "CNF017",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e16",
+  "displayName": "Kevin Moore",
+  "firstName": "Kevin",
+  "lastName": "Moore",
+  "email": "kevin.moore@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 16,
+      "commentsAdded": 23
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 13,
+      "commentsAdded": 20
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 9,
+    "totalPagesModified": 29,
+    "totalCommentsAdded": 43,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 3
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 16,
+      "commentsAdded": 23
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 13,
+      "commentsAdded": 20
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 1,
+    "pagesModifiedLastMonth": 8,
+    "commentsLastMonth": 7
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

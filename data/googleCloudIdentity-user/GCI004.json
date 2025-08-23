@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP004",
+  "fileId": "GCI004",
+  "firstName": "Alex",
+  "lastName": "Thompson",
+  "email": "alex.thompson@fullmetalproductions.com",
+  "upn": "alex.thompson@fullmetalproductions.com",
+  "displayName": "Alex Thompson",
+  "primaryEmail": "alex.thompson@fullmetalproductions.com",
+  "aliases": [
+    "a.thompson@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Development",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-04-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": true,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP004",
+      "Department": "Development",
+      "Manager": "Sarah Chen"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

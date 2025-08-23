@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP038",
+  "fileId": "TMS038",
+  "upn": "grace.roberts@fullmetalproductions.com",
+  "firstName": "Grace",
+  "lastName": "Roberts",
+  "displayName": "Grace Roberts",
+  "userPrincipalName": "grace.roberts@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:financeteam@thread.v2",
+      "teamName": "Finance Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2020-07-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2020-07-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 8,
+    "messagesSentLastWeek": 46,
+    "reactionsLastWeek": 20,
+    "meetingsAttendedLastWeek": 11,
+    "callsInitiatedLastWeek": 3,
+    "filesSharedLastWeek": 8,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

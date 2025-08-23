@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP028",
+  "fileId": "SLK028",
+  "upn": "ava.allen@fullmetalproductions.com",
+  "firstName": "Ava",
+  "lastName": "Allen",
+  "displayName": "Ava Allen",
+  "slackUserId": "U9870079366",
+  "slackUsername": "ava.allen",
+  "slackDisplayName": "Ava Allen",
+  "slackEmail": "ava.allen@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-01-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C1620367781",
+      "channelName": "youtube-content",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-01-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 25,
+      "reactionsLastWeek": 6,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-01-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 9,
+      "reactionsLastWeek": 19,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 13,
+    "totalDirectMessages": 11,
+    "messagesSentLastWeek": 17,
+    "reactionsLastWeek": 27,
+    "filesSharedLastWeek": 2,
+    "threadsStartedLastWeek": 0,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP043",
+  "fileId": "EAD043",
+  "firstName": "Mason",
+  "lastName": "Collins",
+  "email": "mason.collins@fullmetalproductions.com",
+  "upn": "mason.collins@fullmetalproductions.com",
+  "displayName": "Mason Collins",
+  "jobTitle": "Operations Manager",
+  "department": "Operations",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 483 137 548",
+  "businessPhones": [
+    "+61 3 3792 2667"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-09-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Operations_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

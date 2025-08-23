@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP036",
+  "fileId": "CNF036",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e35",
+  "displayName": "Amelia Nelson",
+  "firstName": "Amelia",
+  "lastName": "Nelson",
+  "email": "amelia.nelson@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 8,
+      "commentsAdded": 6
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 5,
+    "totalPagesModified": 8,
+    "totalCommentsAdded": 6,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 10
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 8,
+      "commentsAdded": 6
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 5,
+    "commentsLastMonth": 10
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

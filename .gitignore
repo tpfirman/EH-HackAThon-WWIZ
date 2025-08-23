@@ -1,9 +1,11 @@
 # Environment variables
 # Allow .env files with "example" in the name (templates)
-.env
-.env.*
-!.env*example*
-!.env*example
+**/.env
+**/.env.*
+!**/.env*example*
+!**/.env*example
+data-handling/dataImport/.importFiles.env
+
 
 # SSL certificates and keys
 nginx/certs/
@@ -40,3 +42,4 @@ nginx/www/.well-known/
 
 .venv/
 infra/cfnlint.txt
+

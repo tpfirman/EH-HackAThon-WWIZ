@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP036",
+  "fileId": "GCI036",
+  "firstName": "Amelia",
+  "lastName": "Nelson",
+  "email": "amelia.nelson@fullmetalproductions.com",
+  "upn": "amelia.nelson@fullmetalproductions.com",
+  "displayName": "Amelia Nelson",
+  "primaryEmail": "amelia.nelson@fullmetalproductions.com",
+  "aliases": [
+    "a.nelson@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/HR",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-05-15T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": true,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP036",
+      "Department": "HR",
+      "Manager": "Tim Firman"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

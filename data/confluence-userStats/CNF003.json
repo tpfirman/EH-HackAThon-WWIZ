@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP003",
+  "fileId": "CNF003",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e02",
+  "displayName": "Michael Rodriguez",
+  "firstName": "Michael",
+  "lastName": "Rodriguez",
+  "email": "michael.rodriguez@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 10,
+      "commentsAdded": 3
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 1,
+    "totalPagesModified": 10,
+    "totalCommentsAdded": 3,
+    "totalBlogPostsCreated": 1,
+    "totalAttachmentsUploaded": 4
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 10,
+      "commentsAdded": 3
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 5,
+    "pagesModifiedLastMonth": 11,
+    "commentsLastMonth": 9
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

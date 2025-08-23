@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP015",
+  "fileId": "EAD015",
+  "firstName": "Chris",
+  "lastName": "Anderson",
+  "email": "chris.anderson@fullmetalproductions.com",
+  "upn": "chris.anderson@fullmetalproductions.com",
+  "displayName": "Chris Anderson",
+  "jobTitle": "Game Designer",
+  "department": "Game Design",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 422 526 866",
+  "businessPhones": [
+    "+61 3 8753 9764"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-02-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Game Design_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP029",
+  "fileId": "TMS029",
+  "upn": "noah.wright@fullmetalproductions.com",
+  "firstName": "Noah",
+  "lastName": "Wright",
+  "displayName": "Noah Wright",
+  "userPrincipalName": "noah.wright@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:youtubecontentteam@thread.v2",
+      "teamName": "YouTube Content Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-06-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-06-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 5,
+    "messagesSentLastWeek": 52,
+    "reactionsLastWeek": 8,
+    "meetingsAttendedLastWeek": 4,
+    "callsInitiatedLastWeek": 2,
+    "filesSharedLastWeek": 5,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

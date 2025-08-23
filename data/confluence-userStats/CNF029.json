@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP029",
+  "fileId": "CNF029",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e28",
+  "displayName": "Noah Wright",
+  "firstName": "Noah",
+  "lastName": "Wright",
+  "email": "noah.wright@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 15,
+      "commentsAdded": 4
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 4,
+    "totalPagesModified": 15,
+    "totalCommentsAdded": 4,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 5
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 15,
+      "commentsAdded": 4
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 4,
+    "pagesModifiedLastMonth": 12,
+    "commentsLastMonth": 10
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

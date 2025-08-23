@@ -1,0 +1,46 @@
+{
+  "ehsId": "FMP029",
+  "fileId": "JIR029",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e28",
+  "displayName": "Noah Wright",
+  "firstName": "Noah",
+  "lastName": "Wright",
+  "email": "noah.wright@fullmetalproductions.com",
+  "accountType": "atlassian",
+  "active": true,
+  "projectRoles": [
+    {
+      "projectKey": "YTCHAN",
+      "projectName": "YouTube Channel",
+      "roles": [
+        "Content Creator"
+      ]
+    },
+    {
+      "projectKey": "STREAM",
+      "projectName": "Live Streaming",
+      "roles": [
+        "Producer"
+      ]
+    }
+  ],
+  "jiraGroups": [
+    "jira-software-users",
+    "youtube-content-team"
+  ],
+  "workloadSummary": {
+    "assignedIssues": 5,
+    "inProgressIssues": 4,
+    "completedThisMonth": 8,
+    "totalTimeLoggedThisMonth": "50h 15m",
+    "averageTimePerIssue": "8h 9m"
+  },
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "issuesCreatedLastMonth": 8,
+    "issuesResolvedLastMonth": 9,
+    "commentsLastMonth": 15
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "jira-userStats"
+}

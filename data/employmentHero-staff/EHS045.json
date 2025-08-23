@@ -1,0 +1,16 @@
+{
+  "ehsId": "FMP045",
+  "fileId": "EHS045",
+  "firstName": "Evelyn",
+  "lastName": "Stewart",
+  "positionTitle": "Office Manager",
+  "team": "Operations",
+  "manager": "Mason Collins",
+  "lengthOfService": "4 years 8 months",
+  "startDate": "2020-12-01",
+  "department": "Operations",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

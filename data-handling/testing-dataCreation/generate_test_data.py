@@ -146,6 +146,21 @@ def generate_ehs_id(index):
     """Generate Employment Hero Staff ID."""
     return f"FMP{index:03d}"
 
+def generate_file_id(folder_type, index):
+    """Generate folder-specific file ID to avoid naming conflicts."""
+    prefixes = {
+        "employmentHero-staff": "EHS",
+        "entraAd-user": "EAD", 
+        "googleCloudIdentity-user": "GCI",
+        "jira-userStats": "JIR",
+        "confluence-userStats": "CNF",
+        "calendar-availabilitySummary": "CAL",
+        "teams-userActivitySummary": "TMS",
+        "slack-userActivitySummary": "SLK"
+    }
+    prefix = prefixes.get(folder_type, "FMP")
+    return f"{prefix}{index:03d}"
+
 def generate_email(first_name, last_name):
     """Generate company email address."""
     return f"{first_name.lower()}.{last_name.lower()}@{COMPANY_DOMAIN}"
@@ -166,7 +181,22 @@ def has_confluence_access(department, position):
 def generate_employee_data():
     """Generate all employee data files."""
     
-    data_dir = "c:/git/EH-HackAThon-WWIZ/data"
+    data_dir = "F:/Git/EH-HackAThon-WWIZ/data"
+    
+    # Create all necessary directories
+    directories = [
+        "employmentHero-staff",
+        "entraAd-user", 
+        "googleCloudIdentity-user",
+        "jira-userStats",
+        "confluence-userStats",
+        "calendar-availabilitySummary",
+        "teams-userActivitySummary",
+        "slack-userActivitySummary"
+    ]
+    
+    for directory in directories:
+        os.makedirs(f"{data_dir}/{directory}", exist_ok=True)
     
     for i, employee in enumerate(EMPLOYEES):
         ehs_id = generate_ehs_id(i + 1)
@@ -174,8 +204,10 @@ def generate_employee_data():
         upn = email
         
         # Employment Hero Staff record
+        file_id = generate_file_id("employmentHero-staff", i + 1)
         eh_data = {
             "ehsId": ehs_id,
+            "fileId": file_id,
             "firstName": employee["firstName"],
             "lastName": employee["lastName"],
             "positionTitle": employee["position"],
@@ -190,12 +222,14 @@ def generate_employee_data():
             "dataSource": "employmentHero-staff"
         }
         
-        with open(f"{data_dir}/employmentHero-staff/{ehs_id}.json", "w") as f:
+        with open(f"{data_dir}/employmentHero-staff/{file_id}.json", "w") as f:
             json.dump(eh_data, f, indent=2)
         
         # Entra AD User record
+        file_id = generate_file_id("entraAd-user", i + 1)
         entra_data = {
             "ehsId": ehs_id,
+            "fileId": file_id,
             "firstName": employee["firstName"],
             "lastName": employee["lastName"],
             "email": email,
@@ -215,12 +249,14 @@ def generate_employee_data():
             "dataSource": "entraAd-user"
         }
         
-        with open(f"{data_dir}/entraAd-user/{ehs_id}.json", "w") as f:
+        with open(f"{data_dir}/entraAd-user/{file_id}.json", "w") as f:
             json.dump(entra_data, f, indent=2)
         
         # Google Cloud Identity User record
+        file_id = generate_file_id("googleCloudIdentity-user", i + 1)
         gci_data = {
             "ehsId": ehs_id,
+            "fileId": file_id,
             "firstName": employee["firstName"],
             "lastName": employee["lastName"],
             "email": email,
@@ -248,7 +284,7 @@ def generate_employee_data():
             "dataSource": "googleCloudIdentity-user"
         }
         
-        with open(f"{data_dir}/googleCloudIdentity-user/{ehs_id}.json", "w") as f:
+        with open(f"{data_dir}/googleCloudIdentity-user/{file_id}.json", "w") as f:
             json.dump(gci_data, f, indent=2)
         
         # Jira User Stats (only for employees with Jira access)
@@ -283,8 +319,10 @@ def generate_employee_data():
                     {"projectKey": "STREAM", "projectName": "Live Streaming", "roles": ["Producer"]}
                 ]
             
+            file_id = generate_file_id("jira-userStats", i + 1)
             jira_data = {
                 "ehsId": ehs_id,
+                "fileId": file_id,
                 "atlassianUserId": f"5b10ac8d82e05b22cc7d4e{i:02d}",
                 "displayName": f"{employee['firstName']} {employee['lastName']}",
                 "firstName": employee["firstName"],
@@ -314,7 +352,7 @@ def generate_employee_data():
                 "dataSource": "jira-userStats"
             }
             
-            with open(f"{data_dir}/jira-userStats/{ehs_id}.json", "w") as f:
+            with open(f"{data_dir}/jira-userStats/{file_id}.json", "w") as f:
                 json.dump(jira_data, f, indent=2)
         
         # Confluence User Stats (for most employees)
@@ -335,8 +373,10 @@ def generate_employee_data():
                     {"spaceKey": "COMPANY", "spaceName": "Company Wiki", "role": "contributor", "pagesCreated": random.randint(1, 5), "pagesModified": random.randint(3, 15), "commentsAdded": random.randint(2, 10)}
                 ]
             
+            file_id = generate_file_id("confluence-userStats", i + 1)
             confluence_data = {
                 "ehsId": ehs_id,
+                "fileId": file_id,
                 "atlassianUserId": f"5b10ac8d82e05b22cc7d4e{i:02d}",
                 "displayName": f"{employee['firstName']} {employee['lastName']}",
                 "firstName": employee["firstName"],
@@ -361,12 +401,14 @@ def generate_employee_data():
                 "dataSource": "confluence-userStats"
             }
             
-            with open(f"{data_dir}/confluence-userStats/{ehs_id}.json", "w") as f:
+            with open(f"{data_dir}/confluence-userStats/{file_id}.json", "w") as f:
                 json.dump(confluence_data, f, indent=2)
         
         # Calendar Availability Summary (all employees)
+        file_id = generate_file_id("calendar-availabilitySummary", i + 1)
         calendar_data = {
             "ehsId": ehs_id,
+            "fileId": file_id,
             "upn": upn,
             "firstName": employee["firstName"],
             "lastName": employee["lastName"],
@@ -399,12 +441,14 @@ def generate_employee_data():
             "dataSource": "calendar-availabilitySummary"
         }
         
-        with open(f"{data_dir}/calendar-availabilitySummary/{ehs_id}.json", "w") as f:
+        with open(f"{data_dir}/calendar-availabilitySummary/{file_id}.json", "w") as f:
             json.dump(calendar_data, f, indent=2)
         
         # Teams User Activity Summary (all employees)
+        file_id = generate_file_id("teams-userActivitySummary", i + 1)
         teams_data = {
             "ehsId": ehs_id,
+            "fileId": file_id,
             "upn": upn,
             "firstName": employee["firstName"],
             "lastName": employee["lastName"],
@@ -447,12 +491,14 @@ def generate_employee_data():
             "dataSource": "teams-userActivitySummary"
         }
         
-        with open(f"{data_dir}/teams-userActivitySummary/{ehs_id}.json", "w") as f:
+        with open(f"{data_dir}/teams-userActivitySummary/{file_id}.json", "w") as f:
             json.dump(teams_data, f, indent=2)
         
         # Slack User Activity Summary (all employees)
+        file_id = generate_file_id("slack-userActivitySummary", i + 1)
         slack_data = {
             "ehsId": ehs_id,
+            "fileId": file_id,
             "upn": upn,
             "firstName": employee["firstName"],
             "lastName": employee["lastName"],
@@ -511,12 +557,15 @@ def generate_employee_data():
             "dataSource": "slack-userActivitySummary"
         }
         
-        with open(f"{data_dir}/slack-userActivitySummary/{ehs_id}.json", "w") as f:
+        with open(f"{data_dir}/slack-userActivitySummary/{file_id}.json", "w") as f:
             json.dump(slack_data, f, indent=2)
 
 def generate_project_data():
     """Generate Jira project summary files."""
-    data_dir = "c:/git/EH-HackAThon-WWIZ/data"
+    data_dir = "F:/Git/EH-HackAThon-WWIZ/data"
+    
+    # Create jira-projectSummary directory
+    os.makedirs(f"{data_dir}/jira-projectSummary", exist_ok=True)
     
     for project_key, project_info in PROJECTS.items():
         if project_info["type"] in ["game", "minecraft_mod"]:
@@ -618,7 +667,10 @@ def generate_project_data():
 
 def generate_confluence_spaces():
     """Generate Confluence space summary files."""
-    data_dir = "c:/git/EH-HackAThon-WWIZ/data"
+    data_dir = "F:/Git/EH-HackAThon-WWIZ/data"
+    
+    # Create confluence-spacesSummary directory
+    os.makedirs(f"{data_dir}/confluence-spacesSummary", exist_ok=True)
     
     spaces = {
         "DEV": {
@@ -723,7 +775,16 @@ if __name__ == "__main__":
     print("✅ Confluence spaces generated")
     
     print("\n🎉 All test data generated successfully!")
-    print(f"📁 Data location: c:/git/EH-HackAThon-WWIZ/data/")
+    print(f"📁 Data location: F:/Git/EH-HackAThon-WWIZ/data/")
     print(f"👥 Employees: {len(EMPLOYEES)}")
     print(f"🎮 Projects: {len([p for p in PROJECTS.values() if p['type'] in ['game', 'minecraft_mod']])}")
     print(f"📚 Confluence Spaces: 5")
+    print("\n📋 New naming convention used:")
+    print("   • EHS001-EHS052: employmentHero-staff/")
+    print("   • EAD001-EAD052: entraAd-user/")
+    print("   • GCI001-GCI052: googleCloudIdentity-user/")
+    print("   • JIR001-JIR0xx: jira-userStats/")
+    print("   • CNF001-CNF0xx: confluence-userStats/")
+    print("   • CAL001-CAL052: calendar-availabilitySummary/")
+    print("   • TMS001-TMS052: teams-userActivitySummary/")
+    print("   • SLK001-SLK052: slack-userActivitySummary/")

@@ -12,26 +12,26 @@
       "epicKey": "MCBUILD-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "Done": 28
+        "Done": 20
       }
     },
     {
       "epicKey": "MCBUILD-200",
       "epicName": "Post-Launch Support",
       "statusCounts": {
-        "To Do": 2,
-        "In Progress": 0,
+        "To Do": 1,
+        "In Progress": 1,
         "Done": 11
       }
     }
   ],
   "usersAndRoles": [],
   "projectStats": {
-    "totalIssues": 41,
+    "totalIssues": 33,
     "openIssues": 2,
-    "completedIssues": 39,
-    "totalTimeSpent": "256h 49m",
-    "averageResolutionTime": "6.1 days"
+    "completedIssues": 31,
+    "totalTimeSpent": "579h 29m",
+    "averageResolutionTime": "1.6 days"
   },
   "components": [
     "Core",

@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP009",
+  "fileId": "EAD009",
+  "firstName": "Lisa",
+  "lastName": "Zhang",
+  "email": "lisa.zhang@fullmetalproductions.com",
+  "upn": "lisa.zhang@fullmetalproductions.com",
+  "displayName": "Lisa Zhang",
+  "jobTitle": "Developer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 419 793 334",
+  "businessPhones": [
+    "+61 3 7917 9135"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-05-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

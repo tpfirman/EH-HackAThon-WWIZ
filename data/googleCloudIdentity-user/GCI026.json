@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP026",
+  "fileId": "GCI026",
+  "firstName": "Emma",
+  "lastName": "Lewis",
+  "email": "emma.lewis@fullmetalproductions.com",
+  "upn": "emma.lewis@fullmetalproductions.com",
+  "displayName": "Emma Lewis",
+  "primaryEmail": "emma.lewis@fullmetalproductions.com",
+  "aliases": [
+    "e.lewis@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/YouTube Content",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-06-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP026",
+      "Department": "YouTube Content",
+      "Manager": "Sarah Chen"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP013",
+  "fileId": "EAD013",
+  "firstName": "Jordan",
+  "lastName": "Martinez",
+  "email": "jordan.martinez@fullmetalproductions.com",
+  "upn": "jordan.martinez@fullmetalproductions.com",
+  "displayName": "Jordan Martinez",
+  "jobTitle": "Game Director",
+  "department": "Game Design",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 457 129 488",
+  "businessPhones": [
+    "+61 3 4301 5901"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2020-05-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Game Design_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

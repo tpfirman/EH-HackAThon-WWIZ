@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP034",
+  "fileId": "EAD034",
+  "firstName": "Harper",
+  "lastName": "Baker",
+  "email": "harper.baker@fullmetalproductions.com",
+  "upn": "harper.baker@fullmetalproductions.com",
+  "displayName": "Harper Baker",
+  "jobTitle": "QA Tester",
+  "department": "QA",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 429 705 108",
+  "businessPhones": [
+    "+61 3 9337 8431"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-08-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "QA_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

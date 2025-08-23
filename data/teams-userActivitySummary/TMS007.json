@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP007",
+  "fileId": "TMS007",
+  "upn": "jessica.williams@fullmetalproductions.com",
+  "firstName": "Jessica",
+  "lastName": "Williams",
+  "displayName": "Jessica Williams",
+  "userPrincipalName": "jessica.williams@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:developmentteam@thread.v2",
+      "teamName": "Development Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-01-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-01-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 12,
+    "messagesSentLastWeek": 24,
+    "reactionsLastWeek": 19,
+    "meetingsAttendedLastWeek": 10,
+    "callsInitiatedLastWeek": 1,
+    "filesSharedLastWeek": 1,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

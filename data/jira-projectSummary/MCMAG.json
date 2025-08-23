@@ -12,26 +12,26 @@
       "epicKey": "MCMAG-100",
       "epicName": "Core Gameplay Systems",
       "statusCounts": {
-        "Done": 24
+        "Done": 20
       }
     },
     {
       "epicKey": "MCMAG-200",
       "epicName": "Post-Launch Support",
       "statusCounts": {
-        "To Do": 2,
-        "In Progress": 1,
-        "Done": 5
+        "To Do": 1,
+        "In Progress": 2,
+        "Done": 12
       }
     }
   ],
   "usersAndRoles": [],
   "projectStats": {
-    "totalIssues": 32,
+    "totalIssues": 35,
     "openIssues": 3,
-    "completedIssues": 29,
-    "totalTimeSpent": "229h 9m",
-    "averageResolutionTime": "5.9 days"
+    "completedIssues": 32,
+    "totalTimeSpent": "632h 1m",
+    "averageResolutionTime": "2.1 days"
   },
   "components": [
     "Core",

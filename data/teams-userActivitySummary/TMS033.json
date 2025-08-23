@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP033",
+  "fileId": "TMS033",
+  "upn": "benjamin.adams@fullmetalproductions.com",
+  "firstName": "Benjamin",
+  "lastName": "Adams",
+  "displayName": "Benjamin Adams",
+  "userPrincipalName": "benjamin.adams@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:qateam@thread.v2",
+      "teamName": "QA Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-03-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-03-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 7,
+    "messagesSentLastWeek": 26,
+    "reactionsLastWeek": 11,
+    "meetingsAttendedLastWeek": 7,
+    "callsInitiatedLastWeek": 0,
+    "filesSharedLastWeek": 5,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "moderate"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

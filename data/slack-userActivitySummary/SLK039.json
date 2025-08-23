@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP039",
+  "fileId": "SLK039",
+  "upn": "henry.phillips@fullmetalproductions.com",
+  "firstName": "Henry",
+  "lastName": "Phillips",
+  "displayName": "Henry Phillips",
+  "slackUserId": "U5094995898",
+  "slackUsername": "henry.phillips",
+  "slackDisplayName": "Henry Phillips",
+  "slackEmail": "henry.phillips@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-05-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C2232517366",
+      "channelName": "finance",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-05-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 13,
+      "reactionsLastWeek": 3,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-05-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 10,
+      "reactionsLastWeek": 6,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 13,
+    "totalDirectMessages": 6,
+    "messagesSentLastWeek": 44,
+    "reactionsLastWeek": 38,
+    "filesSharedLastWeek": 3,
+    "threadsStartedLastWeek": 2,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

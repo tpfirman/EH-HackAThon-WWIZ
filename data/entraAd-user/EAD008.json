@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP008",
+  "fileId": "EAD008",
+  "firstName": "Ryan",
+  "lastName": "O'Connor",
+  "email": "ryan.o'connor@fullmetalproductions.com",
+  "upn": "ryan.o'connor@fullmetalproductions.com",
+  "displayName": "Ryan O'Connor",
+  "jobTitle": "Developer",
+  "department": "Development",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 456 384 972",
+  "businessPhones": [
+    "+61 3 6846 8144"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-03-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Development_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

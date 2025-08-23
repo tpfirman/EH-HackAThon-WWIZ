@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP024",
+  "fileId": "GCI024",
+  "firstName": "Sophia",
+  "lastName": "Young",
+  "email": "sophia.young@fullmetalproductions.com",
+  "upn": "sophia.young@fullmetalproductions.com",
+  "displayName": "Sophia Young",
+  "primaryEmail": "sophia.young@fullmetalproductions.com",
+  "aliases": [
+    "s.young@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Art & Animation",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-10-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP024",
+      "Department": "Art & Animation",
+      "Manager": "Maya Patel"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

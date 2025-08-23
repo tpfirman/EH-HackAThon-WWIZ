@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP011",
+  "fileId": "GCI011",
+  "firstName": "Amy",
+  "lastName": "Davis",
+  "email": "amy.davis@fullmetalproductions.com",
+  "upn": "amy.davis@fullmetalproductions.com",
+  "displayName": "Amy Davis",
+  "primaryEmail": "amy.davis@fullmetalproductions.com",
+  "aliases": [
+    "a.davis@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Development",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2022-06-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP011",
+      "Department": "Development",
+      "Manager": "Alex Thompson"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

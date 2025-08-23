@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP016",
+  "fileId": "SLK016",
+  "upn": "rachel.taylor@fullmetalproductions.com",
+  "firstName": "Rachel",
+  "lastName": "Taylor",
+  "displayName": "Rachel Taylor",
+  "slackUserId": "U2049223255",
+  "slackUsername": "rachel.taylor",
+  "slackDisplayName": "Rachel Taylor",
+  "slackEmail": "rachel.taylor@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-08-15T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C6431602622",
+      "channelName": "game-design",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-08-15T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 5,
+      "reactionsLastWeek": 9,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-08-15T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 7,
+      "reactionsLastWeek": 17,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 8,
+    "totalDirectMessages": 11,
+    "messagesSentLastWeek": 23,
+    "reactionsLastWeek": 33,
+    "filesSharedLastWeek": 7,
+    "threadsStartedLastWeek": 4,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP012",
+  "fileId": "CNF012",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e11",
+  "displayName": "Mark Wilson",
+  "firstName": "Mark",
+  "lastName": "Wilson",
+  "email": "mark.wilson@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 25,
+      "commentsAdded": 11
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 9,
+      "commentsAdded": 9
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 9,
+    "totalPagesModified": 34,
+    "totalCommentsAdded": 20,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 10
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 25,
+      "commentsAdded": 11
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 9,
+      "commentsAdded": 9
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 1,
+    "pagesModifiedLastMonth": 11,
+    "commentsLastMonth": 6
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

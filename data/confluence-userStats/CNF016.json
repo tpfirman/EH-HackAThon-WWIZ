@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP016",
+  "fileId": "CNF016",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e15",
+  "displayName": "Rachel Taylor",
+  "firstName": "Rachel",
+  "lastName": "Taylor",
+  "email": "rachel.taylor@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 14,
+      "pagesModified": 36,
+      "commentsAdded": 12
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 9,
+      "pagesModified": 25,
+      "commentsAdded": 18
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 23,
+    "totalPagesModified": 61,
+    "totalCommentsAdded": 30,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 12
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DESIGN",
+      "spaceName": "Game Design",
+      "role": "contributor",
+      "pagesCreated": 14,
+      "pagesModified": 36,
+      "commentsAdded": 12
+    },
+    {
+      "spaceKey": "DOCS",
+      "spaceName": "Game Documentation",
+      "role": "contributor",
+      "pagesCreated": 9,
+      "pagesModified": 25,
+      "commentsAdded": 18
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 3,
+    "pagesModifiedLastMonth": 6,
+    "commentsLastMonth": 10
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP016",
+  "fileId": "EAD016",
+  "firstName": "Rachel",
+  "lastName": "Taylor",
+  "email": "rachel.taylor@fullmetalproductions.com",
+  "upn": "rachel.taylor@fullmetalproductions.com",
+  "displayName": "Rachel Taylor",
+  "jobTitle": "Game Designer",
+  "department": "Game Design",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 499 332 997",
+  "businessPhones": [
+    "+61 3 7416 8238"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2021-08-15T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Game Design_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

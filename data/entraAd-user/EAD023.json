@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP023",
+  "fileId": "EAD023",
+  "firstName": "Ethan",
+  "lastName": "Hall",
+  "email": "ethan.hall@fullmetalproductions.com",
+  "upn": "ethan.hall@fullmetalproductions.com",
+  "displayName": "Ethan Hall",
+  "jobTitle": "2D Artist",
+  "department": "Art & Animation",
+  "officeLocation": "Melbourne/Remote",
+  "mobilePhone": "+61 419 584 208",
+  "businessPhones": [
+    "+61 3 3141 1758"
+  ],
+  "accountEnabled": true,
+  "createdDateTime": "2022-02-01T09:00:00Z",
+  "lastSignInDateTime": "2025-08-23T08:45:00Z",
+  "assignedLicenses": [
+    "Office 365 E3",
+    "Teams",
+    "OneDrive"
+  ],
+  "memberOf": [
+    "Art & Animation_Team",
+    "All_Staff",
+    "Melbourne_Office"
+  ],
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "entraAd-user"
+}

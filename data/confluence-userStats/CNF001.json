@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP001",
+  "fileId": "CNF001",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e00",
+  "displayName": "Tim Firman",
+  "firstName": "Tim",
+  "lastName": "Firman",
+  "email": "tim.firman@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 15,
+      "commentsAdded": 8
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 1,
+    "totalPagesModified": 15,
+    "totalCommentsAdded": 8,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 7
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 1,
+      "pagesModified": 15,
+      "commentsAdded": 8
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 14,
+    "commentsLastMonth": 5
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

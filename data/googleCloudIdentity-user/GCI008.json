@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP008",
+  "fileId": "GCI008",
+  "firstName": "Ryan",
+  "lastName": "O'Connor",
+  "email": "ryan.o'connor@fullmetalproductions.com",
+  "upn": "ryan.o'connor@fullmetalproductions.com",
+  "displayName": "Ryan O'Connor",
+  "primaryEmail": "ryan.o'connor@fullmetalproductions.com",
+  "aliases": [
+    "r.o'connor@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Development",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2021-03-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP008",
+      "Department": "Development",
+      "Manager": "Alex Thompson"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}

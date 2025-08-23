@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP025",
+  "fileId": "TMS025",
+  "upn": "oliver.clark@fullmetalproductions.com",
+  "firstName": "Oliver",
+  "lastName": "Clark",
+  "displayName": "Oliver Clark",
+  "userPrincipalName": "oliver.clark@fullmetalproductions.com",
+  "activeTeamsGroups": [
+    {
+      "teamId": "19:art&animationteam@thread.v2",
+      "teamName": "Art & Animation Team",
+      "teamType": "private",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-12-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "isArchived": false
+    },
+    {
+      "teamId": "19:allstaff@thread.v2",
+      "teamName": "All Staff",
+      "teamType": "public",
+      "membershipType": "member",
+      "role": "member",
+      "joinedDate": "2021-12-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalTeams": 2,
+    "totalChannels": 8,
+    "messagesSentLastWeek": 33,
+    "reactionsLastWeek": 26,
+    "meetingsAttendedLastWeek": 8,
+    "callsInitiatedLastWeek": 2,
+    "filesSharedLastWeek": 4,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "low"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "teams-userActivitySummary"
+}

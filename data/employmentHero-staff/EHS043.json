@@ -1,0 +1,16 @@
+{
+  "ehsId": "FMP043",
+  "fileId": "EHS043",
+  "firstName": "Mason",
+  "lastName": "Collins",
+  "positionTitle": "Operations Manager",
+  "team": "Operations",
+  "manager": "Sarah Chen",
+  "lengthOfService": "4 years 11 months",
+  "startDate": "2020-09-01",
+  "department": "Operations",
+  "location": "Remote/Melbourne Office",
+  "employmentType": "Full-time",
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "employmentHero-staff"
+}

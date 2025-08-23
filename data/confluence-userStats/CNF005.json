@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP005",
+  "fileId": "CNF005",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e04",
+  "displayName": "Emily Johnson",
+  "firstName": "Emily",
+  "lastName": "Johnson",
+  "email": "emily.johnson@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 12,
+      "pagesModified": 34,
+      "commentsAdded": 10
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 12,
+      "commentsAdded": 5
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 19,
+    "totalPagesModified": 46,
+    "totalCommentsAdded": 15,
+    "totalBlogPostsCreated": 2,
+    "totalAttachmentsUploaded": 6
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "DEV",
+      "spaceName": "Development",
+      "role": "contributor",
+      "pagesCreated": 12,
+      "pagesModified": 34,
+      "commentsAdded": 10
+    },
+    {
+      "spaceKey": "TECH",
+      "spaceName": "Technical Documentation",
+      "role": "contributor",
+      "pagesCreated": 7,
+      "pagesModified": 12,
+      "commentsAdded": 5
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 2,
+    "pagesModifiedLastMonth": 5,
+    "commentsLastMonth": 5
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

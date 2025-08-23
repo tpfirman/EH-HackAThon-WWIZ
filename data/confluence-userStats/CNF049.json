@@ -1,0 +1,44 @@
+{
+  "ehsId": "FMP049",
+  "fileId": "CNF049",
+  "atlassianUserId": "5b10ac8d82e05b22cc7d4e48",
+  "displayName": "Scarlett Reed",
+  "firstName": "Scarlett",
+  "lastName": "Reed",
+  "email": "scarlett.reed@fullmetalproductions.com",
+  "spacesActiveIn": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 8,
+      "commentsAdded": 6
+    }
+  ],
+  "totalContributionSummary": {
+    "totalPagesCreated": 4,
+    "totalPagesModified": 8,
+    "totalCommentsAdded": 6,
+    "totalBlogPostsCreated": 3,
+    "totalAttachmentsUploaded": 15
+  },
+  "top10SpacesActivity": [
+    {
+      "spaceKey": "COMPANY",
+      "spaceName": "Company Wiki",
+      "role": "contributor",
+      "pagesCreated": 4,
+      "pagesModified": 8,
+      "commentsAdded": 6
+    }
+  ],
+  "recentActivity": {
+    "lastLogin": "2025-08-23T08:45:00Z",
+    "pagesCreatedLastMonth": 1,
+    "pagesModifiedLastMonth": 3,
+    "commentsLastMonth": 11
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-userStats"
+}

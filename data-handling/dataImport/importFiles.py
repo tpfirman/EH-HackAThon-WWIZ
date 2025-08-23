@@ -18,19 +18,22 @@ Project: WWIZ (Who's Who in the Zoo)
 
 import requests
 import os
-import json
-import re
-from typing import Dict, List, Tuple, Optional
+import sys
+from typing import Dict, List, Tuple
 
 # Global configuration variables
 serverUrl: str
 apiKey: str
 filePath: str
 recursive: bool = True
-dryRun: bool = False
 workspaces: str
+includedFileTypes: List[str] = []
+
+# Testing vars ;)
+dryRun: bool = False
 testing: bool = False
-includedFileTypes: List[str] = ['txt', 'json', 'xml', 'csv']
+smallBatchRun : bool = False
+smallBatchSize : int = 0
 
 
 def main() -> None:
@@ -44,12 +47,17 @@ def main() -> None:
     
     serverURL = env.get("ANYTHINGLLM_URL")
     workSpaceSlug = env.get("WORKSPACE_SLUG") or env.get("AGENT_NAME")
-    apiKey = env.get("API_KEY")
+    apiKey = env.get("ANYTHINGLLM_API_KEY")
     filePath = env.get("FILE_PATH")
     recursive = env.get("RECURSIVE")
     dryRun = env.get("DRY_RUN")
     workspaces = env.get("WORKSPACES")
+    includedFileTypes = env.get("INCLUDED_FILE_TYPES", "txt,json,xml,csv").split(",")
     
+    dryRun = dryRun.lower() == 'true' if isinstance(dryRun, str) else dryRun
+    smallBatchRun = env.get("SMALL_BATCH", "false").lower() == 'true'
+    smallBatchSize = int(env.get("SMALL_BATCH_LIMIT", 0))
+
     if not serverURL or not filePath:
         print(f"Error, variables missing. Check your .env\nserverURL: {serverURL}\nfilePath: {filePath}")
         if not apiKey:
@@ -59,7 +67,7 @@ def main() -> None:
         print("Variables Set")
         
     # Build list of files to upload with their target folders
-    filesToUpload: Dict[str, Tuple[bytes, str]] = buildFileListWithFolders(filePath, recursive)
+    filesToUpload: Dict[str, Tuple[bytes, str]] = buildFileListWithFolders(filePath, recursive, smallBatchRun, smallBatchSize, includedFileTypes)
     
     # Get existing files to avoid duplicates
     existingFiles: List[str] = buildExistingFileList(serverURL, apiKey)
@@ -79,28 +87,48 @@ def main() -> None:
     uploadResults = uploadFilesToFolders(filesToUpload, serverURL, apiKey, workspaces)
 
     # Embed files in workspaces
-    embedFilesInAgents(uploadResults, workspaces, serverURL, apiKey)
+    #  embedFilesInAgents(uploadResults, workspaces, serverURL, apiKey)
 
     print("All files processed and embedded in agent.")
 
 
-def buildFileListWithFolders(filePath: str, recursive: bool) -> Dict[str, Tuple[bytes, str]]:
+def buildFileListWithFolders(filePath: str, recursive: bool, smallBatchRun: bool, smallBatchSize: int, includedFileTypes: List[str]) -> Dict[str, Tuple[bytes, str]]:
     """
     Build a dictionary of files to upload with their target folder paths.
     
     Args:
         filePath: Root directory to scan for files
         recursive: Whether to scan subdirectories recursively
+        smallBatchRun: Whether to limit the number of files processed
+        smallBatchSize: Maximum number of files to process when smallBatchRun is True
+        includedFileTypes: List of file extensions to include (e.g., ['txt', 'json', 'xml', 'csv'])
         
     Returns:
         Dictionary mapping file paths to (file_content, target_folder) tuples
     """
     print(f"Building file list from: {filePath} (recursive={recursive})")
+    if smallBatchRun:
+        print(f"Small batch mode enabled: limiting to {smallBatchSize} files")
+    
     filesDict: Dict[str, Tuple[bytes, str]] = {}
+    
+    if not os.path.exists(filePath) or not os.path.isdir(filePath):
+        print(f"Error: {filePath} does not exist or is not a directory")
+        sys.exit(1)
+        
+    # Check if the directory is empty
+    if not any(os.scandir(filePath)):
+        print(f"Error: Directory {filePath} is empty")
+        sys.exit(1)
     
     if recursive:
         for root, dirs, files in os.walk(filePath):
             for file in files:
+                # Check if we've reached the batch limit
+                if smallBatchRun and len(filesDict) >= smallBatchSize:
+                    print(f"Reached small batch limit of {smallBatchSize} files")
+                    return filesDict
+                    
                 ext = file.split('.')[-1].lower()
                 if ext in includedFileTypes:
                     fullPath = os.path.join(root, file)
@@ -113,6 +141,11 @@ def buildFileListWithFolders(filePath: str, recursive: bool) -> Dict[str, Tuple[
     else:
         if os.path.isdir(filePath):
             for file in os.listdir(filePath):
+                # Check if we've reached the batch limit
+                if smallBatchRun and len(filesDict) >= smallBatchSize:
+                    print(f"Reached small batch limit of {smallBatchSize} files")
+                    return filesDict
+                    
                 ext = file.split('.')[-1].lower()
                 if ext in includedFileTypes:
                     fullPath = os.path.join(filePath, file)
@@ -339,11 +372,13 @@ def uploadFilesToFolders(filesToUpload: Dict[str, Tuple[bytes, str]], serverUrl:
         if workspaces:
             data['addToWorkspaces'] = workspaces
         if targetFolder:
-            data['documentPath'] = targetFolder
+            targetEndpoint = f'{endpoint}/{targetFolder}'
+        else:
+            targetEndpoint = endpoint
         
         try:
-            response = requests.post(endpoint, headers=headers, files=files, data=data)
-            
+            response = requests.post(targetEndpoint, headers=headers, files=files, data=data)
+
             if response.status_code == 200:
                 uploadCount += 1
                 
@@ -351,10 +386,10 @@ def uploadFilesToFolders(filesToUpload: Dict[str, Tuple[bytes, str]], serverUrl:
                 for document in jsonResponse.get('documents', []):
                     result.append(document['location'])
                     
-                print(f"Uploaded: {filename} -> {targetFolder or 'root'} ({uploadCount}/{totalFiles})")
+                print(f"Uploaded: {filename} ({uploadCount}/{totalFiles})")
             else:
                 print(f"Failed to upload {filename}: {response.status_code} - {response.text}")
-                
+
         except Exception as e:
             print(f"Error uploading {filename}: {str(e)}")
             
@@ -427,8 +462,8 @@ def loadEnv() -> Dict[str, str]:
         Dictionary of environment variables
     """
     env = {}
-    envPath = ".importFiles.env"  # Look for .env in current directory
-    
+    envPath = os.path.join("data-handling", "dataImport", ".importFiles.env")
+
     if not os.path.exists(envPath):
         print(f"Environment file not found: {envPath}")
         exit(1)

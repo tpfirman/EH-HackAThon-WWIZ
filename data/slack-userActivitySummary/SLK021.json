@@ -1,0 +1,60 @@
+{
+  "ehsId": "FMP021",
+  "fileId": "SLK021",
+  "upn": "nathan.cooper@fullmetalproductions.com",
+  "firstName": "Nathan",
+  "lastName": "Cooper",
+  "displayName": "Nathan Cooper",
+  "slackUserId": "U9969292748",
+  "slackUsername": "nathan.cooper",
+  "slackDisplayName": "Nathan Cooper",
+  "slackEmail": "nathan.cooper@fullmetalproductions.com",
+  "activeSlackWorkspaces": [
+    {
+      "workspaceId": "T1234567890",
+      "workspaceName": "Full Metal Productions",
+      "workspaceDomain": "fullmetalproductions.slack.com",
+      "membershipType": "regular",
+      "joinedDate": "2021-07-01T09:00:00Z",
+      "isActive": true,
+      "lastActivity": "2025-08-23T08:45:00Z"
+    }
+  ],
+  "activeSlackChannels": [
+    {
+      "channelId": "C5588829898",
+      "channelName": "art-and-animation",
+      "channelType": "private",
+      "membershipType": "member",
+      "joinedDate": "2021-07-01T10:00:00Z",
+      "lastActivity": "2025-08-23T08:45:00Z",
+      "messagesSentLastWeek": 7,
+      "reactionsLastWeek": 17,
+      "isArchived": false
+    },
+    {
+      "channelId": "C2345678901",
+      "channelName": "general",
+      "channelType": "public",
+      "membershipType": "member",
+      "joinedDate": "2021-07-01T09:00:00Z",
+      "lastActivity": "2025-08-22T16:30:00Z",
+      "messagesSentLastWeek": 2,
+      "reactionsLastWeek": 11,
+      "isArchived": false
+    }
+  ],
+  "activitySummary": {
+    "totalChannels": 12,
+    "totalDirectMessages": 9,
+    "messagesSentLastWeek": 24,
+    "reactionsLastWeek": 17,
+    "filesSharedLastWeek": 2,
+    "threadsStartedLastWeek": 1,
+    "lastActiveDate": "2025-08-23T08:45:00Z",
+    "averageDailyActivity": "high",
+    "onlineStatus": "active"
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "slack-userActivitySummary"
+}

@@ -1,0 +1,31 @@
+{
+  "ehsId": "FMP019",
+  "fileId": "GCI019",
+  "firstName": "Lucas",
+  "lastName": "Garcia",
+  "email": "lucas.garcia@fullmetalproductions.com",
+  "upn": "lucas.garcia@fullmetalproductions.com",
+  "displayName": "Lucas Garcia",
+  "primaryEmail": "lucas.garcia@fullmetalproductions.com",
+  "aliases": [
+    "l.garcia@fullmetalproductions.com"
+  ],
+  "orgUnitPath": "/Art & Animation",
+  "suspended": false,
+  "archived": false,
+  "lastLoginTime": "2025-08-23T08:45:00Z",
+  "creationTime": "2020-09-01T09:00:00Z",
+  "agreedToTerms": true,
+  "isAdmin": false,
+  "isDelegatedAdmin": false,
+  "isMailboxSetup": true,
+  "customSchemas": {
+    "Employee_Info": {
+      "Employee_ID": "FMP019",
+      "Department": "Art & Animation",
+      "Manager": "Maya Patel"
+    }
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "googleCloudIdentity-user"
+}
