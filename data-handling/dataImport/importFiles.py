@@ -48,7 +48,7 @@ def main() -> None:
     
     serverURL = env.get("ANYTHINGLLM_URL")
     workSpaceSlug = env.get("WORKSPACE_SLUG") or env.get("AGENT_NAME")
-    apiKey = env.get("API_KEY")
+    apiKey = env.get("ANYTHINGLLM_API_KEY")
     filePath = env.get("FILE_PATH")
     recursive = env.get("RECURSIVE")
     dryRun = env.get("DRY_RUN")
