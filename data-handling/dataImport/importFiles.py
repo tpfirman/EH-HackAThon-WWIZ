@@ -87,7 +87,7 @@ def main() -> None:
     uploadResults = uploadFilesToFolders(filesToUpload, serverURL, apiKey, workspaces)
 
     # Embed files in workspaces
-    embedFilesInAgents(uploadResults, workspaces, serverURL, apiKey)
+    #  embedFilesInAgents(uploadResults, workspaces, serverURL, apiKey)
 
     print("All files processed and embedded in agent.")
 
