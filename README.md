@@ -54,9 +54,11 @@ Your submission will be evaluated on:
 **WWIZ (Who's Who in the Zoo)**
 Everyone has been in a situation at work where they were wondering **"Who do I talk to about that thing?"**, heard about a project in a meeting and thought **"Wait, what's that?"**, or seen a name on an email and wondered **"Who is that?"**. These moments of uncertainty can kill productivity and create frustration in modern workplaces.
 
-**Demo user credentials**
-username: demo
-password: demo
+**Demo User Credentials**
+
+- **Username**: `demo`  
+- **Password**: `demo`
+
 
 **WWIZ is an intelligent workplace assistant** that eliminates these knowledge gaps by providing instant, accurate answers about your organization's people, projects, and processes.
 
