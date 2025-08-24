@@ -52,10 +52,13 @@ Your submission will be evaluated on:
 ## My Solution
 
 **WWIZ (Who's Who in the Zoo)**
-
 Everyone has been in a situation at work where they were wondering **"Who do I talk to about that thing?"**, heard about a project in a meeting and thought **"Wait, what's that?"**, or seen a name on an email and wondered **"Who is that?"**. These moments of uncertainty can kill productivity and create frustration in modern workplaces.
 
-**WWIZ is Employment Hero's intelligent workplace assistant** that eliminates these knowledge gaps by providing instant, accurate answers about your organization's people, projects, and processes.
+**Demo user credentials**
+username: demo
+password: demo
+
+**WWIZ is an intelligent workplace assistant** that eliminates these knowledge gaps by providing instant, accurate answers about your organization's people, projects, and processes.
 
 ### 🎯 Core Mission & Intelligence
 
@@ -88,7 +91,7 @@ The AI Agent never has direct access to sensitive systems. Instead, scheduled da
 - **Project Status**: "Which projects are in production?" → Real-time project tracking
 
 **Data Sources Integrated (426+ files):**
-- 📊 Employment Hero staff records (52 employees)
+- 📊 HRIS staff records (52 employees)
 - 🔍 Azure AD user profiles and roles
 - 📅 Calendar availability summaries
 - 🎯 Jira project tracking (7 active projects)
