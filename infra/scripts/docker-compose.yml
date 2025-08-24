@@ -1,4 +1,9 @@
 version: '3.8'
+
+networks:
+  anythingllm:
+    driver: bridge
+
 services:
   anythingllm:
     image: mintplexlabs/anythingllm:latest
@@ -6,22 +11,22 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - ./storage:/app/server/storage
-      - ./logs:/app/server/logs
+      - "/home/ec2-user/anythingllm/.env:/app/server/.env"
+      - "/home/ec2-user/anythingllm/storage:/app/server/storage"
+      - "/home/ec2-user/anythingllm/logs:/app/server/logs"
+    user: "${UID:-1000}:${GID:-1000}"
+    env_file:
+      - /home/ec2-user/anythingllm/.env
     environment:
       - NODE_ENV=production
-      - DISABLE_TELEMETRY=true
-      - STORAGE_DIR=/app/server/storage
-      - LOG_LEVEL=info
-      - JWT_SECRET="GmzuGUzDB5YrC8GYBjGqNTsfWc3xyDecQX44EtL7foSHUNbvp5QjPQvcsqAvZYfR"
     restart: unless-stopped
     mem_limit: ${ANYTHINGLLM_MEMORY_MB:-2048}m
+    networks:
+      - anythingllm
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     logging:
       driver: "json-file"
       options:
         max-size: "100m"
         max-file: "3"
-
-volumes:
-  anythingllm_storage:
-  anythingllm_logs:

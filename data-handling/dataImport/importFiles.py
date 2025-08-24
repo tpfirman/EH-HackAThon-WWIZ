@@ -19,6 +19,7 @@ Project: WWIZ (Who's Who in the Zoo)
 import requests
 import os
 import sys
+import urllib.parse
 from typing import Dict, List, Tuple
 
 # Global configuration variables
@@ -341,40 +342,58 @@ def uploadFilesToFolders(filesToUpload: Dict[str, Tuple[bytes, str]], serverUrl:
     Returns:
         List of document locations for embedding
     """
-    endpoint = f"{serverUrl}/api/v1/document/upload"
+    
+    
+    baseEndpoint = f"{serverUrl}/api/v1/document/upload"
     auth = f"Bearer {apiKey}"
+    # Don't set Content-Type header - let requests handle multipart/form-data
     headers = {'Authorization': auth}
     
     result = []
-    contentTypeMap = {
-        'txt': 'text/plain',
-        'json': 'application/json',
-        'xml': 'application/xml',
-        'csv': 'text/csv'
-    }
     
     uploadCount = 0
     totalFiles = len(filesToUpload)
     
+    # Parse workspaces properly - should be comma-separated string
+    workspacesList = [ws.strip() for ws in workspaces.split(",") if ws.strip()] if isinstance(workspaces, str) else workspaces
+    
     for filePath, (fileContent, targetFolder) in filesToUpload.items():
         filename = os.path.basename(filePath)
         
-        # Determine content type based on file extension
+        # Check file size (AnythingLLM might have limits)
+        fileSize = len(fileContent)
+        if fileSize > 10 * 1024 * 1024:  # 10MB limit
+            print(f"Skipping {filename}: File too large ({fileSize} bytes)")
+            continue
+        
+        # For JSON files, validate content
         ext = filename.split('.')[-1].lower()
-        contentType = contentTypeMap.get(ext, 'text/plain')
+        if ext == 'json':
+            try:
+                import json
+                json.loads(fileContent.decode('utf-8'))
+            except (json.JSONDecodeError, UnicodeDecodeError) as e:
+                print(f"Skipping {filename}: Invalid JSON content - {str(e)}")
+                continue
+        
+        # Build endpoint URL with folder path
+        if targetFolder:
+            # URL encode the folder path
+            encodedFolder = urllib.parse.quote(targetFolder, safe='')
+            targetEndpoint = f"{baseEndpoint}/{encodedFolder}"
+        else:
+            targetEndpoint = baseEndpoint
         
         # Prepare multipart form data
         files = {
-            'file': (filename, fileContent, contentType)
+            'file': (filename, fileContent)
         }
         
+        # Add workspace parameter as single form field (not multiple)
         data = {}
-        if workspaces:
-            data['addToWorkspaces'] = workspaces
-        if targetFolder:
-            targetEndpoint = f'{endpoint}/{targetFolder}'
-        else:
-            targetEndpoint = endpoint
+        if workspacesList:
+            # Join multiple workspaces with comma as per API docs
+            data['addToWorkspaces'] = ','.join(workspacesList)
         
         try:
             response = requests.post(targetEndpoint, headers=headers, files=files, data=data)
@@ -382,16 +401,27 @@ def uploadFilesToFolders(filesToUpload: Dict[str, Tuple[bytes, str]], serverUrl:
             if response.status_code == 200:
                 uploadCount += 1
                 
-                jsonResponse = response.json()
-                for document in jsonResponse.get('documents', []):
-                    result.append(document['location'])
+                # Check if response is JSON
+                try:
+                    jsonResponse = response.json()
+                    for document in jsonResponse.get('documents', []):
+                        result.append(document['location'])
+                    print(f"Uploaded: {filename} ({uploadCount}/{totalFiles}) - Size: {fileSize} bytes")
+                except json.JSONDecodeError:
+                    print(f"Warning: {filename} uploaded but response not JSON")
                     
-                print(f"Uploaded: {filename} ({uploadCount}/{totalFiles})")
             else:
                 print(f"Failed to upload {filename}: {response.status_code} - {response.text}")
+                # Log additional debug info for failures
+                print(f"  File size: {fileSize} bytes")
+                print(f"  Target folder: {targetFolder}")
+                print(f"  Endpoint: {targetEndpoint}")
+                print(f"  Workspaces: {data.get('addToWorkspaces', 'None')}")
 
         except Exception as e:
             print(f"Error uploading {filename}: {str(e)}")
+            print(f"  File size: {fileSize} bytes")
+            print(f"  Endpoint: {targetEndpoint}")
             
         if uploadCount % 25 == 0 and uploadCount > 0:
             print(f"Progress: {uploadCount}/{totalFiles} files uploaded...")
