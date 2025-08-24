@@ -77,7 +77,7 @@ WWIZ is designed to be your **go-to source for workplace knowledge**, answering 
 WWIZ aggregates information from multiple corporate systems—employee directories, project management tools, communication platforms, and calendar systems—creating a unified knowledge base that understands relationships between people, projects, and processes.
 
 **AI-Powered Contextual Responses:**
-Using AWS Bedrock Nova, WWIZ doesn't just return search results—it provides **contextual, conversational answers** that include why someone is relevant, how to contact them, and what their current availability looks like.
+Using OpenAI gpt-4, WWIZ doesn't just return search results—it provides **contextual, conversational answers** that include why someone is relevant, how to contact them, and what their current availability looks like.
 
 **Privacy-First Architecture:**
 The AI Agent never has direct access to sensitive systems. Instead, scheduled data collection scripts gather, anonymize, and format information before making it available to the chat interface, ensuring **security and privacy are built-in by design**.
@@ -104,7 +104,7 @@ The AI Agent never has direct access to sensitive systems. Instead, scheduled da
 ### 🏗️ Architecture
 
 - **Hosting**: AWS for Compute and frontend (EC2 with ALB)
-- **LLM**: AWS Bedrock Nova (integrated with AnythingLLM)
+- **LLM**: OpenAI gpt-4 (integrated with AnythingLLM)
 - **Frontend**: AnythingLLM (production-ready deployment)
 - **Data Store**: Local storage with 426+ embedded documents
 - **Data Aggregation**: Python scripts for data generation and import
@@ -174,7 +174,7 @@ The AI Agent never has direct access to sensitive systems. Instead, scheduled da
 **AI & Data Integration:**
 - ✅ **Knowledge Base**: 426+ documents successfully embedded
 - ✅ **Semantic Search**: Vector database with contextual retrieval
-- ✅ **AWS Bedrock**: Nova model integration for natural conversations
+- ✅ **OpenAI**: gpt-4 model integration for natural conversations
 - ✅ **Data Pipeline**: Automated Python scripts for data generation and import
 - ✅ **Multi-source Integration**: 10 different corporate data sources
 
@@ -195,7 +195,7 @@ The AI POC is fully deployed and operational:
 **Live Demo:** `wwiz.firman.id.au`
 
 **Key Features Implemented:**
-- ✅ **AI Chat Interface**: Fully functional with AWS Bedrock Nova
+- ✅ **AI Chat Interface**: Fully functional with OpenAI gpt-4
 - ✅ **Knowledge Base**: 426+ documents across 10 data sources embedded
 - ✅ **Company Data**: Full Metal Productions dataset (52 employees, 7 projects)
 - ✅ **Real-time Queries**: Ask about people, projects, availability, and processes
@@ -232,7 +232,7 @@ The AI POC is fully deployed and operational:
 - **Compute:** AWS EC2 (spot instances for cost optimization)
 - **Load Balancer:** Application Load Balancer with health checks
 - **Security:** WAF, VPC, Security Groups
-- **AI Platform:** AnythingLLM with AWS Bedrock integration
+- **AI Platform:** AnythingLLM with OpenAi integration
 - **Infrastructure:** CloudFormation for reproducible deployments
 
 ### Known Issues
@@ -252,7 +252,7 @@ See project documentation in `docs/` folder for detailed troubleshooting guides.
 - ✅ **Concept Validated**: WWIZ successfully answers complex workplace queries
 - ✅ **PRE-PRODUCTION READY**: Deployed and accessible at `wwiz.firman.id.au`
 - ✅ **Real Data**: 426+ documents from 10 corporate data sources
-- ✅ **AI Integration**: AWS Bedrock Nova providing intelligent responses
+- ✅ **AI Integration**: OpenAI gpt-4 providing intelligent responses
 - ✅ **Full Infrastructure**: CloudFormation, monitoring, security, and scaling
 
 **Time Investment:**
