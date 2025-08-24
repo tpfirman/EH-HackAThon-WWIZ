@@ -1,0 +1,19 @@
+{
+  "spaceKey": "DEV",
+  "spaceName": "Development Team",
+  "spaceType": "team",
+  "description": "Technical documentation and development processes for Full Metal Productions",
+  "homepageTitle": "Development Team Home",
+  "activitySummary": {
+    "totalPages": 24,
+    "totalBlogPosts": 12,
+    "totalComments": 87,
+    "totalAttachments": 33,
+    "averageViewsPerPage": 105,
+    "mostViewedPage": "Sample Article 1 for Development Team",
+    "recentlyUpdatedPages": 7,
+    "activeContributors": 10
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

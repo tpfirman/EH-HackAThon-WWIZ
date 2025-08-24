@@ -1,0 +1,19 @@
+{
+  "spaceKey": "YOUTUBE",
+  "spaceName": "YouTube Content",
+  "spaceType": "team",
+  "description": "Content planning, production guides, and YouTube channel documentation",
+  "homepageTitle": "YouTube Content Home",
+  "activitySummary": {
+    "totalPages": 16,
+    "totalBlogPosts": 10,
+    "totalComments": 77,
+    "totalAttachments": 37,
+    "averageViewsPerPage": 110,
+    "mostViewedPage": "Sample Article 4 for YouTube Content",
+    "recentlyUpdatedPages": 14,
+    "activeContributors": 15
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

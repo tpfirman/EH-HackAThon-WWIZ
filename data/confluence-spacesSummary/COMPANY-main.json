@@ -1,0 +1,19 @@
+{
+  "spaceKey": "COMPANY",
+  "spaceName": "Company Wiki",
+  "spaceType": "global",
+  "description": "Company-wide policies, procedures, and general information",
+  "homepageTitle": "Company Wiki Home",
+  "activitySummary": {
+    "totalPages": 36,
+    "totalBlogPosts": 9,
+    "totalComments": 100,
+    "totalAttachments": 77,
+    "averageViewsPerPage": 105,
+    "mostViewedPage": "Sample Article 34 for Company Wiki",
+    "recentlyUpdatedPages": 15,
+    "activeContributors": 15
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

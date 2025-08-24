@@ -1,0 +1,19 @@
+{
+  "spaceKey": "ART",
+  "spaceName": "Art & Animation",
+  "spaceType": "team",
+  "description": "Art style guides, asset libraries, and animation documentation",
+  "homepageTitle": "Art & Animation Home",
+  "activitySummary": {
+    "totalPages": 16,
+    "totalBlogPosts": 7,
+    "totalComments": 81,
+    "totalAttachments": 53,
+    "averageViewsPerPage": 106,
+    "mostViewedPage": "Sample Article 12 for Art & Animation",
+    "recentlyUpdatedPages": 14,
+    "activeContributors": 14
+  },
+  "lastUpdated": "2025-08-23T10:30:00Z",
+  "dataSource": "confluence-spacesSummary"
+}

@@ -1,0 +1,86 @@
+{
+  "spaceKey": "DEV",
+  "contributors": [
+    {
+      "ehsId": "FMP001",
+      "displayName": "Tim Firman",
+      "role": "administrator",
+      "pagesCreated": 5,
+      "pagesModified": 21,
+      "lastActivity": "2025-08-21T10:07:00Z"
+    },
+    {
+      "ehsId": "FMP002",
+      "displayName": "Sarah Chen",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 19,
+      "lastActivity": "2025-08-20T16:06:00Z"
+    },
+    {
+      "ehsId": "FMP003",
+      "displayName": "Michael Rodriguez",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 20,
+      "lastActivity": "2025-08-20T17:42:00Z"
+    },
+    {
+      "ehsId": "FMP004",
+      "displayName": "Alex Thompson",
+      "role": "administrator",
+      "pagesCreated": 4,
+      "pagesModified": 5,
+      "lastActivity": "2025-08-21T09:14:00Z"
+    },
+    {
+      "ehsId": "FMP005",
+      "displayName": "Emily Johnson",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 11,
+      "lastActivity": "2025-08-23T10:32:00Z"
+    },
+    {
+      "ehsId": "FMP006",
+      "displayName": "David Kim",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 16,
+      "lastActivity": "2025-08-20T15:58:00Z"
+    },
+    {
+      "ehsId": "FMP007",
+      "displayName": "Jessica Williams",
+      "role": "contributor",
+      "pagesCreated": 6,
+      "pagesModified": 17,
+      "lastActivity": "2025-08-22T10:32:00Z"
+    },
+    {
+      "ehsId": "FMP008",
+      "displayName": "Ryan O'Connor",
+      "role": "contributor",
+      "pagesCreated": 8,
+      "pagesModified": 18,
+      "lastActivity": "2025-08-22T09:28:00Z"
+    },
+    {
+      "ehsId": "FMP009",
+      "displayName": "Lisa Zhang",
+      "role": "contributor",
+      "pagesCreated": 5,
+      "pagesModified": 18,
+      "lastActivity": "2025-08-23T15:43:00Z"
+    },
+    {
+      "ehsId": "FMP010",
+      "displayName": "James Brown",
+      "role": "contributor",
+      "pagesCreated": 3,
+      "pagesModified": 10,
+      "lastActivity": "2025-08-20T12:55:00Z"
+    }
+  ],
+  "dataSource": "confluence-spacesSummary"
+}
