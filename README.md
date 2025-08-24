@@ -57,7 +57,7 @@ Everyone has been in a situation at work where they were wondering **"Who do I t
 **Demo User Credentials**
 
 - **Username**: `demo`  
-- **Password**: `demo`
+- **Password**: `demo1234`
 
 
 **WWIZ is an intelligent workplace assistant** that eliminates these knowledge gaps by providing instant, accurate answers about your organization's people, projects, and processes.
